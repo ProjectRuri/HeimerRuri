@@ -78,5 +78,5 @@ def animate_3_planes_lut(slices):
     plt.show()
 
 
-slices = load_dicom_slices('dcm_file_viewer/mri_file')
+slices = load_dicom_slices('mri_file')
 animate_3_planes_lut(slices)

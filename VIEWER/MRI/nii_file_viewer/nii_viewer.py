@@ -2,9 +2,11 @@ import nibabel as nib
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+import os
 
+print("현재 작업 디렉토리 : ", os.getcwd())
 # 1. NIfTI 파일 로드
-img = nib.load('nii_file_viewer/test2.nii')  # 파일 경로 수정
+img = nib.load('test2.nii')  # 파일 경로 수정
 data = img.get_fdata()
 
 # 2. 데이터 정규화 (0~255 범위로)
