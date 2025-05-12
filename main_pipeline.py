@@ -10,7 +10,16 @@ def main():
     # 가상환경 설정 안했다면 아래 들여쓴 코드 실행
     # conda create -n tf_env python=3.10
     # conda activate tf_env
-    # pip install tensorflow
+
+    # 윈도우는 텐서플로우에서 gpu를 사용하기 위해서는 tensorflow 2.10을 사용해야함
+    # 이에 호환되는 cuda와 cudnn을 매칭시켜야함
+    # cudnn - 8.1
+    # https://developer.nvidia.com/rdp/cudnn-archive#a-collapse81-112
+    # cuda - 11.2
+    # https://developer.nvidia.com/cuda-11.2.2-download-archive
+
+    # 텐서 플로우 버전을 맞춰야함
+    # pip install tensorflow=2.10
 
     # 사용중인 패키지
     # pip install scipy pandas matplotlib nibabel
