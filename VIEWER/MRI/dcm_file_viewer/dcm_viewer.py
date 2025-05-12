@@ -143,5 +143,5 @@ def animate_3_planes_lut(slices):
 
 
 slices = load_dicom_slices('mri_file')
-animate_3_planes_lut(slices)
+# animate_3_planes_lut(slices)
 viewer_3_planes_lut_with_slider(slices)
