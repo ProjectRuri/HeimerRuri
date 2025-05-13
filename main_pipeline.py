@@ -8,24 +8,23 @@ def main():
     # ─────터미널 입력───────────────────────────────
     # cd 이용해서 heimerruri로 이동
     # 가상환경 설정 안했다면 아래 들여쓴 코드 실행
-    # conda create -n tf_env python=3.10
-    # conda activate tf_env
+    # 아나콘다3을 사용중임, python버전은 3.10 사용
+    # conda create -n tf_gpu python=3.10
+    # conda activate tf_gpu
 
     # 윈도우는 텐서플로우에서 gpu를 사용하기 위해서는 tensorflow 2.10을 사용해야함
     # 이에 호환되는 cuda와 cudnn을 매칭시켜야함
-    # cudnn - 8.1
+    # cudnn - 8.1 -> 여러 버전이 같이 있으니 주의!
     # https://developer.nvidia.com/rdp/cudnn-archive#a-collapse81-112
     # cuda - 11.2
     # https://developer.nvidia.com/cuda-11.2.2-download-archive
 
     # 텐서 플로우 버전을 맞춰야함
-    # pip install tensorflow=2.10
+    # pip install tensorflow==2.10
 
     # 사용중인 패키지
     # pip install scipy pandas matplotlib nibabel
 
-    # venv_tf\Scripts\activate
-    
 
     # ─────데이터 준비───────────────────────────────
 

@@ -20,6 +20,8 @@ def resize_volume(volume, target_shape=(128, 128, 128)):
 
 
 
+
+
 def preprocess(origin_data: list[ClinicalDataset]):
     """
     전처리를 진행
