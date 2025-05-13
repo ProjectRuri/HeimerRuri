@@ -57,11 +57,73 @@ def load_nii_volume(nii_path:Path):
 
 def view_nii(nii_path:Path):
     """
-    nii_path            : .nii또는 .nii.gz파일 경로
+    한개의 nii파일을 보는 함수
+    INTPUT:
+        nii_path            : .nii또는 .nii.gz파일 경로
+
+
     """
 
     img = nib.load(nii_path)
     data = img.get_fdata()
+
+    # 초기 슬라이스 인덱스
+    x, y, z = data.shape
+    idxs = [x // 2, y // 2, z // 2]
+
+    # Figure & Subplots
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    fig.subplots_adjust(bottom=0.25)
+
+    im0 = axes[0].imshow(data[idxs[0], :, :].T, cmap="gray", origin="lower")
+    axes[0].set_title("Sagittal (X)")
+    im1 = axes[1].imshow(data[:, idxs[1], :].T, cmap="gray", origin="lower")
+    axes[1].set_title("Coronal (Y)")
+    im2 = axes[2].imshow(data[:, :, idxs[2]].T, cmap="gray", origin="lower")
+    axes[2].set_title("Axial (Z)")
+
+    for ax in axes:
+        ax.axis("off")
+
+    # 슬라이더 위치 정의
+    axcolor = 'lightgoldenrodyellow'
+    ax_x = plt.axes([0.15, 0.15, 0.7, 0.03], facecolor=axcolor)
+    ax_y = plt.axes([0.15, 0.10, 0.7, 0.03], facecolor=axcolor)
+    ax_z = plt.axes([0.15, 0.05, 0.7, 0.03], facecolor=axcolor)
+
+    slider_x = Slider(ax_x, 'X-axis', 0, x - 1e-3, valinit=idxs[0], valstep=1)
+    slider_y = Slider(ax_y, 'Y-axis', 0, y - 1e-3, valinit=idxs[1], valstep=1)
+    slider_z = Slider(ax_z, 'Z-axis', 0, z - 1e-3, valinit=idxs[2], valstep=1)
+
+    # 슬라이더 업데이트 함수
+    def update(val):
+        ix = int(slider_x.val)
+        iy = int(slider_y.val)
+        iz = int(slider_z.val)
+
+        im0.set_data(data[ix, :, :].T)
+        im1.set_data(data[:, iy, :].T)
+        im2.set_data(data[:, :, iz].T)
+        fig.canvas.draw_idle()
+
+    # 슬라이더 이벤트 연결
+    slider_x.on_changed(update)
+    slider_y.on_changed(update)
+    slider_z.on_changed(update)
+
+    plt.show()
+
+def view_volume(volume:np.ndarray):
+    """
+    한개의 volume을 보는 함수
+    INTPUT:
+        volume            : nii로 부터 가져온 volume
+
+
+    """
+
+    
+    data = volume
 
     # 초기 슬라이스 인덱스
     x, y, z = data.shape
@@ -208,12 +270,12 @@ def load_labels(input_dataset_path):
 
 
 
-def loader():
+def loader(dcm_to_nii_process:bool):
     """
     모든 기본 데이터를 갖춘 벡터를 리턴합니다.
 
     INPUT:
-        X
+        dcm_to_nii_process : dcm파일을 nii파일로 변환을 진행여부
     
     OUTPUT:
         ClinicalDataset 리스트 혹은 벡터?
@@ -227,7 +289,7 @@ def loader():
     # load_dcm_to_nii(input_dataset_path)
 
     # dcm 파일을 nii로 변환
-    if(input("DCM 변환이 필요합니까?(입력없을 경우 불필요) : ")):
+    if(dcm_to_nii_process==True):
         load_dcm_to_nii(input_dataset_path)
 
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장

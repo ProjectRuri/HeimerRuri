@@ -8,7 +8,7 @@ class Label:
 
     설명:
         Subject         : 환자 식별 번호
-        Group           : 치매 여부
+        Group           : 치매 여부  (CN => 0 AD => 1)
         Image Data ID   : 촬영 식별 번호
     """
     def __init__(self, subject: str, group: str, imageDataID: str):

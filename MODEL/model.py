@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
+from tensorflow.keras.utils import plot_model
 
 
 
@@ -46,6 +47,7 @@ def build_model():
    
 
     model = Model(inputs=mri_input, outputs=output)
+    # model.summary()
     return model
 
 
@@ -61,12 +63,24 @@ def build(preprocessed: list[ClinicalDataset]):
     """
 
     # 데이터셋 구성
+
+    # 전처리된 데이터셋을 텐서플로우 데이터셋으로 변환
     tf_dataset = build_tensorflow_dataset(preprocessed)
+
+    # shuffle(100) -> 데이터 순서를 섞어 과적합을 방지
+    # batch(8) -> 한번에 8개의 샘플을 묶어 학습(미니 배치 학습)
+    # prefetch(tf.data.AUTOTUNE) -> CPU와 GPU의 병렬처리로 속도 향상상
+
     train_dataset = tf_dataset.shuffle(100).batch(8).prefetch(tf.data.AUTOTUNE)
 
     model = build_model()
+    
+
+    # optimizer='adam' -> 경사하강 최적화 알고리즘을 사용
+    # loss = 'binary_crossentropy' -> 이진 분류 문제에 적합한 손실 함수
+    # metrics=['accuracy'] -> 학습중 정확도를 표기
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-    model.fit(train_dataset, epochs=10)
+    model.fit(train_dataset, epochs=10, verbose=2)
 
     return model
