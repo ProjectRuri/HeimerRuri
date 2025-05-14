@@ -30,3 +30,22 @@ def ask_yes_no(prompt: str, default: str = 'y') -> bool:
             return False
         else:
             print("Please enter y or n.")
+
+
+
+import time
+
+def timer(label="Timer"):
+    """
+    이전에 이 힘수를 호출한 시점으로부터 시간을 출력
+    INPUT:
+        label : 설명
+    """
+    if not hasattr(timer, "_last_time"):
+        timer._last_time = time.time()
+        print(f"\n[{label}] 시작\n")
+    else:
+        now = time.time()
+        elapsed = now - timer._last_time
+        print(f"\n[{label}] 경과 시간: {elapsed:.2f}초\n")
+        timer._last_time = now

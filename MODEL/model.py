@@ -6,6 +6,8 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
 from tensorflow.keras.utils import plot_model
 
+from util import *
+
 
 
 
@@ -33,8 +35,8 @@ def build_tensorflow_dataset(dataset: list[ClinicalDataset]):
     return tf.data.Dataset.from_tensor_slices(((mri_data), labels))
 
 
-def build_model():
-    mri_input = Input(shape=(128, 128, 128, 1), name='mri_input')
+def build_model(size:int):
+    mri_input = Input(shape=(size, size, size, 1), name='mri_input')
     x = layers.Conv3D(16, kernel_size=3, activation='relu')(mri_input)
     x = layers.MaxPool3D(pool_size=2)(x)
     x = layers.Conv3D(32, kernel_size=3, activation='relu')(x)
@@ -52,7 +54,7 @@ def build_model():
 
 
 
-def build(preprocessed: list[ClinicalDataset]):
+def build(preprocessed: list[ClinicalDataset], size:int):
     """
     모델 초기 학습을 진행
 
@@ -61,6 +63,7 @@ def build(preprocessed: list[ClinicalDataset]):
     OUTPUT:
         학습된 모델
     """
+    timer("모델 처리 시작")
 
     # 데이터셋 구성
 
@@ -71,9 +74,9 @@ def build(preprocessed: list[ClinicalDataset]):
     # batch(8) -> 한번에 8개의 샘플을 묶어 학습(미니 배치 학습)
     # prefetch(tf.data.AUTOTUNE) -> CPU와 GPU의 병렬처리로 속도 향상상
 
-    train_dataset = tf_dataset.shuffle(100).batch(8).prefetch(tf.data.AUTOTUNE)
+    train_dataset = tf_dataset.shuffle(100).batch(2).prefetch(tf.data.AUTOTUNE)
 
-    model = build_model()
+    model = build_model(size)
     
 
     # optimizer='adam' -> 경사하강 최적화 알고리즘을 사용
@@ -83,4 +86,5 @@ def build(preprocessed: list[ClinicalDataset]):
 
     model.fit(train_dataset, epochs=10, verbose=2)
 
+    timer("모델 처리 완료")
     return model

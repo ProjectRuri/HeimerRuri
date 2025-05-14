@@ -1,14 +1,17 @@
 import subprocess
-from typing import Optional, Dict, Any
-from matplotlib.widgets import Slider
 import numpy as np
 import pandas as pd
 import os
-from pathlib import Path
 import nibabel as nib
 import matplotlib.pyplot as plt
-from classModels import *
 
+
+from typing import Optional, Dict, Any
+from matplotlib.widgets import Slider
+from pathlib import Path
+from classModels import *
+from tqdm import tqdm
+from util import *
 
 
 def convert_dcm_to_nii(dicom_dir:Path, output_dir:Path):
@@ -47,7 +50,7 @@ def load_nii_volume(nii_path:Path):
         volume      : 3차원 영상?
     """
     img = nib.load(nii_path)
-    data = img.get_fdata()
+    data = img.get_fdata().astype(np.float32)
     
     file_name = nii_path.name
     ID = file_name.split("_")[0]
@@ -280,6 +283,8 @@ def loader(dcm_to_nii_process:bool):
     OUTPUT:
         ClinicalDataset 리스트 혹은 벡터?
     """
+    timer("초기 데이터 로드 시작")
+    
 
     # 루트 경로 지정
     ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -290,14 +295,17 @@ def loader(dcm_to_nii_process:bool):
 
     # dcm 파일을 nii로 변환
     if(dcm_to_nii_process==True):
+        timer("dcm파일 nii로 변환 시작")
         load_dcm_to_nii(input_dataset_path)
+        timer("dcm파일 nii로 변환 완료")
 
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
     
 
     # 가져온 mri영상의 3차원 배열 목록
-    volumes, IDs = zip(*[load_nii_volume(i) for i in nii_list])
+    volumes, IDs = zip(*[load_nii_volume(i) for i in tqdm(nii_list, desc="NIfTI 로딩 중")])
+    
 
     clinicalDataset = []
 
@@ -308,13 +316,13 @@ def loader(dcm_to_nii_process:bool):
     sorted_labels = [dict_labels[i] for i in IDs]
     
     # 모든 mri 영상 및 라벨 로드
-    for i in range(len(IDs)):
+    for i in tqdm(range(len(IDs)), desc="MRI 및 라벨 로딩 중"):
         p = ClinicalDataset(volumes[i],sorted_labels[i])
         clinicalDataset.append(p)
 
     
 
-    print("MRI 데이터 로드 완료")
+    timer("초기 데이터 로드 완료")
     return clinicalDataset
     
 
