@@ -1,5 +1,6 @@
 ## .gitignore
 *.nii
-*.dcm
 *.nii.gz
+*.dcm
+*.zip
 INPUT_DATASET/*.json

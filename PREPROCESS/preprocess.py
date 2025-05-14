@@ -2,6 +2,8 @@
 import numpy as np
 from scipy.ndimage import zoom
 from classModels import *
+from tqdm import tqdm
+from util import *
 
 def resize_volume(volume, target_shape=(128, 128, 128)):
     """
@@ -22,7 +24,7 @@ def resize_volume(volume, target_shape=(128, 128, 128)):
 
 
 
-def preprocess(origin_data: list[ClinicalDataset]):
+def preprocess(origin_data: list[ClinicalDataset], size:int):
     """
     전처리를 진행
     INPUT:
@@ -31,8 +33,11 @@ def preprocess(origin_data: list[ClinicalDataset]):
     OUTPUT:
         전처리가 진행된
     """
-    for i in origin_data:
-        resized = resize_volume(i.volume)
+    timer("전처리 시작")
+
+    target_shape = (size, size,size)
+    for i in tqdm(origin_data, desc="볼륨 리사이즈 중"):
+        resized = resize_volume(i.volume, target_shape)
         i.volume = resized
-    print("전처리 완료")
+    timer("전처리 완료")
     return origin_data

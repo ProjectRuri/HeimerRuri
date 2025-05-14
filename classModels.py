@@ -18,7 +18,7 @@ class Label:
 
 
     def __repr__(self):
-        return f"(subject = {self.subject}, group = {self.group}, imageDataID = {self.imageDataID})\n"
+        return f"(subject = {self.subject}, group = {self.group}, imageDataID = {self.imageDataID})"
  
 
 class ClinicalDataset:
