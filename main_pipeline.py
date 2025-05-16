@@ -68,6 +68,23 @@ def main():
     # 전처리
     preprocessed = preprocess(origin_data,size)
     
+
+    random.shuffle(preprocessed)
+
+    adList, cnList =[],[]
+
+    for i in preprocessed:
+        if i.label.group == "CN":
+            cnList.append(i)
+        else:
+            adList.append(i)
+
+    preprocessed = cnList[50:] + adList[50:]
+
+    test_list = cnList[:50]+adList[:50]
+
+    print(f"정상 데이터 수 : {len(cnList)}, 치매 데이터 수 : {len(adList)}")
+
     # 모델 처리
     fit_model = build(preprocessed,size)
     
@@ -87,9 +104,7 @@ def main():
     aa, ac, ca, cc = 0,0,0,0
     # 테스트용 샘플
     for i in range(100):
-        # 랜덤 샘플 선택
-        index = random.randrange(1,len(preprocessed))
-        sample = preprocessed[index]  # ClinicalDataset
+        sample = test_list[i]  # ClinicalDataset
 
         # volume을 텐서플로에 넣어둘 규격으로 변경
         input_tensor = np.expand_dims(sample.volume, axis=(0, -1))  # (1, D, H, W, 1)
