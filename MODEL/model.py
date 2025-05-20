@@ -1,3 +1,4 @@
+import random
 import numpy as np
 from classModels import ClinicalDataset
 import tensorflow as tf
@@ -54,7 +55,7 @@ def build_model(size:int):
 
 
 
-def build(preprocessed: list[ClinicalDataset], size:int):
+def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:int):
     """
     모델 초기 학습을 진행
 
@@ -64,6 +65,37 @@ def build(preprocessed: list[ClinicalDataset], size:int):
         학습된 모델
     """
     timer("모델 처리 시작")
+
+    
+    min_count = min(CNcount, ADcount)
+    cn_data = [x for x in preprocessed if x.label.group == 'CN']
+    ad_data = [x for x in preprocessed if x.label.group == 'AD']
+
+    random.shuffle(cn_data)
+    random.shuffle(ad_data)
+
+    balanced_data = cn_data[:min_count] + ad_data[:min_count]
+    random.shuffle(balanced_data)
+
+    preprocessed = balanced_data
+
+    input_shape = (size, size, size, 1)
+
+    def generator():
+        for sample in preprocessed:
+            volume = np.load(sample.volume_path)
+            label = 1 if sample.label.group == "AD" else 0  # 이진 분류 기준
+            yield volume, label
+
+    def build_tensorflow_dataset(preprocessed_list):
+        dataset = tf.data.Dataset.from_generator(
+            generator,
+            output_signature=(
+                tf.TensorSpec(shape=input_shape, dtype=tf.float32),
+                tf.TensorSpec(shape=(), dtype=tf.int32)
+            )
+        )
+        return dataset
 
     # 데이터셋 구성
 
@@ -83,6 +115,10 @@ def build(preprocessed: list[ClinicalDataset], size:int):
     # loss = 'binary_crossentropy' -> 이진 분류 문제에 적합한 손실 함수
     # metrics=['accuracy'] -> 학습중 정확도를 표기
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+
+    
+    print(f"모델 생성에 사용된 데이터 (정상 : {min_count}/{CNcount}, 치매 {min_count}/{ADcount})")
 
     model.fit(train_dataset, epochs=10, verbose=2)
 

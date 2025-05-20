@@ -49,3 +49,30 @@ def timer(label="Timer"):
         elapsed = now - timer._last_time
         print(f"\n[{label}] 경과 시간: {elapsed:.2f}초\n")
         timer._last_time = now
+
+
+
+def reset_log(file_path="log.txt"):
+    """
+    로그 파일 초기화 하는 함수
+    INPUT:
+        file_path: 로그 파일 이름 입력 없을시 기본 log.txt로 작성됨됨
+
+    """
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write("")  # 빈 문자열로 덮어쓰기
+
+
+def print_and_log(text, file_path="log.txt"):
+    """
+    로그 찍어주는 함수
+    INPUT:
+        text : 찍을 로그
+        file_path : 로그 파일 이름 입력 없을시 기본 log.txt로 작성됨
+    """
+   
+    text = str(text)
+    #print(text)
+    with open(file_path, "a", encoding="utf-8") as f:
+        f.write(text + "\n")
+
