@@ -1,6 +1,6 @@
 import os
 import random
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # TF_CPP_MIN_LOG_LEVEL 값:
 
 # '0': 모든 메시지 출력 (기본값)
@@ -63,7 +63,7 @@ def main():
     timer("프로그램 시작")
     
     # 초기 데이터 로드
-    origin_data = loader(dcm_to_nii_process)
+    origin_data = loader(dcm_to_nii_process,size)
     
     # 전처리
     preprocessed = preprocess(origin_data,size)
@@ -79,22 +79,23 @@ def main():
         else:
             adList.append(i)
 
-    preprocessed = cnList[50:] + adList[50:]
 
-    test_list = cnList[:50]+adList[:50]
+    prediction_size = 50
+
+    preprocessed = cnList[prediction_size:] + adList[prediction_size:]
+
+    test_list = cnList[:prediction_size]+adList[:prediction_size]
 
     print(f"정상 데이터 수 : {len(cnList)}, 치매 데이터 수 : {len(adList)}")
 
     # 모델 처리
-    fit_model = build(preprocessed,size)
+    fit_model = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size)
     
 
     # view_volume(sample) # 입력한 데이터 시각으로 확인
     # 모델 시각화
     if(model_visualization):
         plot_model(fit_model, to_file='model_structure.png', show_shapes=True, show_layer_names=True)
-
-
 
     # 입력한 데이터(치매 수, 정상 수)
     ad, cn = 0,0
@@ -103,32 +104,42 @@ def main():
     # 데이터는 치매지만     예측은 정상 -> ac
     aa, ac, ca, cc = 0,0,0,0
     # 테스트용 샘플
-    for i in range(100):
-        sample = test_list[i]  # ClinicalDataset
 
-        # volume을 텐서플로에 넣어둘 규격으로 변경
-        input_tensor = np.expand_dims(sample.volume, axis=(0, -1))  # (1, D, H, W, 1)
 
-        # 예측
-        prediction = fit_model.predict(input_tensor)
         
-        # 라벨 출력
-        print(sample.label)
-        # CN => 0 AD => 1
+    input_tensors = []
+    labels = []
+    raw_labels = []
 
-        # 결과 처리
-        result = (prediction>0.5).astype(int)
-        resultStr = ("AD" if result else "CN")
+    for sample in test_list[:100]:
+        volume = sample.load_volume()
+        input_tensor = np.expand_dims(volume, axis=(0, -1))  # (1, D, H, W, 1)
+        input_tensors.append(input_tensor[0])  # remove batch dim
+        labels.append(sample.label.group)
+        raw_labels.append(repr(sample.label))
 
-        # sample의 그룹
-        nowGroup = sample.label.group
+    input_tensors = np.array(input_tensors)  # (100, D, H, W, 1)
 
+    # 2. 한 번에 예측
+    predictions = fit_model.predict(input_tensors)
+
+
+
+    prediction_log = "예측 결과.txt"
+    reset_log(prediction_log)
+
+    # 3. 후처리
+    for i in range(len(predictions)):
+        pred = predictions[i]
+        result = (pred > 0.5).astype(int)
+        resultStr = "AD" if result else "CN"
+        nowGroup = labels[i]
 
         if nowGroup == "CN":
             cn += 1
         else:
             ad += 1
-        # 혼동 행렬 구성
+
         if nowGroup == "AD" and resultStr == "AD":
             aa += 1
         elif nowGroup == "AD" and resultStr == "CN":
@@ -138,9 +149,55 @@ def main():
         elif nowGroup == "CN" and resultStr == "CN":
             cc += 1
 
+        print_and_log(raw_labels[i], prediction_log)
+        print_and_log(f"예측 결과 : {resultStr}, prediction : {pred}", prediction_log)
 
 
-        print(f"예측 결과 : {resultStr}, prediction : {prediction}")
+
+    # for i in range(100):
+    #     sample = test_list[i]  # ClinicalDataset
+
+
+    #     volume = sample.load_volume()
+
+    #     # volume을 텐서플로에 넣어둘 규격으로 변경
+    #     input_tensor = np.expand_dims(volume, axis=(0, -1))  # (1, D, H, W, 1)
+
+    #     # 예측
+    #     prediction = fit_model.predict(input_tensor)
+        
+
+    #     # 결과 처리
+    #     result = (prediction>0.5).astype(int)
+    #     resultStr = ("AD" if result else "CN")
+
+    #     # sample의 그룹
+    #     nowGroup = sample.label.group
+
+
+    #     if nowGroup == "CN":
+    #         cn += 1
+    #     else:
+    #         ad += 1
+    #     # 혼동 행렬 구성
+    #     if nowGroup == "AD" and resultStr == "AD":
+    #         aa += 1
+    #     elif nowGroup == "AD" and resultStr == "CN":
+    #         ac += 1
+    #     elif nowGroup == "CN" and resultStr == "AD":
+    #         ca += 1
+    #     elif nowGroup == "CN" and resultStr == "CN":
+    #         cc += 1
+
+
+    #     # 라벨 출력
+    #     log_label= repr(sample.label)
+    #     # CN => 0 AD => 1
+    #     log_result = f"예측 결과 : {resultStr}, prediction : {prediction}"
+        
+    #     print_and_log(log_label, "예측 결과.txt")
+    #     print_and_log(log_result, "예측 결과.txt")
+
 
     print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {(aa+cc)/(ad+cn)}")
     print(f"치매->치매 : {aa}, 치매->정상 : {ac}")

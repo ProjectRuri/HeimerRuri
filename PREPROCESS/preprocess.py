@@ -1,30 +1,17 @@
 
+import gc
 import numpy as np
 from scipy.ndimage import zoom
 from classModels import *
 from tqdm import tqdm
 from util import *
 
-def resize_volume(volume, target_shape=(128, 128, 128)):
-    """
-    3D MRI 볼륨을 target_shape로 리사이즈함
-
-    Args:
-        volume (np.ndarray): 원본 MRI 볼륨 (D, H, W)
-        target_shape (tuple): 원하는 출력 크기 (D, H, W)
-
-    Returns:
-        np.ndarray: 리사이즈된 MRI 볼륨
-    """
-    zoom_factors = [t / s for t, s in zip(target_shape, volume.shape)]
-    resized = zoom(volume, zoom=zoom_factors, order=1)  # 선형 보간
-    return resized.astype(np.float32)
 
 
 
 
 
-def preprocess(origin_data: list[ClinicalDataset], size:int):
+def preprocess(origin_data: list[ClinicalDataset], size:int)-> list[ClinicalDataset]:
     """
     전처리를 진행
     INPUT:
@@ -35,9 +22,30 @@ def preprocess(origin_data: list[ClinicalDataset], size:int):
     """
     timer("전처리 시작")
 
-    target_shape = (size, size,size)
-    for i in tqdm(origin_data, desc="볼륨 리사이즈 중"):
-        resized = resize_volume(i.volume, target_shape)
-        i.volume = resized
+    # target_shape = (size, size, size)
+    # resized_dir = Path("resized_volumes")
+    # resized_dir.mkdir(exist_ok=True)
+
+    # processed = []
+
+    # for i in tqdm(origin_data, desc="볼륨 리사이즈 중"):
+    #     # 원본 볼륨 로드
+    #     volume = np.load(i.volume_path)
+
+    #     # 리사이즈
+    #     resized = resize_volume(volume, target_shape)
+
+    #     # 경로 생성 및 저장
+    #     save_path = resized_dir / f"{i.label.ID}.npy"
+    #     np.save(save_path, resized)
+
+    #     # 새 ClinicalDataset 생성 (경로만 포함)
+    #     new_item = ClinicalDataset(save_path, i.label)
+    #     processed.append(new_item)
+
+    #     # 메모리 해제
+    #     del volume, resized
+    #     gc.collect()
+
     timer("전처리 완료")
     return origin_data
