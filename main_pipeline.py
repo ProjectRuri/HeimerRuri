@@ -99,11 +99,7 @@ def main():
 
     # 입력한 데이터(치매 수, 정상 수)
     ad, cn = 0,0
-    # 치매-> a , 정상-> c
-    # 데이터는 정상이지만   예측은 치매 -> ca
-    # 데이터는 치매지만     예측은 정상 -> ac
-    aa, ac, ca, cc = 0,0,0,0
-    # 테스트용 샘플
+    
 
 
         
@@ -120,7 +116,7 @@ def main():
 
     input_tensors = np.array(input_tensors)  # (100, D, H, W, 1)
 
-    # 2. 한 번에 예측
+    # 한 번에 예측
     predictions = fit_model.predict(input_tensors)
 
 
@@ -128,7 +124,14 @@ def main():
     prediction_log = "예측 결과.txt"
     reset_log(prediction_log)
 
-    # 3. 후처리
+
+    # 치매-> a , 정상-> c
+    # 데이터는 정상이지만   예측은 치매 -> ca
+    # 데이터는 치매지만     예측은 정상 -> ac
+    aa, ac, ca, cc = 0,0,0,0
+    # 테스트용 샘플
+
+    # 후처리
     for i in range(len(predictions)):
         pred = predictions[i]
         result = (pred > 0.5).astype(int)
@@ -154,49 +157,7 @@ def main():
 
 
 
-    # for i in range(100):
-    #     sample = test_list[i]  # ClinicalDataset
 
-
-    #     volume = sample.load_volume()
-
-    #     # volume을 텐서플로에 넣어둘 규격으로 변경
-    #     input_tensor = np.expand_dims(volume, axis=(0, -1))  # (1, D, H, W, 1)
-
-    #     # 예측
-    #     prediction = fit_model.predict(input_tensor)
-        
-
-    #     # 결과 처리
-    #     result = (prediction>0.5).astype(int)
-    #     resultStr = ("AD" if result else "CN")
-
-    #     # sample의 그룹
-    #     nowGroup = sample.label.group
-
-
-    #     if nowGroup == "CN":
-    #         cn += 1
-    #     else:
-    #         ad += 1
-    #     # 혼동 행렬 구성
-    #     if nowGroup == "AD" and resultStr == "AD":
-    #         aa += 1
-    #     elif nowGroup == "AD" and resultStr == "CN":
-    #         ac += 1
-    #     elif nowGroup == "CN" and resultStr == "AD":
-    #         ca += 1
-    #     elif nowGroup == "CN" and resultStr == "CN":
-    #         cc += 1
-
-
-    #     # 라벨 출력
-    #     log_label= repr(sample.label)
-    #     # CN => 0 AD => 1
-    #     log_result = f"예측 결과 : {resultStr}, prediction : {prediction}"
-        
-    #     print_and_log(log_label, "예측 결과.txt")
-    #     print_and_log(log_result, "예측 결과.txt")
 
 
     print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {(aa+cc)/(ad+cn)}")
@@ -204,21 +165,8 @@ def main():
     print(f"정상->치매 : {ca}, 정상->정상 : {cc}")
     
 
-    # ─────모델 학습────────────────────────────────
-
-    # 지도학습용 데이터 로드
-
-    # 전처리
-
-    # 지도학습 예시 
-    #    for X, Y in dataloader:
-    #     optimizer.zero_grad()         # 🔸 이전 gradient를 0으로 초기화
-    #     Y_hat = model(X)              # 🔸 forward: 예측값 계산
-    #     loss = criterion(Y_hat, Y)    # 🔸 예측 vs 정답 → 손실
-    #     loss.backward()               # 🔸 역전파: gradient 계산
-    #     optimizer.step()              # 🔸 gradient 기반으로 가중치 갱신
 
     # 텐서플로우나 파이토치를 사용할 경우 체크포인트를 만들어서 저장할것
-    # 저장할 경우 초키 모델 학습이 불필요함
+    # 저장할 경우 초기 모델 학습이 불필요함
 
 main()

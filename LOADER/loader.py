@@ -355,6 +355,7 @@ def loader(dcm_to_nii_process:bool, size:int):
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
     
+    view_nii(nii_list[0])
 
     # 가져온 mri영상의 3차원 배열 목록
     # volumes, IDs = zip(*[load_nii_volume(i) for i in tqdm(nii_list, desc="NIfTI 로딩 중")])

@@ -46,6 +46,7 @@ def build_model(size:int):
     x = layers.GlobalAveragePooling3D()(x)
     x = layers.Dense(64, activation='relu')(x)
     output = layers.Dense(1, activation='sigmoid')(x)  # 이진 분류
+    # rnn 방식
 
    
 
