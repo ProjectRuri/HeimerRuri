@@ -3,4 +3,5 @@
 *.nii.gz
 *.dcm
 *.zip
+*.npy
 INPUT_DATASET/*.json
