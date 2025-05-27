@@ -1,4 +1,6 @@
+from functools import partial
 import subprocess
+import concurrent
 import numpy as np
 import pandas as pd
 import os
@@ -344,7 +346,6 @@ def loader(dcm_to_nii_process:bool, size:int):
     input_dataset_path = ROOT_DIR/"INPUT_DATASET"
     labels = load_labels(input_dataset_path)
     
-    # load_dcm_to_nii(input_dataset_path)
 
     # dcm 파일을 nii로 변환
     if(dcm_to_nii_process==True):
@@ -456,18 +457,24 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     OUTPUT
     ClinicalDataset 인스턴스들의 리스트.
     """
-    ROOT_DIR = Path("/content")
+    # 루트 경로 지정 , 코렙 환경에서 수정이 필요해보임
+    ROOT_DIR = Path(__file__).resolve().parent.parent
+    
+    # INPUT_DATASET 폴더로 주소 이동
     input_dataset_path = ROOT_DIR / "INPUT_DATASET"
     labels = load_labels(input_dataset_path)
 
+    # dcm 파일을 nii로 변환
     if dcm_to_nii_process:
         timer("dcm파일 nii로 변환 시작")
         load_dcm_to_nii(input_dataset_path)
         timer("dcm파일 nii로 변환 완료")
 
+    # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
+    
+    # 메모리 매핑
     num_sample = len(nii_list)
-
     example_volume, _ = load_nii_volume(nii_list[0])
     example_volume = resize_volume(example_volume, target_shape=(size, size, size))
     example_volume = np.expand_dims(example_volume, axis=-1)
@@ -478,6 +485,7 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
 
     save_dir = Path("volumes")
     save_dir.mkdir(parents=True, exist_ok=True)
+    
     #이건 병렬 프로세싱에 쓸 함수 만들기
     func = partial(load_and_process_nii_mp, size=size, save_dir_str=str(save_dir))
     nii_path_strs = [str(p) for p in nii_list]
