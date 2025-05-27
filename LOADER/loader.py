@@ -355,7 +355,7 @@ def loader(dcm_to_nii_process:bool, size:int):
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
     
-    view_nii(nii_list[0])
+    # view_nii(nii_list[0])
 
     # 가져온 mri영상의 3차원 배열 목록
     # volumes, IDs = zip(*[load_nii_volume(i) for i in tqdm(nii_list, desc="NIfTI 로딩 중")])
@@ -401,8 +401,10 @@ def loader(dcm_to_nii_process:bool, size:int):
     # 메모리 매핑 쓰기 모드 종료
 
     # 메모리 매핑 읽기 모드로 실행
-    volumes = np.memmap(data_path, dtype=np.float32, mode='r', shape=(num_sample, *shape))
+    # volumes = np.memmap(data_path, dtype=np.float32, mode='r', shape=(num_sample, *shape))
 
+
+    
 
     clinicalDataset = []
 

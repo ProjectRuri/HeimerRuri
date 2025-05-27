@@ -33,7 +33,13 @@ def ask_yes_no(prompt: str, default: str = 'y') -> bool:
 
 
 
+import os
 import time
+
+import numpy as np
+import psutil
+
+from classModels import ClinicalDataset
 
 def timer(label="Timer"):
     """
@@ -76,3 +82,26 @@ def print_and_log(text, file_path="log.txt"):
     with open(file_path, "a", encoding="utf-8") as f:
         f.write(text + "\n")
 
+
+
+def test_memory_load(samples:list[ClinicalDataset], verbose=True):
+    """
+    데이터 메모리 사용량 확인용 코드
+    INPUT:
+        samples : 테스트할 데이터(list[ClinicalDataset])
+        verbose : 중간과정 출력 여부
+    OUTPUT:
+        X
+        
+    """
+    volumes = []
+    for i, sample in enumerate(samples):
+        vol = np.load(sample.volume_path).astype(np.float32)
+        volumes.append(vol)
+        if verbose and i % 10 == 0:
+            print(f"{i+1}개 로드 완료")
+    print(f"총 {len(volumes)}개 샘플 메모리에 적재 완료")
+    test_volumes = volumes
+
+    process = psutil.Process(os.getpid())
+    print(f"현재 메모리 사용량: {process.memory_info().rss / 1024 ** 2:.2f} MB")

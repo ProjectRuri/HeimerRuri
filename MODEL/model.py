@@ -56,6 +56,9 @@ def build_model(size:int):
 
 
 
+
+# GPU VRAM에 영향을 주는 요소는 batch size와 모델의 크기
+
 def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:int):
     """
     모델 초기 학습을 진행
