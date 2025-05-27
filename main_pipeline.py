@@ -19,8 +19,7 @@ from classModels import *
 from util import *
 
 
-
-from tensorflow.keras.utils import plot_model
+#from tensorflow.keras.utils import plot_model
 
 
 def main():
@@ -63,11 +62,12 @@ def main():
     timer("프로그램 시작")
     
     # 초기 데이터 로드
-    origin_data = loader(dcm_to_nii_process)
+    origin_data = loader_parallel_process(dcm_to_nii_process, size)
     
     # 전처리
     preprocessed = preprocess(origin_data,size)
     
+    return
 
     random.shuffle(preprocessed)
 
@@ -163,5 +163,5 @@ def main():
 
     # 텐서플로우나 파이토치를 사용할 경우 체크포인트를 만들어서 저장할것
     # 저장할 경우 초키 모델 학습이 불필요함
-
-main()
+if __name__ == "__main__":
+    main()

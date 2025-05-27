@@ -4,14 +4,17 @@ import pandas as pd
 import os
 import nibabel as nib
 import matplotlib.pyplot as plt
+import sys
 
-
+import concurrent.futures
+from functools import partial
 from typing import Optional, Dict, Any
 from matplotlib.widgets import Slider
 from pathlib import Path
-from classModels import *
 from tqdm import tqdm
+from scipy.ndimage import zoom
 from util import *
+from classModels import *
 
 
 def convert_dcm_to_nii(dicom_dir:Path, output_dir:Path):
@@ -271,7 +274,20 @@ def load_labels(input_dataset_path):
     
     return labels
 
+def resize_volume(volume, target_shape=(128, 128, 128)):
+    """
+    3D MRI 볼륨을 target_shape로 리사이즈함
 
+    Args:
+        volume (np.ndarray): 원본 MRI 볼륨 (D, H, W)
+        target_shape (tuple): 원하는 출력 크기 (D, H, W)
+
+    Returns:
+        np.ndarray: 리사이즈된 MRI 볼륨
+    """
+    zoom_factors = [t / s for t, s in zip(target_shape, volume.shape)]
+    resized = zoom(volume, zoom=zoom_factors, order=1)  # 선형 보간
+    return resized.astype(np.float32)
 
 def loader(dcm_to_nii_process:bool):
     """
@@ -408,10 +424,3 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
 
     timer("초기 데이터 로드 완료")
     return clinicalDataset
-
-if __name__ == "__main__":
-    clinicalDataset = loader_parallel_process(
-        dcm_to_nii_process=True,
-        size=128,
-        max_workers=None  # 생략 가능
-    )
