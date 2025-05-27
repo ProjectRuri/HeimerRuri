@@ -1,5 +1,6 @@
 import os
 import random
+import os, psutil
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # TF_CPP_MIN_LOG_LEVEL 값:
 
@@ -44,7 +45,7 @@ def main():
     # pip install tensorflow==2.10
 
     # 사용중인 패키지
-    # pip install scipy pandas matplotlib nibabel pydot tqdm
+    # pip install scipy pandas matplotlib nibabel pydot tqdm psutil
 
 
     # ─────데이터 준비───────────────────────────────
@@ -87,6 +88,11 @@ def main():
     test_list = cnList[:prediction_size]+adList[:prediction_size]
 
     print(f"정상 데이터 수 : {len(cnList)}, 치매 데이터 수 : {len(adList)}")
+
+    # 사용 메모리 확인용 코드
+    # test_memory_load(test_list)
+
+    
 
     # 모델 처리
     fit_model = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size)
