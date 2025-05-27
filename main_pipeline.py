@@ -69,8 +69,7 @@ def main():
     # 전처리
     preprocessed = preprocess(origin_data,size)
     
-    return
-
+    
     random.shuffle(preprocessed)
 
     adList, cnList =[],[]

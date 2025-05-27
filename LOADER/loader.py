@@ -12,6 +12,7 @@ from matplotlib.widgets import Slider
 from pathlib import Path
 from tqdm import tqdm
 from scipy.ndimage import zoom
+from classModels import Label
 from util import *
 from scipy.ndimage import zoom
 
@@ -452,13 +453,18 @@ def load_and_process_nii_mp(nii_path_str: str, size: int, save_dir_str: str):
     volume, ID = load_nii_volume(nii_path)
     volume = resize_volume(volume, target_shape=(size, size, size))
     volume = np.expand_dims(volume, axis=-1)
+    volume = volume.astype(np.float32) # 볼륨크기 조정-wmc
 
     file_path = save_dir / f"{ID}.npy"
     np.save(file_path, volume)
 
-    return volume.astype(np.float32), ID, str(file_path)
+    return volume.astype(np.float32), ID, Path(str(file_path)) # 쒸발 이거 str아니에요 Path형 자료에요 -wmc
 
-def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: int = None):
+def load_and_process_wrapper(args):
+        nii_path_str, size, save_dir_str = args
+        return load_and_process_nii_mp(nii_path_str, size, save_dir_str)
+
+def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: int = 16):
     """
     NIfTI 파일 로드, 전처리, 저장 과정을 멀티프로세싱으로 병렬화한 로더 함수입니다.
 
@@ -494,6 +500,7 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     example_volume, _ = load_nii_volume(nii_list[0])
     example_volume = resize_volume(example_volume, target_shape=(size, size, size))
     example_volume = np.expand_dims(example_volume, axis=-1)
+    example_volume = example_volume.astype(np.float32) # 64->32로 수정 - wmc
     shape = example_volume.shape
 
     data_path = "volumes_memmap.dat"
@@ -503,16 +510,19 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     save_dir.mkdir(parents=True, exist_ok=True)
     
     #이건 병렬 프로세싱에 쓸 함수 만들기
-    func = partial(load_and_process_nii_mp, size=size, save_dir_str=str(save_dir))
+    # func = partial(load_and_process_nii_mp, size=size, save_dir_str=str(save_dir))
+    
+    
     nii_path_strs = [str(p) for p in nii_list]
 
     clinicalDataset = []
     volume_paths = []
     IDs = []
     #여기서 병렬 프로세싱
+    args_list = [(p, size, str(save_dir)) for p in nii_path_strs]
     with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
         results = list(tqdm(
-            executor.map(func, nii_path_strs),
+            executor.map(load_and_process_wrapper, args_list),
             total=num_sample,
             desc="NIFTI 멀티프로세싱 처리 중"
         ))

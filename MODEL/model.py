@@ -8,6 +8,7 @@ from tensorflow.keras.layers import Input
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
+from tqdm.keras import TqdmCallback
 
 from tensorflow.keras.callbacks import EarlyStopping
 
@@ -143,7 +144,7 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
         patience=5,                     # n 번 동안 개선없을시 정지
         restore_best_weights=True       # 성능이 가장 좋았던 시점의 가중치를 복원할건지?
         )
-
+    
 
     model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
 
@@ -156,7 +157,7 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
         validation_data=val_dataset,  # ← val_loss 계산을 위한 설정 (임시로 train 그대로 사용)
         epochs=50,
         callbacks=[early_stop],
-        verbose=2
+        verbose=1
     )
 
     timer("모델 처리 완료")
