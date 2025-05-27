@@ -4,4 +4,6 @@
 *.dcm
 *.zip
 *.npy
+*.csv
+volumes_memmap.dat
 INPUT_DATASET/*.json
