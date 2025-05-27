@@ -4,7 +4,6 @@ import pandas as pd
 import os
 import nibabel as nib
 import matplotlib.pyplot as plt
-import sys
 
 import concurrent.futures
 from functools import partial
