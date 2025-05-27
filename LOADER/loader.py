@@ -369,8 +369,10 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     OUTPUT
     ClinicalDataset 인스턴스들의 리스트.
     """
-    ROOT_DIR = Path("/content")
-    input_dataset_path = ROOT_DIR / "INPUT_DATASET"
+    # 루트 경로 지정
+    ROOT_DIR = Path(__file__).resolve().parent.parent
+    # INPUT_DATASET 폴더로 주소 이동
+    input_dataset_path = ROOT_DIR/"INPUT_DATASET"
     labels = load_labels(input_dataset_path)
 
     if dcm_to_nii_process:
