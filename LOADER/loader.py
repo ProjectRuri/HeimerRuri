@@ -326,5 +326,85 @@ def loader(dcm_to_nii_process:bool):
     return clinicalDataset
     
 
+#multy processing
+#기본 로드 함수
+def load_and_process_nii_mp(nii_path_str: str, size: int, save_dir_str: str):
+    nii_path = Path(nii_path_str)
+    save_dir = Path(save_dir_str)
 
+    volume, ID = load_nii_volume(nii_path)
+    volume = resize_volume(volume, target_shape=(size, size, size))
+    volume = np.expand_dims(volume, axis=-1)
+
+    file_path = save_dir / f"{ID}.npy"
+    np.save(file_path, volume)
+
+    return volume.astype(np.float32), ID, str(file_path)
+
+def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: int = None):
+    """
+    NIfTI 파일 로드, 전처리, 저장 과정을 멀티프로세싱으로 병렬화한 로더 함수입니다.
+
+    INPUT
+    dcm_to_nii_process: DICOM 파일을 NIfTI(.nii.gz)로 진행여부
+    size: 볼륨 리사이즈 시의 목표 크기 (size x size x size).
+    max_workers: 사용할 병렬 처리 프로세스 수. 기본값은 CPU 코어 수. 그냥 넣지 말고 기본값 쓰셈
+
+    OUTPUT
+    ClinicalDataset 인스턴스들의 리스트.
+    """
+    ROOT_DIR = Path("/content")
+    input_dataset_path = ROOT_DIR / "INPUT_DATASET"
+    labels = load_labels(input_dataset_path)
+
+    if dcm_to_nii_process:
+        timer("dcm파일 nii로 변환 시작")
+        load_dcm_to_nii(input_dataset_path)
+        timer("dcm파일 nii로 변환 완료")
+
+    nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
+    num_sample = len(nii_list)
+
+    example_volume, _ = load_nii_volume(nii_list[0])
+    example_volume = resize_volume(example_volume, target_shape=(size, size, size))
+    example_volume = np.expand_dims(example_volume, axis=-1)
+    shape = example_volume.shape
+
+    data_path = "volumes_memmap.dat"
+    volumes = np.memmap(data_path, dtype=np.float32, mode='w+', shape=(num_sample, *shape))
+
+    save_dir = Path("volumes")
+    save_dir.mkdir(parents=True, exist_ok=True)
+    #이건 병렬 프로세싱에 쓸 함수 만들기
+    func = partial(load_and_process_nii_mp, size=size, save_dir_str=str(save_dir))
+    nii_path_strs = [str(p) for p in nii_list]
+
+    clinicalDataset = []
+    volume_paths = []
+    IDs = []
+    #여기서 병렬 프로세싱
+    with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
+        results = list(tqdm(
+            executor.map(func, nii_path_strs),
+            total=num_sample,
+            desc="NIFTI 멀티프로세싱 처리 중"
+        ))
+
+    for idx, (volume, ID, file_path) in enumerate(results):
+        volumes[idx] = volume
+        IDs.append(ID)
+        volume_paths.append(file_path)
+
+    volumes.flush()
+    volumes = np.memmap(data_path, dtype=np.float32, mode='r', shape=(num_sample, *shape))
+
+    dict_labels = {label.imageDataID: label for label in labels}
+    sorted_labels = [dict_labels[i] for i in IDs]
+
+    for i in tqdm(range(num_sample), desc="MRI 및 라벨 로딩 중"):
+        p = ClinicalDataset(volume_paths[i], sorted_labels[i])
+        clinicalDataset.append(p)
+
+    timer("초기 데이터 로드 완료")
+    return clinicalDataset
 
