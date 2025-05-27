@@ -6,6 +6,11 @@ from tensorflow.keras import layers, models
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
 from tensorflow.keras.utils import plot_model
+from tensorflow.keras.optimizers import Adam
+from sklearn.model_selection import train_test_split
+
+from tensorflow.keras.callbacks import EarlyStopping
+
 
 from util import *
 
@@ -36,19 +41,31 @@ def build_tensorflow_dataset(dataset: list[ClinicalDataset]):
     return tf.data.Dataset.from_tensor_slices(((mri_data), labels))
 
 
-def build_model(size:int):
+def build_model(size:int)->Model:
     mri_input = Input(shape=(size, size, size, 1), name='mri_input')
-    x = layers.Conv3D(16, kernel_size=3, activation='relu')(mri_input)
-    x = layers.MaxPool3D(pool_size=2)(x)
-    x = layers.Conv3D(32, kernel_size=3, activation='relu')(x)
-    x = layers.MaxPool3D(pool_size=2)(x)
-    x = layers.Conv3D(64, kernel_size=3, activation='relu')(x)
-    x = layers.GlobalAveragePooling3D()(x)
-    x = layers.Dense(64, activation='relu')(x)
-    output = layers.Dense(1, activation='sigmoid')(x)  # 이진 분류
-    # rnn 방식
 
-   
+    x = layers.Conv3D(16, kernel_size=3, padding='same')(mri_input)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+    x = layers.MaxPool3D(pool_size=2)(x)
+
+    x = layers.Conv3D(32, kernel_size=3, padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+    x = layers.MaxPool3D(pool_size=2)(x)
+
+    x = layers.Conv3D(64, kernel_size=3, padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+
+    x = layers.Conv3D(128, kernel_size=3, padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+
+    x = layers.GlobalAveragePooling3D()(x)
+    x = layers.Dense(128, activation='relu')(x)
+    x = layers.Dropout(0.5)(x)
+    output = layers.Dense(1, activation='sigmoid')(x)
 
     model = Model(inputs=mri_input, outputs=output)
     # model.summary()
@@ -67,6 +84,7 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
         전처리된 ClinicalDataset 리스트
     OUTPUT:
         학습된 모델
+        학습 히스토그램
     """
     timer("모델 처리 시작")
 
@@ -81,7 +99,8 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
     balanced_data = cn_data[:min_count] + ad_data[:min_count]
     random.shuffle(balanced_data)
 
-    preprocessed = balanced_data
+    # 지도학습 과정에서 학습용이랑 테스트용 분리
+    train_data, val_data = train_test_split(balanced_data, test_size=0.2, stratify=[x.label.group for x in balanced_data])
 
     input_shape = (size, size, size, 1)
 
@@ -104,13 +123,13 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
     # 데이터셋 구성
 
     # 전처리된 데이터셋을 텐서플로우 데이터셋으로 변환
-    tf_dataset = build_tensorflow_dataset(preprocessed)
+    train_dataset = build_tensorflow_dataset(train_data).shuffle(100).batch(4).prefetch(tf.data.AUTOTUNE)
+    val_dataset = build_tensorflow_dataset(val_data).batch(4).prefetch(tf.data.AUTOTUNE)
 
     # shuffle(100) -> 데이터 순서를 섞어 과적합을 방지
     # batch(8) -> 한번에 8개의 샘플을 묶어 학습(미니 배치 학습)
     # prefetch(tf.data.AUTOTUNE) -> CPU와 GPU의 병렬처리로 속도 향상상
 
-    train_dataset = tf_dataset.shuffle(100).batch(2).prefetch(tf.data.AUTOTUNE)
 
     model = build_model(size)
     
@@ -118,13 +137,27 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
     # optimizer='adam' -> 경사하강 최적화 알고리즘을 사용
     # loss = 'binary_crossentropy' -> 이진 분류 문제에 적합한 손실 함수
     # metrics=['accuracy'] -> 학습중 정확도를 표기
-    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    optimizer = Adam(learning_rate=0.0001)
+    early_stop = EarlyStopping(
+        monitor='val_loss',             # 검토할 성능 지표 : 검증 손실
+        patience=5,                     # n 번 동안 개선없을시 정지
+        restore_best_weights=True       # 성능이 가장 좋았던 시점의 가중치를 복원할건지?
+        )
+
+
+    model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
 
 
     
     print(f"모델 생성에 사용된 데이터 (정상 : {min_count}/{CNcount}, 치매 {min_count}/{ADcount})")
 
-    model.fit(train_dataset, epochs=10, verbose=2)
+    history = model.fit(
+        train_dataset,
+        validation_data=val_dataset,  # ← val_loss 계산을 위한 설정 (임시로 train 그대로 사용)
+        epochs=50,
+        callbacks=[early_stop],
+        verbose=2
+    )
 
     timer("모델 처리 완료")
-    return model
+    return model, history

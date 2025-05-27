@@ -36,6 +36,7 @@ def ask_yes_no(prompt: str, default: str = 'y') -> bool:
 import os
 import time
 
+from matplotlib import pyplot as plt
 import numpy as np
 import psutil
 
@@ -105,3 +106,28 @@ def test_memory_load(samples:list[ClinicalDataset], verbose=True):
 
     process = psutil.Process(os.getpid())
     print(f"현재 메모리 사용량: {process.memory_info().rss / 1024 ** 2:.2f} MB")
+
+
+
+def view_history(history):
+    # 정확도 시각화
+    plt.figure(figsize=(10, 4))
+    plt.subplot(1, 2, 1)
+    plt.plot(history.history['accuracy'], label='Train Accuracy')
+    plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+    plt.title('Accuracy over Epochs')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    plt.legend()
+
+    # 손실값 시각화
+    plt.subplot(1, 2, 2)
+    plt.plot(history.history['loss'], label='Train Loss')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+    plt.title('Loss over Epochs')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
