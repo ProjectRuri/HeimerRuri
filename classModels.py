@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional, Dict, Any
 import numpy as np
 
@@ -32,12 +33,18 @@ class ClinicalDataset:
         modalities (Dict[str, Any]): 임상 정보, 유전자 정보 등 다양한 모달 입력
     """
     
-    def __init__(self, volume: np.ndarray, label: Label, modalities: Optional[Dict[str, Any]] = None):
-        self.volume = volume                    # mri 3d 모델? 3차원 배열?          
+    def __init__(self, volume_path: Path, label: Label, modalities: Optional[Dict[str, Any]] = None):
+        self.volume_path = volume_path          # mri 3d 모델 경로(메모리 매핑)          
         self.label = label                      # 라벨
         self.modalities = modalities or {}      # mmse, ldkjflskd~~~~
 
     
+    def load_volume(self):
+        """
+        경로에 있는 볼륨을 로드
+        """
+        return np.load(self.volume_path)
+
     def to_tensor_dict(self):
         """PyTorch나 TensorFlow 학습에 적합한 딕셔너리 형태로 변환"""
         return {
