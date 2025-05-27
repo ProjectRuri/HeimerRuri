@@ -1,10 +1,12 @@
+from functools import partial
 import subprocess
+import concurrent
 import numpy as np
 import pandas as pd
 import os
 import nibabel as nib
 import matplotlib.pyplot as plt
-
+import gc
 
 from typing import Optional, Dict, Any
 from matplotlib.widgets import Slider
@@ -12,6 +14,7 @@ from pathlib import Path
 from classModels import *
 from tqdm import tqdm
 from util import *
+from scipy.ndimage import zoom
 
 
 def convert_dcm_to_nii(dicom_dir:Path, output_dir:Path):
@@ -35,7 +38,9 @@ def convert_dcm_to_nii(dicom_dir:Path, output_dir:Path):
     result = subprocess.run(command,capture_output=True, text=True)
 
     if result.returncode == 0:
-        print("변환 성공 :\n",result.stdout)
+        
+        # print("변환 성공 :\n",result.stdout)
+        pass
     else:
         print("변환 실패 :\n",result.stderr)
 
@@ -49,11 +54,13 @@ def load_nii_volume(nii_path:Path):
     OUTPUT:
         volume      : 3차원 영상?
     """
+    gc.collect()
     img = nib.load(nii_path)
     data = img.get_fdata().astype(np.float32)
     
     file_name = nii_path.name
     ID = file_name.split("_")[0]
+
     
 
     return data, ID
@@ -198,55 +205,85 @@ def load_dcm_to_nii(input_dataset_path):
     
     mri_count = 0
 
+    convert_targets = []
+
     for collection in collections:
-        # 콜랙션 위치 저장
         _collectionPath = _path
-
-        # 콜랙션 안으로 이동
-        _path = _path/collection/'ADNI'
-        # subject 목록 로드
+        _path = _path / collection / 'ADNI'
         subjects = [f.name for f in _path.iterdir() if f.is_dir()]
+        
         for subject in subjects:
-            # subject 위치 저장
             _subjectPath = _path
-
-            # subject속 MPRAGE 안까지 이동
-            _path = _path/subject/'MPRAGE'
-
-            # 촬영 날짜 로드
+            _path = _path / subject / 'MPRAGE'
             acqDates = [f.name for f in _path.iterdir() if f.is_dir()]
+            
             for acqDate in acqDates:
-                #acqDate 위치 저장
                 _acqDatePath = _path
-
-                # acq 안으로 이동
-                _path = _path/acqDate
-
-                # 촬영 식별번호 로드
+                _path = _path / acqDate
                 imageDataIDs = [f.name for f in _path.iterdir() if f.is_dir()]
                 
                 for imageDataID in imageDataIDs:
-                    # 이미지데이터 위치 저장
                     _imageDataIDPath = _path
-
-                    # dcm 파일이 있는 위치로 이동
-                    _path = _path/imageDataID
-                    convert_dcm_to_nii(_path,input_dataset_path)
-
-                    # 이미지데이터 위치로 복귀
+                    dcm_path = _path / imageDataID
+                    convert_targets.append(dcm_path)
                     _path = _imageDataIDPath
 
-
-                mri_count +=1
-
-                #acqDate 위치로 복귀
                 _path = _acqDatePath
-
-            # subject 위치로 복귀
             _path = _subjectPath
-
-        # 기존 콜랙션 위치로 복귀
         _path = _collectionPath
+
+    for idx, dcm_path in enumerate(tqdm(convert_targets, desc="dcm → nii 변환")):
+        convert_dcm_to_nii(dcm_path, input_dataset_path)
+
+    # for collection in collections:
+    #     # 콜랙션 위치 저장
+    #     _collectionPath = _path
+
+    #     # 콜랙션 안으로 이동
+    #     _path = _path/collection/'ADNI'
+    #     # subject 목록 로드
+    #     subjects = [f.name for f in _path.iterdir() if f.is_dir()]
+    #     for subject in subjects:
+    #         # subject 위치 저장
+    #         _subjectPath = _path
+
+    #         # subject속 MPRAGE 안까지 이동
+    #         _path = _path/subject/'MPRAGE'
+
+    #         # 촬영 날짜 로드
+    #         acqDates = [f.name for f in _path.iterdir() if f.is_dir()]
+    #         for acqDate in acqDates:
+    #             #acqDate 위치 저장
+    #             _acqDatePath = _path
+
+    #             # acq 안으로 이동
+    #             _path = _path/acqDate
+
+    #             # 촬영 식별번호 로드
+    #             imageDataIDs = [f.name for f in _path.iterdir() if f.is_dir()]
+                
+    #             for imageDataID in imageDataIDs:
+    #                 # 이미지데이터 위치 저장
+    #                 _imageDataIDPath = _path
+
+    #                 # dcm 파일이 있는 위치로 이동
+    #                 _path = _path/imageDataID
+    #                 convert_dcm_to_nii(_path,input_dataset_path)
+
+    #                 # 이미지데이터 위치로 복귀
+    #                 _path = _imageDataIDPath
+
+
+    #             mri_count +=1
+
+    #             #acqDate 위치로 복귀
+    #             _path = _acqDatePath
+
+    #         # subject 위치로 복귀
+    #         _path = _subjectPath
+
+    #     # 기존 콜랙션 위치로 복귀
+    #     _path = _collectionPath
     
     print(f"확인된 mri 개수 : {mri_count}")
 
@@ -273,7 +310,23 @@ def load_labels(input_dataset_path):
 
 
 
-def loader(dcm_to_nii_process:bool):
+def resize_volume(volume, target_shape=(128, 128, 128)):
+    """
+    3D MRI 볼륨을 target_shape로 리사이즈함
+
+    Args:
+        volume (np.ndarray): 원본 MRI 볼륨 (D, H, W)
+        target_shape (tuple): 원하는 출력 크기 (D, H, W)
+
+    Returns:
+        np.ndarray: 리사이즈된 MRI 볼륨
+    """
+    zoom_factors = [t / s for t, s in zip(target_shape, volume.shape)]
+    resized = zoom(volume, zoom=zoom_factors, order=1)  # 선형 보간
+    return resized.astype(np.float32)
+
+
+def loader(dcm_to_nii_process:bool, size:int):
     """
     모든 기본 데이터를 갖춘 벡터를 리턴합니다.
 
@@ -288,10 +341,11 @@ def loader(dcm_to_nii_process:bool):
 
     # 루트 경로 지정
     ROOT_DIR = Path(__file__).resolve().parent.parent
+
     # INPUT_DATASET 폴더로 주소 이동
     input_dataset_path = ROOT_DIR/"INPUT_DATASET"
     labels = load_labels(input_dataset_path)
-    # load_dcm_to_nii(input_dataset_path)
+    
 
     # dcm 파일을 nii로 변환
     if(dcm_to_nii_process==True):
@@ -302,9 +356,55 @@ def loader(dcm_to_nii_process:bool):
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
     
+    # view_nii(nii_list[0])
 
     # 가져온 mri영상의 3차원 배열 목록
-    volumes, IDs = zip(*[load_nii_volume(i) for i in tqdm(nii_list, desc="NIfTI 로딩 중")])
+    # volumes, IDs = zip(*[load_nii_volume(i) for i in tqdm(nii_list, desc="NIfTI 로딩 중")])
+    
+
+
+    # 메모리 매핑
+    num_sample = len(nii_list)
+    example_volume, _ = load_nii_volume(nii_list[0])
+    example_volume = resize_volume(example_volume, target_shape=(size, size, size))
+    example_volume = np.expand_dims(example_volume, axis=-1)
+        
+    
+    shape = example_volume.shape
+
+    data_path = "volumes_memmap.dat"
+    volumes = np.memmap(data_path, dtype=np.float32, mode='w+', shape=(num_sample, *shape))
+
+    volume_paths = []
+
+    save_dir = Path("volumes")
+    save_dir.mkdir(parents=True, exist_ok=True)
+
+
+    # 데이터 로드
+    IDs =[]
+    for idx, path in enumerate(tqdm(nii_list,desc="NIFTI 로딩 중")):
+        volume, ID = load_nii_volume(path)
+        
+        volume = resize_volume(volume, target_shape=(size, size, size))
+        volume = np.expand_dims(volume, axis=-1)
+        
+        file_path = Path("volumes")/f"{ID}.npy"
+        np.save(file_path, volume)
+        volume_paths.append(file_path)
+
+
+        volumes[idx] = volume
+        IDs.append(ID)
+    
+    volumes.flush()
+
+    # 메모리 매핑 쓰기 모드 종료
+
+    # 메모리 매핑 읽기 모드로 실행
+    # volumes = np.memmap(data_path, dtype=np.float32, mode='r', shape=(num_sample, *shape))
+
+
     
 
     clinicalDataset = []
@@ -316,8 +416,12 @@ def loader(dcm_to_nii_process:bool):
     sorted_labels = [dict_labels[i] for i in IDs]
     
     # 모든 mri 영상 및 라벨 로드
+
+
+    
     for i in tqdm(range(len(IDs)), desc="MRI 및 라벨 로딩 중"):
-        p = ClinicalDataset(volumes[i],sorted_labels[i])
+        volume_path = volume_paths[i]
+        p = ClinicalDataset(volume_path,sorted_labels[i])
         clinicalDataset.append(p)
 
     
@@ -353,19 +457,26 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     OUTPUT
     ClinicalDataset 인스턴스들의 리스트.
     """
+
+    # 루트 경로 지정 , 코렙 환경에서 수정이 필요해보임
     ROOT_DIR = Path(__file__).resolve().parent.parent
+    
     # INPUT_DATASET 폴더로 주소 이동
-    input_dataset_path = ROOT_DIR/"INPUT_DATASET"
+    input_dataset_path = ROOT_DIR / "INPUT_DATASET"
+    
     labels = load_labels(input_dataset_path)
 
+    # dcm 파일을 nii로 변환
     if dcm_to_nii_process:
         timer("dcm파일 nii로 변환 시작")
         load_dcm_to_nii(input_dataset_path)
         timer("dcm파일 nii로 변환 완료")
 
+    # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
+    
+    # 메모리 매핑
     num_sample = len(nii_list)
-
     example_volume, _ = load_nii_volume(nii_list[0])
     example_volume = resize_volume(example_volume, target_shape=(size, size, size))
     example_volume = np.expand_dims(example_volume, axis=-1)
@@ -376,6 +487,7 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
 
     save_dir = Path("volumes")
     save_dir.mkdir(parents=True, exist_ok=True)
+    
     #이건 병렬 프로세싱에 쓸 함수 만들기
     func = partial(load_and_process_nii_mp, size=size, save_dir_str=str(save_dir))
     nii_path_strs = [str(p) for p in nii_list]
