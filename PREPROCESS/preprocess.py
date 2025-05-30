@@ -9,8 +9,13 @@ from util import *
 
 
 
+
+
 def normalization(volume):
-    # Non-zero mask 기반 Z-score 정규화
+    """
+        Non_zero mask 기반 Z-score 정규화화
+    """
+    
     mask = volume != 0
     mean = np.mean(volume[mask])
     std = np.std(volume[mask])
@@ -19,6 +24,12 @@ def normalization(volume):
         volume[mask] = (volume[mask] - mean) / std
     else:
         volume[mask] = volume[mask] - mean
+
+
+
+    
+
+
     return volume
 
 

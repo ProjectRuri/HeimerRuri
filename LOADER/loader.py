@@ -236,55 +236,7 @@ def load_dcm_to_nii(input_dataset_path):
     for idx, dcm_path in enumerate(tqdm(convert_targets, desc="dcm → nii 변환")):
         convert_dcm_to_nii(dcm_path, input_dataset_path)
 
-    # for collection in collections:
-    #     # 콜랙션 위치 저장
-    #     _collectionPath = _path
-
-    #     # 콜랙션 안으로 이동
-    #     _path = _path/collection/'ADNI'
-    #     # subject 목록 로드
-    #     subjects = [f.name for f in _path.iterdir() if f.is_dir()]
-    #     for subject in subjects:
-    #         # subject 위치 저장
-    #         _subjectPath = _path
-
-    #         # subject속 MPRAGE 안까지 이동
-    #         _path = _path/subject/'MPRAGE'
-
-    #         # 촬영 날짜 로드
-    #         acqDates = [f.name for f in _path.iterdir() if f.is_dir()]
-    #         for acqDate in acqDates:
-    #             #acqDate 위치 저장
-    #             _acqDatePath = _path
-
-    #             # acq 안으로 이동
-    #             _path = _path/acqDate
-
-    #             # 촬영 식별번호 로드
-    #             imageDataIDs = [f.name for f in _path.iterdir() if f.is_dir()]
-                
-    #             for imageDataID in imageDataIDs:
-    #                 # 이미지데이터 위치 저장
-    #                 _imageDataIDPath = _path
-
-    #                 # dcm 파일이 있는 위치로 이동
-    #                 _path = _path/imageDataID
-    #                 convert_dcm_to_nii(_path,input_dataset_path)
-
-    #                 # 이미지데이터 위치로 복귀
-    #                 _path = _imageDataIDPath
-
-
-    #             mri_count +=1
-
-    #             #acqDate 위치로 복귀
-    #             _path = _acqDatePath
-
-    #         # subject 위치로 복귀
-    #         _path = _subjectPath
-
-    #     # 기존 콜랙션 위치로 복귀
-    #     _path = _collectionPath
+ 
     
     print(f"확인된 mri 개수 : {mri_count}")
 
@@ -324,20 +276,35 @@ def resize_volume(volume, target_shape=(128, 128, 128)):
     resized = zoom(volume, zoom=zoom_factors, order=1)  # 선형 보간
     return resized.astype(np.float32)
 
-def resize_volume(volume, target_shape=(128, 128, 128)):
+def load_resample_volume(nii_path:Path, target_spacing=(1.0, 1.0, 1.0)):
     """
-    3D MRI 볼륨을 target_shape로 리사이즈함
+    NIfTI 파일을 로드하고, 지정된 voxel spacing으로 리샘플링한 3D 볼륨과 ID 반환
 
-    Args:
-        volume (np.ndarray): 원본 MRI 볼륨 (D, H, W)
-        target_shape (tuple): 원하는 출력 크기 (D, H, W)
+    INPUT:
+        nii_path (Path): 입력 .nii 또는 .nii.gz 파일 경로
+        target_spacing (tuple): 원하는 spacing (단위: mm)
 
-    Returns:
-        np.ndarray: 리사이즈된 MRI 볼륨
+    OUTPUT:
+        np.ndarray: 리샘플링된 3D 볼륨 (float32)
+        str: 파일명 기반 ID
     """
-    zoom_factors = [t / s for t, s in zip(target_shape, volume.shape)]
-    resized = zoom(volume, zoom=zoom_factors, order=1)  # 선형 보간
-    return resized.astype(np.float32)
+    gc.collect()
+    img = nib.load(nii_path)    # 이미지 로드
+    file_name = nii_path.name   
+    ID = file_name.split("_")[0]    # 파일 이름에서 ID추출
+
+    original_spacing = np.abs(img.affine[:3,:3].diagonal())
+    zoom_factors = original_spacing/np.array(target_spacing)
+    data = img.get_fdata()
+    resampled_data = zoom(data, zoom=zoom_factors, order=1)
+
+    # new_affine = np.copy(img.affine)
+    # new_affine[:3,:3] = np.diag(target_spacing)
+
+
+
+    return resampled_data.astype(np.float32), ID
+
 
 
 def loader(dcm_to_nii_process:bool, size:int):
@@ -450,7 +417,8 @@ def load_and_process_nii_mp(nii_path_str: str, size: int, save_dir_str: str):
     nii_path = Path(nii_path_str)
     save_dir = Path(save_dir_str)
 
-    volume, ID = load_nii_volume(nii_path)
+    # volume, ID = load_nii_volume(nii_path)
+    volume, ID = load_resample_volume(nii_path)
     volume = resize_volume(volume, target_shape=(size, size, size))
     volume = np.expand_dims(volume, axis=-1)
     volume = volume.astype(np.float32) # 볼륨크기 조정-wmc
@@ -464,7 +432,7 @@ def load_and_process_wrapper(args):
         nii_path_str, size, save_dir_str = args
         return load_and_process_nii_mp(nii_path_str, size, save_dir_str)
 
-def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: int = 16):
+def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: int = 8):
     """
     NIfTI 파일 로드, 전처리, 저장 과정을 멀티프로세싱으로 병렬화한 로더 함수입니다.
 
@@ -495,6 +463,8 @@ def loader_parallel_process(dcm_to_nii_process: bool, size: int, max_workers: in
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
     
+   
+
     # 메모리 매핑
     num_sample = len(nii_list)
     example_volume, _ = load_nii_volume(nii_list[0])
