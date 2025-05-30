@@ -7,6 +7,8 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras import layers, regularizers, Input, Model
+
 from sklearn.model_selection import train_test_split
 from tqdm.keras import TqdmCallback
 
@@ -42,7 +44,41 @@ def build_tensorflow_dataset(dataset: list[ClinicalDataset]):
     return tf.data.Dataset.from_tensor_slices(((mri_data), labels))
 
 
-def build_model(size:int)->Model:
+# def build_model(size:int)->Model:
+#     mri_input = Input(shape=(size, size, size, 1), name='mri_input')
+
+#     x = layers.Conv3D(16, kernel_size=3, padding='same')(mri_input)
+#     x = layers.BatchNormalization()(x)
+#     x = layers.Activation('relu')(x)
+#     x = layers.MaxPool3D(pool_size=2)(x)
+
+#     x = layers.Conv3D(32, kernel_size=3, padding='same')(x)
+#     x = layers.BatchNormalization()(x)
+#     x = layers.Activation('relu')(x)
+#     x = layers.MaxPool3D(pool_size=2)(x)
+
+#     x = layers.Conv3D(64, kernel_size=3, padding='same')(x)
+#     x = layers.BatchNormalization()(x)
+#     x = layers.Activation('relu')(x)
+
+#     x = layers.Conv3D(128, kernel_size=3, padding='same')(x)
+#     x = layers.BatchNormalization()(x)
+#     x = layers.Activation('relu')(x)
+
+#     x = layers.GlobalAveragePooling3D()(x)
+#     x = layers.Dense(128, activation='relu')(x)
+#     x = layers.Dropout(0.5)(x)
+#     output = layers.Dense(1, activation='sigmoid')(x)
+
+#     model = Model(inputs=mri_input, outputs=output)
+#     # model.summary()
+#     return model
+
+def build_model(size: int) -> Model:
+    """
+    개선 모델 L2정규화 적용
+    L2 : 가중치가 커질수록 loss에 패널티를 부여해서 과의존 현상 방지
+    """
     mri_input = Input(shape=(size, size, size, 1), name='mri_input')
 
     x = layers.Conv3D(16, kernel_size=3, padding='same')(mri_input)
@@ -64,14 +100,23 @@ def build_model(size:int)->Model:
     x = layers.Activation('relu')(x)
 
     x = layers.GlobalAveragePooling3D()(x)
-    x = layers.Dense(128, activation='relu')(x)
+
+    # L2 적용
+    x = layers.Dense(
+        128, 
+        activation='relu',
+        kernel_regularizer=regularizers.l2(0.001)
+    )(x)
     x = layers.Dropout(0.5)(x)
-    output = layers.Dense(1, activation='sigmoid')(x)
+
+    output = layers.Dense(
+        1, 
+        activation='sigmoid',
+        kernel_regularizer=regularizers.l2(0.001)  # 마지막에도 L2 약하게 적용
+    )(x)
 
     model = Model(inputs=mri_input, outputs=output)
-    # model.summary()
     return model
-
 
 
 
@@ -103,17 +148,40 @@ def build(preprocessed: list[ClinicalDataset], size:int, CNcount:int, ADcount:in
     # 지도학습 과정에서 학습용이랑 테스트용 분리
     train_data, val_data = train_test_split(balanced_data, test_size=0.2, stratify=[x.label.group for x in balanced_data])
 
+
+
+    cn_count, ad_count= 0,0
+
+
+    # 데이터 검토
+    for i in train_data:
+        if i.label.group == 'CN':
+            cn_count +=1
+        else:
+            ad_count+=1
+    print(f"train data CN : {cn_count}, AD : {ad_count}")
+
+    cn_count, ad_count= 0,0
+
+    for i in val_data:
+        if i.label.group == 'CN':
+            cn_count +=1
+        else:
+            ad_count+=1
+    print(f"val data CN : {cn_count}, AD : {ad_count}")
+
+
     input_shape = (size, size, size, 1)
 
-    def generator():
-        for sample in preprocessed:
+    def generator(preprocessed_list): # 매개 변수로 사용할 데이터 확실하게 입력
+        for sample in preprocessed_list:
             volume = np.load(sample.volume_path)
             label = 1 if sample.label.group == "AD" else 0  # 이진 분류 기준
             yield volume, label
 
-    def build_tensorflow_dataset(preprocessed_list):
+    def build_tensorflow_dataset(preprocessed_list): # 매개 변수로 사용할 데이터 확실하게 입력
         dataset = tf.data.Dataset.from_generator(
-            generator,
+            lambda: generator(preprocessed_list),
             output_signature=(
                 tf.TensorSpec(shape=input_shape, dtype=tf.float32),
                 tf.TensorSpec(shape=(), dtype=tf.int32)
