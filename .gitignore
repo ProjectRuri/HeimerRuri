@@ -3,6 +3,7 @@
 *.nii.gz
 *.dcm
 *.zip
-INPUT_DATASET/*.json
-*.npy
+
+*.csv
 volumes_memmap.dat
+INPUT_DATASET/*.json

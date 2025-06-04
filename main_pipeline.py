@@ -1,6 +1,7 @@
 import os
 import random
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+import os, psutil
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # TF_CPP_MIN_LOG_LEVEL 값:
 
 # '0': 모든 메시지 출력 (기본값)
@@ -19,8 +20,7 @@ from classModels import *
 from util import *
 
 
-
-from tensorflow.keras.utils import plot_model
+#from tensorflow.keras.utils import plot_model
 
 
 def main():
@@ -44,7 +44,7 @@ def main():
     # pip install tensorflow==2.10
 
     # 사용중인 패키지
-    # pip install scipy pandas matplotlib nibabel pydot tqdm
+    # pip install scipy pandas matplotlib nibabel pydot tqdm psutil scikit-learn
 
 
     # ─────데이터 준비───────────────────────────────
@@ -55,20 +55,21 @@ def main():
     # 작업에 필요한 선택지 선입력
     dcm_to_nii_process = ask_yes_no("DCM 변환이 필요합니까?", default='n')
     model_visualization = ask_yes_no("모델 시각화가 필요합니까?", default='n')
-
-    size = 64
+    
+    size = 64 # 96
 
 
     
     timer("프로그램 시작")
     
     # 초기 데이터 로드
-    origin_data = loader(dcm_to_nii_process)
+    origin_data = loader_parallel_process(dcm_to_nii_process, size,max_workers=16)
     
     # 전처리
+
     preprocessed = preprocess(origin_data,size)
     
-
+    
     random.shuffle(preprocessed)
 
     adList, cnList =[],[]
@@ -79,14 +80,22 @@ def main():
         else:
             adList.append(i)
 
-    preprocessed = cnList[50:] + adList[50:]
 
-    test_list = cnList[:50]+adList[:50]
+    prediction_size = 50
+
+    preprocessed = cnList[prediction_size:] + adList[prediction_size:]
+
+    test_list = cnList[:prediction_size]+adList[:prediction_size]
 
     print(f"정상 데이터 수 : {len(cnList)}, 치매 데이터 수 : {len(adList)}")
 
+    # 사용 메모리 확인용 코드
+    # test_memory_load(test_list)
+
+    
+
     # 모델 처리
-    fit_model = build(preprocessed,size)
+    fit_model, history = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size)
     
 
     # view_volume(sample) # 입력한 데이터 시각으로 확인
@@ -94,54 +103,106 @@ def main():
     if(model_visualization):
         plot_model(fit_model, to_file='model_structure.png', show_shapes=True, show_layer_names=True)
 
+    
+    
 
 
-    # 입력한 데이터(치매 수, 정상 수)
-    ad, cn = 0,0
-    # 치매-> a , 정상-> c
-    # 데이터는 정상이지만   예측은 치매 -> ca
-    # 데이터는 치매지만     예측은 정상 -> ac
-    aa, ac, ca, cc = 0,0,0,0
-    # 테스트용 샘플
-    for i in range(100):
-        sample = test_list[i]  # ClinicalDataset
-
-        # volume을 텐서플로에 넣어둘 규격으로 변경
-        input_tensor = np.expand_dims(sample.volume, axis=(0, -1))  # (1, D, H, W, 1)
-
-        # 예측
-        prediction = fit_model.predict(input_tensor)
         
-        # 라벨 출력
-        print(sample.label)
-        # CN => 0 AD => 1
+    input_tensors = []
+    labels = []
+    raw_labels = []
 
-        # 결과 처리
-        result = (prediction>0.5).astype(int)
-        resultStr = ("AD" if result else "CN")
+    swit = False
 
-        # sample의 그룹
-        nowGroup = sample.label.group
+    for sample in test_list[:100]:
+        volume = sample.load_volume()
+        if swit == False:
+            # print(np.mean(volume), np.std(volume))
+            swit=True
+        input_tensor = np.expand_dims(volume, axis=(0, -1))  # (1, D, H, W, 1)
+        input_tensors.append(input_tensor[0])  # remove batch dim
+        labels.append(sample.label.group)
+        raw_labels.append(repr(sample.label))
 
+    input_tensors = np.array(input_tensors)  # (100, D, H, W, 1)
 
-        if nowGroup == "CN":
-            cn += 1
-        else:
-            ad += 1
-        # 혼동 행렬 구성
-        if nowGroup == "AD" and resultStr == "AD":
-            aa += 1
-        elif nowGroup == "AD" and resultStr == "CN":
-            ac += 1
-        elif nowGroup == "CN" and resultStr == "AD":
-            ca += 1
-        elif nowGroup == "CN" and resultStr == "CN":
-            cc += 1
+    # 한 번에 예측
+    predictions = fit_model.predict(input_tensors)
 
 
 
-        print(f"예측 결과 : {resultStr}, prediction : {prediction}")
+    prediction_log = "예측 결과.txt"
+    reset_log(prediction_log)
 
+
+    
+    # 테스트용 샘플
+
+
+    threshold_list=[]
+    threshold_count = 20
+    temp = 1/threshold_count
+    for i in range(threshold_count):
+        threshold_list.append(temp*i)
+
+    acc_list=[]
+
+
+    best_threshold = 0
+    best_data_frame = [0,0,0,0] # aa, ac, ca, cc
+    best_acc = 0
+
+
+
+    
+
+
+    # threshold 경계 탐색 적용된 버전
+    # 적절한 경계 찾기
+    for threshold in threshold_list:
+        # 후처리
+        # 치매-> a , 정상-> c
+        # 데이터는 정상이지만   예측은 치매 -> ca
+        # 데이터는 치매지만     예측은 정상 -> ac
+        # 입력한 데이터(치매 수, 정상 수)
+        ad, cn = 0,0
+        aa, ac, ca, cc = 0,0,0,0
+        for i in range(len(predictions)):
+            pred = predictions[i]
+            # 기존의 threshold값 -> 0.5
+            result = (pred > threshold).astype(int)
+            resultStr = "AD" if result else "CN"
+            nowGroup = labels[i]
+
+            if nowGroup == "CN":
+                cn += 1
+            else:
+                ad += 1
+
+            if nowGroup == "AD" and resultStr == "AD":
+                aa += 1
+            elif nowGroup == "AD" and resultStr == "CN":
+                ac += 1
+            elif nowGroup == "CN" and resultStr == "AD":
+                ca += 1
+            elif nowGroup == "CN" and resultStr == "CN":
+                cc += 1
+
+            
+
+
+
+        acc = (aa+cc)/(ad+cn)
+        
+        acc_list.append(acc)
+
+        # 기록 경신시 갱신
+        if(acc >best_acc):
+            best_acc = acc
+            best_data_frame = aa,ac,ca,cc
+            best_threshold = threshold
+
+    
     print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {(aa+cc)/(ad+cn)}")
     print(f"치매->치매 : {aa}, 치매->정상 : {ac}")
     print(f"정상->치매 : {ca}, 정상->정상 : {cc}")
@@ -169,25 +230,30 @@ def main():
     # ad_tensor = np.expand_dims(ad_sample.volume, axis=(0, -1))
     # cn_tensor = np.expand_dims(cn_sample.volume, axis=(0, -1))
     # compare_feature_maps(fit_model, ad_tensor, cn_tensor)
+  
+    for i in range(len(predictions)):
+        pred = predictions[i]
+        # 기존의 threshold값 -> 0.5
+        result = (pred > best_threshold).astype(int)
+        resultStr = "AD" if result else "CN"
+        print_and_log(raw_labels[i], prediction_log)
+        print_and_log(f"예측 결과 : {resultStr}, prediction : {pred}", prediction_log)
 
 
-    
 
-    # ─────모델 학습────────────────────────────────
+    # threshold 경계 탐색 최고 기록 출력
+    print(f"최고 기록 - threshold : {best_threshold}")
+    print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {best_acc}")
+    print(f"치매->치매 : {best_data_frame[0]}, 치매->정상 : {best_data_frame[1]}")
+    print(f"정상->치매 : {best_data_frame[2]}, 정상->정상 : {best_data_frame[3]}")
 
-    # 지도학습용 데이터 로드
+    for i in range(threshold_count):
+        print(f"threshold : {threshold_list[i]:.2f}, acc : {acc_list[i]:.2f}")
 
-    # 전처리
-
-    # 지도학습 예시 
-    #    for X, Y in dataloader:
-    #     optimizer.zero_grad()         # 🔸 이전 gradient를 0으로 초기화
-    #     Y_hat = model(X)              # 🔸 forward: 예측값 계산
-    #     loss = criterion(Y_hat, Y)    # 🔸 예측 vs 정답 → 손실
-    #     loss.backward()               # 🔸 역전파: gradient 계산
-    #     optimizer.step()              # 🔸 gradient 기반으로 가중치 갱신
+    plot_all_metrics(history,labels, predictions, best_threshold)
 
     # 텐서플로우나 파이토치를 사용할 경우 체크포인트를 만들어서 저장할것
-    # 저장할 경우 초키 모델 학습이 불필요함
 
-main()
+
+if __name__ == "__main__":
+    main()
