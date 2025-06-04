@@ -195,9 +195,7 @@ def main():
             best_threshold = threshold
 
     
-    print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {(aa+cc)/(ad+cn)}")
-    print(f"치매->치매 : {aa}, 치매->정상 : {ac}")
-    print(f"정상->치매 : {ca}, 정상->정상 : {cc}")
+    
 
 
 
@@ -210,8 +208,8 @@ def main():
     from OUTPUT.output import plot_average_feature_maps #평균내서 비교
 
     # AD, CN 샘플 각각 여러 개 선택
-    ad_tensors = [np.expand_dims(x.volume, axis=(0, -1)) for x in test_list if x.label.group == "AD"][:100]
-    cn_tensors = [np.expand_dims(x.volume, axis=(0, -1)) for x in test_list if x.label.group == "CN"][:100]
+    ad_tensors = [np.expand_dims(x.load_volume(), axis=(0, -1)) for x in test_list if x.label.group == "AD"][:100]
+    cn_tensors = [np.expand_dims(x.load_volume(), axis=(0, -1)) for x in test_list if x.label.group == "CN"][:100]
 
     plot_average_feature_maps(fit_model, ad_tensors, cn_tensors)
 

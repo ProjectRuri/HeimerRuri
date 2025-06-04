@@ -185,7 +185,7 @@ def build(preprocessed: list[ClinicalDataset], size: int, CNcount: int, ADcount:
                 best_model = model
                 best_history = history
 
-        kfold_time = kfold_time-time.time()
+        kfold_time = -1*(kfold_time-time.time())
         print(f"K-Fold 교차검증 수행 완료, 소요시간 : {kfold_time:.2f}")
         return best_model, best_history
 
