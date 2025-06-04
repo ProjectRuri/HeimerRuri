@@ -293,9 +293,15 @@ def load_resample_volume(nii_path:Path, target_spacing=(1.0, 1.0, 1.0)):
     file_name = nii_path.name   
     ID = file_name.split("_")[0]    # 파일 이름에서 ID추출
 
+
+
+    # nii파일의 affine 행렬(voxel의 간격) 추출
     original_spacing = np.abs(img.affine[:3,:3].diagonal())
+    # 복셀 비율을 정육면체 형태로 변환할 비율 계산
     zoom_factors = original_spacing/np.array(target_spacing)
+    # 데이터 로드
     data = img.get_fdata()
+    # 비율 조정
     resampled_data = zoom(data, zoom=zoom_factors, order=1)
 
     # new_affine = np.copy(img.affine)

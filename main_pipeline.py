@@ -95,7 +95,7 @@ def main():
     
 
     # 모델 처리
-    fit_model, history = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size)
+    fit_model, history = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size,True,5)
     
 
     # view_volume(sample) # 입력한 데이터 시각으로 확인
@@ -131,12 +131,26 @@ def main():
 
 
 
+    # 로그 기록을 위한 로그파일 이름 지정
     prediction_log = "예측 결과.txt"
     reset_log(prediction_log)
-
-
     
-    # 테스트용 샘플
+    
+    def confusion_matrix_classification(confusion_matrix,label, prediction):
+        if label == "AD":
+            confusion_matrix["AD"] +=1
+        else:
+            confusion_matrix["CN"] +=1
+        
+        if label == "AD" and prediction == "AD":
+            confusion_matrix["AA"] += 1
+        elif label == "AD" and prediction == "CN":
+            confusion_matrix["AC"] += 1
+        elif label == "CN" and prediction == "AD":
+            confusion_matrix["CA"] += 1
+        elif label == "CN" and prediction == "CN":
+            confusion_matrix["CC"] += 1
+
 
 
     threshold_list=[]
@@ -149,57 +163,35 @@ def main():
 
 
     best_threshold = 0
-    best_data_frame = [0,0,0,0] # aa, ac, ca, cc
+    best_confusion_matrix= {'AD':0,'CN':0,'AA':0,'AC':0,'CA':0,'CC':0}
     best_acc = 0
-
-
-
-    
-
 
     # threshold 경계 탐색 적용된 버전
     # 적절한 경계 찾기
+
     for threshold in threshold_list:
-        # 후처리
         # 치매-> a , 정상-> c
         # 데이터는 정상이지만   예측은 치매 -> ca
         # 데이터는 치매지만     예측은 정상 -> ac
-        # 입력한 데이터(치매 수, 정상 수)
-        ad, cn = 0,0
-        aa, ac, ca, cc = 0,0,0,0
+        confusion_matrix= {'AD':0,'CN':0,'AA':0,'AC':0,'CA':0,'CC':0}
+
         for i in range(len(predictions)):
             pred = predictions[i]
-            # 기존의 threshold값 -> 0.5
             result = (pred > threshold).astype(int)
             resultStr = "AD" if result else "CN"
-            nowGroup = labels[i]
 
-            if nowGroup == "CN":
-                cn += 1
-            else:
-                ad += 1
-
-            if nowGroup == "AD" and resultStr == "AD":
-                aa += 1
-            elif nowGroup == "AD" and resultStr == "CN":
-                ac += 1
-            elif nowGroup == "CN" and resultStr == "AD":
-                ca += 1
-            elif nowGroup == "CN" and resultStr == "CN":
-                cc += 1
-
+            confusion_matrix_classification(confusion_matrix,labels[i],resultStr)
             
 
-
-
-        acc = (aa+cc)/(ad+cn)
+        # 정확도 계산
+        acc = (confusion_matrix["AA"]+confusion_matrix["CC"]) / (confusion_matrix["AD"] + confusion_matrix["CN"])
         
         acc_list.append(acc)
 
         # 기록 경신시 갱신
         if(acc >best_acc):
             best_acc = acc
-            best_data_frame = aa,ac,ca,cc
+            best_confusion_matrix = confusion_matrix
             best_threshold = threshold
 
     
@@ -224,16 +216,17 @@ def main():
     plot_average_feature_maps(fit_model, ad_tensors, cn_tensors)
 
 
+    
+
     # 대표 한개씩만만
     # ad_sample = next(x for x in test_list if x.label.group == "AD")
     # cn_sample = next(x for x in test_list if x.label.group == "CN")
     # ad_tensor = np.expand_dims(ad_sample.volume, axis=(0, -1))
     # cn_tensor = np.expand_dims(cn_sample.volume, axis=(0, -1))
     # compare_feature_maps(fit_model, ad_tensor, cn_tensor)
-  
+    # 최적의 threshold기준으로 log 기록
     for i in range(len(predictions)):
         pred = predictions[i]
-        # 기존의 threshold값 -> 0.5
         result = (pred > best_threshold).astype(int)
         resultStr = "AD" if result else "CN"
         print_and_log(raw_labels[i], prediction_log)
@@ -243,16 +236,17 @@ def main():
 
     # threshold 경계 탐색 최고 기록 출력
     print(f"최고 기록 - threshold : {best_threshold}")
-    print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {best_acc}")
-    print(f"치매->치매 : {best_data_frame[0]}, 치매->정상 : {best_data_frame[1]}")
-    print(f"정상->치매 : {best_data_frame[2]}, 정상->정상 : {best_data_frame[3]}")
+    print(f"치매 : {best_confusion_matrix['AD']}, 정상 : {best_confusion_matrix['CN']}, 정확도 : {best_acc}")
+    print(f"치매->치매 : {best_confusion_matrix['AA']}, 치매->정상 : {best_confusion_matrix['AC']}")
+    print(f"정상->치매 : {best_confusion_matrix['CA']}, 정상->정상 : {best_confusion_matrix['CC']}")
 
     for i in range(threshold_count):
         print(f"threshold : {threshold_list[i]:.2f}, acc : {acc_list[i]:.2f}")
 
+
+    # 시각화
     plot_all_metrics(history,labels, predictions, best_threshold)
 
-    # 텐서플로우나 파이토치를 사용할 경우 체크포인트를 만들어서 저장할것
 
 
 if __name__ == "__main__":

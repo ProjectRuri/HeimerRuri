@@ -15,7 +15,6 @@ def normalization(volume):
     """
         Non_zero mask 기반 Z-score 정규화화
     """
-    
     mask = volume != 0
     mean = np.mean(volume[mask])
     std = np.std(volume[mask])
