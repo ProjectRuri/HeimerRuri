@@ -201,8 +201,36 @@ def main():
             best_acc = acc
             best_data_frame = aa,ac,ca,cc
             best_threshold = threshold
-    
 
+    
+    print(f"치매 : {ad}, 정상 : {cn}, 정확도 : {(aa+cc)/(ad+cn)}")
+    print(f"치매->치매 : {aa}, 치매->정상 : {ac}")
+    print(f"정상->치매 : {ca}, 정상->정상 : {cc}")
+
+
+
+    # cnn futuremap 의미 
+    # CNN의 중간 레이어 출력 (feature map)을 직접 추출하여
+    # 뇌의 어느 부위에 필터가 반응하는지 확인
+    # 향후 AD/CN을 구분하는 데 어떤 특징을 학습하는지 해석 가능
+    
+    # cnn FutureMap 시각화
+    from OUTPUT.output import plot_average_feature_maps #평균내서 비교
+
+    # AD, CN 샘플 각각 여러 개 선택
+    ad_tensors = [np.expand_dims(x.volume, axis=(0, -1)) for x in test_list if x.label.group == "AD"][:100]
+    cn_tensors = [np.expand_dims(x.volume, axis=(0, -1)) for x in test_list if x.label.group == "CN"][:100]
+
+    plot_average_feature_maps(fit_model, ad_tensors, cn_tensors)
+
+
+    # 대표 한개씩만만
+    # ad_sample = next(x for x in test_list if x.label.group == "AD")
+    # cn_sample = next(x for x in test_list if x.label.group == "CN")
+    # ad_tensor = np.expand_dims(ad_sample.volume, axis=(0, -1))
+    # cn_tensor = np.expand_dims(cn_sample.volume, axis=(0, -1))
+    # compare_feature_maps(fit_model, ad_tensor, cn_tensor)
+  
     for i in range(len(predictions)):
         pred = predictions[i]
         # 기존의 threshold값 -> 0.5
