@@ -12,6 +12,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # '3': INFO + WARNING + ERROR 숨김 (주의 필요)
 
+import tensorflow as tf
 from LOADER.loader import *
 from PREPROCESS.preprocess import *
 from MODEL.model import *
@@ -47,6 +48,8 @@ def main():
     # pip install scipy pandas matplotlib nibabel pydot tqdm psutil scikit-learn
 
 
+
+
     # ─────데이터 준비───────────────────────────────
 
     # 이미 학습이 진행된경우 바로 모델 학습으로 이동해도됨
@@ -63,7 +66,7 @@ def main():
     timer("프로그램 시작")
     
     # 초기 데이터 로드
-    origin_data = loader_parallel_process(dcm_to_nii_process, size,max_workers=16)
+    origin_data = loader_parallel_process(dcm_to_nii_process, size,max_workers=8)
     
     # 전처리
 
@@ -208,8 +211,9 @@ def main():
     from OUTPUT.output import plot_average_feature_maps #평균내서 비교
 
     # AD, CN 샘플 각각 여러 개 선택
-    ad_tensors = [np.expand_dims(x.load_volume(), axis=(0, -1)) for x in test_list if x.label.group == "AD"][:100]
-    cn_tensors = [np.expand_dims(x.load_volume(), axis=(0, -1)) for x in test_list if x.label.group == "CN"][:100]
+    ad_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "AD"][:100]
+    cn_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "CN"][:100]
+
 
     plot_average_feature_maps(fit_model, ad_tensors, cn_tensors)
 
