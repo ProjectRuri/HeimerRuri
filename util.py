@@ -1,4 +1,9 @@
-def ask_yes_no(prompt: str, default: str = 'y') -> bool:
+
+import queue
+import threading
+
+
+def ask_yes_no(prompt: str, default: str = 'y',timeout:int = 5) -> bool:
     """
     선택지를 묻는 함수
     
@@ -17,19 +22,30 @@ def ask_yes_no(prompt: str, default: str = 'y') -> bool:
 
     # 공백시 사용할 답안 처리
     prompt_suffix = "((y)/n)" if default == 'y' else "(y/(n))"
+    user_input = queue.Queue()
 
+    def get_input():
+        print(f"{prompt} {prompt_suffix}: ", end='', flush=True)
+        user_input.put(input().strip().lower())
 
     # 정상적인 답을 입력할때 까지 입력 요청
     while True:
-        answer = input(f"{prompt} {prompt_suffix}: ").strip().lower()
-        if answer == '':
-            return default == 'y'
-        elif answer in ['y', 'yes']:
-            return True
-        elif answer in ['n', 'no']:
-            return False
+        thread = threading.Thread(target=get_input)
+        thread.start()
+        thread.join(timeout)
+        if not user_input.empty():
+            answer = user_input.get()
+            if answer == '':
+                return default == 'y'
+            elif answer in ['y', 'yes']:
+                return True
+            elif answer in ['n', 'no']:
+                return False
+            else:
+                print("Please enter y or n.")
         else:
-            print("Please enter y or n.")
+            print(f"\n입력 시간이 초과되어 기본값 '{default}'으로 처리됩니다.")
+            return default == 'y'
 
 
 

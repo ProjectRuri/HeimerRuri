@@ -18,6 +18,48 @@ from scipy.ndimage import zoom
 
 
 
+import subprocess
+from pathlib import Path
+
+def runing_hd_bet(input_dataset_path):
+    mask_output_dir = input_dataset_path / "HD_BET_MASK"
+    mask_output_dir.mkdir(parents=True, exist_ok=True)
+    run_hd_bet(
+        input_dir=input_dataset_path,
+        output_dir=mask_output_dir,
+        device="cpu",      # 또는 "gpu" (CUDA 사용 가능하면)
+        mode="fast"
+    )
+
+def run_hd_bet(input_dir: Path, output_dir: Path, device: str = "cpu", mode: str = "fast"):
+    """
+    HD-BET skull-stripping 실행 함수 (Python에서 CLI 호출 방식)
+
+    Args:
+        input_dir (Path): 입력 .nii.gz 파일들이 있는 폴더
+        output_dir (Path): 마스크 출력 폴더
+        device (str): "cpu" or "gpu"
+        mode (str): "fast" or "accurate"
+    """
+    input_dir = str(input_dir.resolve())
+    output_dir = str(output_dir.resolve())
+    
+    command = [
+        "hd-bet",
+        "-i", input_dir,
+        "-o", output_dir,
+        "-device", device,
+        "-mode", mode
+    ]
+
+    try:
+        print(f"[HD-BET 실행] {' '.join(command)}")
+        subprocess.run(command, check=True)
+        print("[HD-BET 완료]")
+    except subprocess.CalledProcessError as e:
+        print(f"[HD-BET 실패] {e}")
+
+
 def convert_dcm_to_nii(dicom_dir:Path, output_dir:Path):
     """
     dcm파일을 nii로 변환하는 프로세스
@@ -63,6 +105,7 @@ def load_nii_volume(nii_path:Path):
     ID = file_name.split("_")[0]
 
     
+
 
     return data, ID
 
@@ -241,6 +284,7 @@ def load_dcm_to_nii(input_dataset_path):
     print(f"확인된 mri 개수 : {mri_count}")
 
 
+
 def load_labels(input_dataset_path):
     """
     데이터의 정답을 가져오는 함수
@@ -339,6 +383,10 @@ def loader(dcm_to_nii_process:bool, size:int):
         timer("dcm파일 nii로 변환 시작")
         load_dcm_to_nii(input_dataset_path)
         timer("dcm파일 nii로 변환 완료")
+        # timer("HD-BET 적용 시작")
+        # runing_hd_bet(input_dataset_path)
+        # timer("HD-BET 적용 완료")
+
 
     # INPUT_DATASET에 있는 모든 .nii.gz의 이름 저장
     nii_list = sorted(input_dataset_path.glob("*.nii.gz"))
