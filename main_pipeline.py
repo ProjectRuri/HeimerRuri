@@ -56,6 +56,7 @@ def main():
 
 
     # 작업에 필요한 선택지 선입력
+    ensemble_process = ask_yes_no("앙상블 방식을 적용합니까?", default='y')
     dcm_to_nii_process = ask_yes_no("DCM 변환이 필요합니까?", default='n')
     model_visualization = ask_yes_no("모델 시각화가 필요합니까?", default='n')
     
@@ -66,7 +67,7 @@ def main():
     timer("프로그램 시작")
     
     # 초기 데이터 로드
-    origin_data = loader_parallel_process(dcm_to_nii_process, size,max_workers=8)
+    origin_data = loader_parallel_process(dcm_to_nii_process, size,max_workers=16)
     
     # 전처리
 
@@ -98,7 +99,7 @@ def main():
     
 
     # 모델 처리
-    fit_model, history = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size,True,5)
+    fit_model, history = build(preprocessed,size,len(cnList)-prediction_size, len(adList)-prediction_size,True,5,ensemble=ensemble_process)
     
 
     # view_volume(sample) # 입력한 데이터 시각으로 확인
@@ -129,9 +130,15 @@ def main():
 
     input_tensors = np.array(input_tensors)  # (100, D, H, W, 1)
 
+    predictions =[]
     # 한 번에 예측
-    predictions = fit_model.predict(input_tensors)
-
+    if(ensemble_process==False):
+        predictions = fit_model.predict(input_tensors)
+    if(ensemble_process==True):
+        predictions=[]
+        for mini_model in fit_model:
+            predict = mini_model.predict(input_tensors)
+            predictions.append(predict)
 
 
     # 로그 기록을 위한 로그파일 이름 지정
@@ -178,12 +185,22 @@ def main():
         # 데이터는 치매지만     예측은 정상 -> ac
         confusion_matrix= {'AD':0,'CN':0,'AA':0,'AC':0,'CA':0,'CC':0}
 
-        for i in range(len(predictions)):
-            pred = predictions[i]
-            result = (pred > threshold).astype(int)
-            resultStr = "AD" if result else "CN"
+        if(ensemble_process==False):
+            for i in range(len(predictions)):
+                pred = predictions[i]
+                result = (pred > threshold).astype(int)
+                resultStr = "AD" if result else "CN"
 
-            confusion_matrix_classification(confusion_matrix,labels[i],resultStr)
+                confusion_matrix_classification(confusion_matrix,labels[i],resultStr)
+        else:
+            ensemble_probs = np.mean(predictions, axis=0)
+            ensemble_preds = (ensemble_probs > threshold).astype(int)
+            for i in range(len(ensemble_preds)):
+                resultStr = "AD" if ensemble_preds[i] else "CN"
+                confusion_matrix_classification(confusion_matrix, labels[i], resultStr)
+            
+            
+                
             
 
         # 정확도 계산
@@ -211,11 +228,15 @@ def main():
     from OUTPUT.output import plot_average_feature_maps #평균내서 비교
 
     # AD, CN 샘플 각각 여러 개 선택
-    ad_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "AD"][:100]
-    cn_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "CN"][:100]
+    # ad_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "AD"][:100]
+    # cn_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "CN"][:100]
+    
+    ad_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "AD"][:1]
+    cn_tensors = [np.expand_dims(np.expand_dims(x.load_volume(), axis=0), axis=-1) for x in test_list if x.label.group == "CN"][:1]
 
+    
 
-    plot_average_feature_maps(fit_model, ad_tensors, cn_tensors)
+    plot_average_feature_maps(fit_model[0], ad_tensors, cn_tensors)
 
 
     
@@ -227,12 +248,13 @@ def main():
     # cn_tensor = np.expand_dims(cn_sample.volume, axis=(0, -1))
     # compare_feature_maps(fit_model, ad_tensor, cn_tensor)
     # 최적의 threshold기준으로 log 기록
-    for i in range(len(predictions)):
-        pred = predictions[i]
-        result = (pred > best_threshold).astype(int)
-        resultStr = "AD" if result else "CN"
-        print_and_log(raw_labels[i], prediction_log)
-        print_and_log(f"예측 결과 : {resultStr}, prediction : {pred}", prediction_log)
+    for prediction in predictions:
+        for i in range(len(prediction)):
+            pred = prediction[i]
+            result = (pred > best_threshold).astype(int)
+            resultStr = "AD" if result else "CN"
+            print_and_log(raw_labels[i], prediction_log)
+            print_and_log(f"예측 결과 : {resultStr}, prediction : {pred}", prediction_log)
 
 
 
@@ -247,7 +269,12 @@ def main():
 
 
     # 시각화
-    plot_all_metrics(history,labels, predictions, best_threshold)
+    if(ensemble_process==True):
+        ensemble_probs = np.mean(predictions, axis=0)
+        plot_all_metrics(history[0],labels, ensemble_probs, best_threshold)
+    elif(ensemble_process==False):
+        plot_all_metrics(history,labels, predictions, best_threshold)
+
 
 
 
