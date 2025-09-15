@@ -12,6 +12,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # '3': INFO + WARNING + ERROR 숨김 (주의 필요)
 
+# zzzzzz
+
+
 import tensorflow as tf
 from LOADER.loader import *
 from PREPROCESS.preprocess import *
