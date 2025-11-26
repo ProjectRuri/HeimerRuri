@@ -41,7 +41,7 @@ ADNI 접근 권한 요청 절차 : https://adni.loni.usc.edu/data-samples/adni-d
 ## ADNI 2 + T1 데이터 접근   
 위 방법으로 접근 권한이 성공적으로 받았을 경우 위 프로젝트에서 사용한 데이터에 접근 하기 위해선 "고급 이미지 검색"(Advanced Image Search)을 진행이 필요    
 
-![adni_image](./IMAGE/image.png)
+![adni_image](./image/image.png)
 
 
 허가 받은 계정으로 IDA로그인 진행시 위에서 접근 가능    
