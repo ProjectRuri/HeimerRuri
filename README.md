@@ -33,4 +33,4 @@ MRI 영상 데이터는 ADNI에서 제공한 ADNI2 T1을 사용
 ADNI(IDA) : https://ida.loni.usc.edu/login.jsp
 
 ## ADNI 접근 권한 요청이 필요
-![alt text](image.png)
+![alt text](image/image.png)
