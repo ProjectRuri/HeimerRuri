@@ -2,12 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: main.py",
+            "name": "Run: main_pipeline.py",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}\\main_pipeline.py",
             "console": "integratedTerminal",
-            "cwd": "${fileDirname}"
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "C:\\Users\\admin\\.conda\\envs\\tf_gpu\\python.exe",
+            "python": "C:\\Users\\admin\\.conda\\envs\\tf_gpu\\python.exe",
+            "justMyCode": false
         }
     ]
 }

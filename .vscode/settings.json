@@ -1,1 +1,7 @@
-{}
+{
+    "python.defaultInterpreterPath": "C:\\Users\\admin\\.conda\\envs\\tf_gpu\\python.exe",
+    "python.logging.level": "warning",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python-envs.pythonProjects": []
+}

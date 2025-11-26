@@ -1,1000 +1,1000 @@
-(subject = 002_S_5178, group = CN, imageDataID = I384728)
-예측 결과 : CN, prediction : [0.23172873]
-(subject = 023_S_4448, group = CN, imageDataID = I280812)
-예측 결과 : CN, prediction : [0.27852955]
-(subject = 002_S_4262, group = CN, imageDataID = I274823)
-예측 결과 : CN, prediction : [0.4015511]
-(subject = 023_S_0061, group = CN, imageDataID = I283530)
-예측 결과 : AD, prediction : [0.69413316]
-(subject = 082_S_4224, group = CN, imageDataID = I257382)
-예측 결과 : AD, prediction : [0.463703]
-(subject = 073_S_4393, group = CN, imageDataID = I401086)
-예측 결과 : CN, prediction : [0.27299923]
+(subject = 082_S_4090, group = CN, imageDataID = I241094)
+예측 결과 : CN, prediction : [0.27600807]
+(subject = 014_S_4576, group = CN, imageDataID = I336069)
+예측 결과 : CN, prediction : [0.21230705]
+(subject = 037_S_4071, group = CN, imageDataID = I412222)
+예측 결과 : AD, prediction : [0.5470759]
+(subject = 006_S_4150, group = CN, imageDataID = I336214)
+예측 결과 : AD, prediction : [0.5932088]
+(subject = 032_S_1169, group = CN, imageDataID = I282651)
+예측 결과 : CN, prediction : [0.37627593]
+(subject = 022_S_4266, group = CN, imageDataID = I289098)
+예측 결과 : CN, prediction : [0.16547811]
+(subject = 009_S_4337, group = CN, imageDataID = I346460)
+예측 결과 : CN, prediction : [0.46933907]
+(subject = 037_S_4028, group = CN, imageDataID = I495892)
+예측 결과 : CN, prediction : [0.1553945]
+(subject = 067_S_0056, group = CN, imageDataID = I279513)
+예측 결과 : CN, prediction : [0.0863765]
+(subject = 009_S_0842, group = CN, imageDataID = I499406)
+예측 결과 : CN, prediction : [0.34826764]
+(subject = 033_S_4179, group = CN, imageDataID = I252069)
+예측 결과 : AD, prediction : [0.60244316]
+(subject = 011_S_0023, group = CN, imageDataID = I342262)
+예측 결과 : CN, prediction : [0.3279068]
+(subject = 003_S_0981, group = CN, imageDataID = I295005)
+예측 결과 : CN, prediction : [0.4354699]
+(subject = 941_S_4255, group = CN, imageDataID = I397804)
+예측 결과 : CN, prediction : [0.4273755]
+(subject = 067_S_0257, group = CN, imageDataID = I317533)
+예측 결과 : CN, prediction : [0.31379643]
+(subject = 011_S_4222, group = CN, imageDataID = I256865)
+예측 결과 : AD, prediction : [0.51999986]
+(subject = 067_S_0056, group = CN, imageDataID = I401691)
+예측 결과 : CN, prediction : [0.2644545]
+(subject = 116_S_4483, group = CN, imageDataID = I301748)
+예측 결과 : CN, prediction : [0.31196427]
+(subject = 018_S_4313, group = CN, imageDataID = I268930)
+예측 결과 : CN, prediction : [0.17158487]
+(subject = 011_S_4120, group = CN, imageDataID = I397486)
+예측 결과 : CN, prediction : [0.4445526]
+(subject = 137_S_4632, group = CN, imageDataID = I435040)
+예측 결과 : CN, prediction : [0.29570693]
+(subject = 037_S_4410, group = CN, imageDataID = I311751)
+예측 결과 : CN, prediction : [0.19378321]
+(subject = 023_S_1190, group = CN, imageDataID = I415243)
+예측 결과 : CN, prediction : [0.27579716]
+(subject = 012_S_4545, group = CN, imageDataID = I665221)
+예측 결과 : CN, prediction : [0.29183766]
+(subject = 037_S_4071, group = CN, imageDataID = I384204)
+예측 결과 : AD, prediction : [0.6235488]
+(subject = 033_S_4177, group = CN, imageDataID = I389487)
+예측 결과 : AD, prediction : [0.7382884]
 (subject = 036_S_4491, group = CN, imageDataID = I281772)
-예측 결과 : CN, prediction : [0.40273365]
-(subject = 037_S_4410, group = CN, imageDataID = I290033)
-예측 결과 : CN, prediction : [0.26065078]
-(subject = 022_S_4291, group = CN, imageDataID = I361312)
-예측 결과 : AD, prediction : [0.65158075]
-(subject = 053_S_4578, group = CN, imageDataID = I366391)
-예측 결과 : AD, prediction : [0.4595416]
-(subject = 128_S_4586, group = CN, imageDataID = I308307)
-예측 결과 : AD, prediction : [0.5073425]
-(subject = 018_S_4400, group = CN, imageDataID = I353125)
-예측 결과 : CN, prediction : [0.29380232]
-(subject = 014_S_4577, group = CN, imageDataID = I384900)
-예측 결과 : AD, prediction : [0.63867086]
-(subject = 018_S_4400, group = CN, imageDataID = I580989)
-예측 결과 : CN, prediction : [0.19761543]
-(subject = 153_S_4372, group = CN, imageDataID = I575681)
-예측 결과 : AD, prediction : [0.54294336]
-(subject = 014_S_4080, group = CN, imageDataID = I272384)
-예측 결과 : AD, prediction : [0.70144707]
-(subject = 014_S_4401, group = CN, imageDataID = I310601)
-예측 결과 : CN, prediction : [0.36585137]
-(subject = 082_S_4090, group = CN, imageDataID = I384356)
-예측 결과 : AD, prediction : [0.52999824]
-(subject = 082_S_4224, group = CN, imageDataID = I1043686)
-예측 결과 : AD, prediction : [0.65701675]
-(subject = 016_S_0359, group = CN, imageDataID = I783532)
-예측 결과 : AD, prediction : [0.51187587]
-(subject = 135_S_5113, group = CN, imageDataID = I499660)
-예측 결과 : AD, prediction : [0.7067714]
-(subject = 014_S_4093, group = CN, imageDataID = I277894)
-예측 결과 : AD, prediction : [0.68862593]
-(subject = 153_S_4151, group = CN, imageDataID = I389229)
-예측 결과 : AD, prediction : [0.60731584]
-(subject = 137_S_4632, group = CN, imageDataID = I377606)
-예측 결과 : CN, prediction : [0.23918897]
-(subject = 041_S_4060, group = CN, imageDataID = I495795)
-예측 결과 : AD, prediction : [0.4661956]
-(subject = 100_S_4469, group = CN, imageDataID = I289564)
-예측 결과 : CN, prediction : [0.3510629]
-(subject = 941_S_1195, group = CN, imageDataID = I420205)
-예측 결과 : AD, prediction : [0.7059033]
-(subject = 136_S_4433, group = CN, imageDataID = I278511)
-예측 결과 : CN, prediction : [0.34664753]
-(subject = 006_S_0731, group = CN, imageDataID = I552099)
-예측 결과 : CN, prediction : [0.36727256]
-(subject = 037_S_5126, group = CN, imageDataID = I492146)
-예측 결과 : AD, prediction : [0.7679695]
-(subject = 135_S_5113, group = CN, imageDataID = I365355)
-예측 결과 : AD, prediction : [0.677591]
-(subject = 100_S_4469, group = CN, imageDataID = I366946)
-예측 결과 : CN, prediction : [0.2741647]
-(subject = 006_S_4449, group = CN, imageDataID = I319631)
-예측 결과 : CN, prediction : [0.27388766]
-(subject = 041_S_5253, group = CN, imageDataID = I381326)
-예측 결과 : CN, prediction : [0.18719885]
-(subject = 137_S_4466, group = CN, imageDataID = I280773)
-예측 결과 : AD, prediction : [0.46728683]
-(subject = 070_S_5040, group = CN, imageDataID = I382389)
-예측 결과 : CN, prediction : [0.41286042]
-(subject = 037_S_0467, group = CN, imageDataID = I498649)
-예측 결과 : AD, prediction : [0.8118309]
-(subject = 036_S_4491, group = CN, imageDataID = I323086)
-예측 결과 : AD, prediction : [0.51953226]
-(subject = 128_S_4599, group = CN, imageDataID = I487400)
-예측 결과 : CN, prediction : [0.29505497]
-(subject = 070_S_5040, group = CN, imageDataID = I348757)
-예측 결과 : AD, prediction : [0.45383513]
+예측 결과 : CN, prediction : [0.43439963]
+(subject = 023_S_0058, group = CN, imageDataID = I229512)
+예측 결과 : CN, prediction : [0.12693974]
+(subject = 010_S_4442, group = CN, imageDataID = I319212)
+예측 결과 : CN, prediction : [0.42652833]
+(subject = 129_S_4369, group = CN, imageDataID = I322057)
+예측 결과 : CN, prediction : [0.19340359]
+(subject = 053_S_4578, group = CN, imageDataID = I337996)
+예측 결과 : CN, prediction : [0.44575292]
+(subject = 116_S_4092, group = CN, imageDataID = I502211)
+예측 결과 : AD, prediction : [0.67674595]
+(subject = 032_S_4429, group = CN, imageDataID = I666365)
+예측 결과 : CN, prediction : [0.36460397]
+(subject = 023_S_4020, group = CN, imageDataID = I281785)
+예측 결과 : CN, prediction : [0.42302254]
+(subject = 135_S_4598, group = CN, imageDataID = I311224)
+예측 결과 : CN, prediction : [0.3098856]
+(subject = 002_S_0295, group = CN, imageDataID = I303066)
+예측 결과 : AD, prediction : [0.71253264]
+(subject = 130_S_5175, group = CN, imageDataID = I385730)
+예측 결과 : AD, prediction : [0.6318249]
+(subject = 116_S_4092, group = CN, imageDataID = I241692)
+예측 결과 : AD, prediction : [0.51391035]
+(subject = 022_S_4291, group = CN, imageDataID = I415168)
+예측 결과 : CN, prediction : [0.2203574]
+(subject = 023_S_4164, group = CN, imageDataID = I351091)
+예측 결과 : CN, prediction : [0.4642984]
+(subject = 137_S_4466, group = CN, imageDataID = I361913)
+예측 결과 : CN, prediction : [0.32088637]
+(subject = 051_S_1123, group = CN, imageDataID = I327000)
+예측 결과 : CN, prediction : [0.12723382]
+(subject = 073_S_4552, group = CN, imageDataID = I368465)
+예측 결과 : CN, prediction : [0.23024328]
+(subject = 032_S_4921, group = CN, imageDataID = I366251)
+예측 결과 : CN, prediction : [0.29450253]
+(subject = 135_S_4598, group = CN, imageDataID = I291138)
+예측 결과 : CN, prediction : [0.3195463]
+(subject = 011_S_4278, group = CN, imageDataID = I543530)
+예측 결과 : AD, prediction : [0.66013855]
 (subject = 002_S_0685, group = CN, imageDataID = I322437)
-예측 결과 : AD, prediction : [0.6875448]
-(subject = 941_S_4376, group = CN, imageDataID = I423568)
-예측 결과 : AD, prediction : [0.67509353]
-(subject = 009_S_0751, group = CN, imageDataID = I390969)
-예측 결과 : AD, prediction : [0.7786425]
-(subject = 014_S_4576, group = CN, imageDataID = I289484)
-예측 결과 : AD, prediction : [0.53699964]
-(subject = 031_S_4032, group = CN, imageDataID = I371757)
-예측 결과 : CN, prediction : [0.3803206]
-(subject = 036_S_4389, group = CN, imageDataID = I410160)
-예측 결과 : CN, prediction : [0.36263]
-(subject = 018_S_4257, group = CN, imageDataID = I320516)
-예측 결과 : AD, prediction : [0.6536418]
-(subject = 011_S_4278, group = CN, imageDataID = I275327)
-예측 결과 : AD, prediction : [0.5776883]
-(subject = 023_S_4020, group = CN, imageDataID = I500692)
-예측 결과 : AD, prediction : [0.5229173]
-(subject = 116_S_4855, group = CN, imageDataID = I500525)
-예측 결과 : AD, prediction : [0.754478]
-(subject = 116_S_4195, group = AD, imageDataID = I271074)
-예측 결과 : AD, prediction : [0.65863]
-(subject = 128_S_4792, group = AD, imageDataID = I310913)
-예측 결과 : AD, prediction : [0.8156972]
-(subject = 128_S_4792, group = AD, imageDataID = I344002)
-예측 결과 : AD, prediction : [0.8590449]
-(subject = 135_S_4676, group = AD, imageDataID = I424528)
-예측 결과 : AD, prediction : [0.8049716]
-(subject = 036_S_4820, group = AD, imageDataID = I338405)
-예측 결과 : AD, prediction : [0.6507839]
-(subject = 130_S_4982, group = AD, imageDataID = I341787)
-예측 결과 : AD, prediction : [0.69654775]
-(subject = 073_S_4853, group = AD, imageDataID = I341846)
-예측 결과 : AD, prediction : [0.82294214]
-(subject = 123_S_4526, group = AD, imageDataID = I302642)
-예측 결과 : AD, prediction : [0.772118]
-(subject = 036_S_4894, group = AD, imageDataID = I387580)
-예측 결과 : AD, prediction : [0.71684873]
-(subject = 011_S_4912, group = AD, imageDataID = I363474)
-예측 결과 : AD, prediction : [0.4654871]
-(subject = 037_S_4770, group = AD, imageDataID = I315489)
-예측 결과 : AD, prediction : [0.81896365]
-(subject = 006_S_4192, group = AD, imageDataID = I302036)
-예측 결과 : AD, prediction : [0.4781597]
-(subject = 036_S_4894, group = AD, imageDataID = I363016)
-예측 결과 : AD, prediction : [0.69628704]
-(subject = 011_S_4906, group = AD, imageDataID = I346967)
-예측 결과 : AD, prediction : [0.7249896]
-(subject = 123_S_4526, group = AD, imageDataID = I416335)
-예측 결과 : AD, prediction : [0.7858804]
-(subject = 082_S_5029, group = AD, imageDataID = I364977)
-예측 결과 : AD, prediction : [0.83130926]
-(subject = 036_S_5112, group = AD, imageDataID = I371195)
-예측 결과 : AD, prediction : [0.49438658]
-(subject = 116_S_4209, group = AD, imageDataID = I253234)
-예측 결과 : AD, prediction : [0.8355951]
-(subject = 019_S_5012, group = AD, imageDataID = I372590)
-예측 결과 : AD, prediction : [0.7655002]
-(subject = 011_S_4912, group = AD, imageDataID = I346989)
-예측 결과 : AD, prediction : [0.48342103]
-(subject = 009_S_5224, group = AD, imageDataID = I381184)
-예측 결과 : AD, prediction : [0.8289217]
-(subject = 128_S_4774, group = AD, imageDataID = I311833)
-예측 결과 : AD, prediction : [0.7212498]
-(subject = 037_S_5162, group = AD, imageDataID = I382019)
-예측 결과 : AD, prediction : [0.49242073]
-(subject = 051_S_5005, group = AD, imageDataID = I344149)
-예측 결과 : AD, prediction : [0.68310523]
-(subject = 053_S_5070, group = AD, imageDataID = I372257)
-예측 결과 : AD, prediction : [0.8653859]
-(subject = 053_S_5070, group = AD, imageDataID = I357474)
-예측 결과 : AD, prediction : [0.84904313]
-(subject = 068_S_4968, group = AD, imageDataID = I360599)
-예측 결과 : AD, prediction : [0.8316053]
-(subject = 130_S_4730, group = AD, imageDataID = I352404)
-예측 결과 : AD, prediction : [0.7565949]
-(subject = 013_S_5071, group = AD, imageDataID = I413792)
-예측 결과 : AD, prediction : [0.70957893]
-(subject = 019_S_5019, group = AD, imageDataID = I372477)
-예측 결과 : AD, prediction : [0.6196572]
-(subject = 036_S_5063, group = AD, imageDataID = I355515)
-예측 결과 : AD, prediction : [0.7268721]
-(subject = 006_S_4153, group = AD, imageDataID = I248517)
-예측 결과 : CN, prediction : [0.29135287]
-(subject = 011_S_4845, group = AD, imageDataID = I337141)
-예측 결과 : AD, prediction : [0.8091698]
-(subject = 019_S_4477, group = AD, imageDataID = I322346)
-예측 결과 : AD, prediction : [0.77799153]
-(subject = 019_S_4549, group = AD, imageDataID = I317439)
-예측 결과 : AD, prediction : [0.67142606]
-(subject = 009_S_5027, group = AD, imageDataID = I373876)
-예측 결과 : AD, prediction : [0.6923991]
-(subject = 153_S_4172, group = AD, imageDataID = I251187)
-예측 결과 : AD, prediction : [0.7178435]
-(subject = 067_S_4728, group = AD, imageDataID = I348571)
-예측 결과 : AD, prediction : [0.88698095]
-(subject = 136_S_4993, group = AD, imageDataID = I342522)
-예측 결과 : AD, prediction : [0.45516664]
-(subject = 116_S_4195, group = AD, imageDataID = I335031)
-예측 결과 : AD, prediction : [0.5706898]
-(subject = 036_S_5063, group = AD, imageDataID = I368349)
-예측 결과 : AD, prediction : [0.8297278]
-(subject = 135_S_4657, group = AD, imageDataID = I342900)
-예측 결과 : AD, prediction : [0.71067613]
-(subject = 013_S_5071, group = AD, imageDataID = I390461)
-예측 결과 : AD, prediction : [0.53402877]
-(subject = 070_S_4692, group = AD, imageDataID = I302279)
-예측 결과 : AD, prediction : [0.7379222]
-(subject = 019_S_4549, group = AD, imageDataID = I300335)
-예측 결과 : AD, prediction : [0.7339515]
-(subject = 011_S_4906, group = AD, imageDataID = I330056)
-예측 결과 : AD, prediction : [0.6926136]
-(subject = 019_S_4477, group = AD, imageDataID = I412885)
-예측 결과 : AD, prediction : [0.77780426]
-(subject = 116_S_4625, group = AD, imageDataID = I313538)
-예측 결과 : AD, prediction : [0.59038955]
-(subject = 137_S_4672, group = AD, imageDataID = I340303)
-예측 결과 : AD, prediction : [0.7888525]
+예측 결과 : AD, prediction : [0.7218619]
+(subject = 053_S_4578, group = CN, imageDataID = I290814)
+예측 결과 : AD, prediction : [0.51505125]
+(subject = 002_S_0413, group = CN, imageDataID = I304793)
+예측 결과 : AD, prediction : [0.56460756]
+(subject = 137_S_4587, group = CN, imageDataID = I371168)
+예측 결과 : CN, prediction : [0.26151934]
 (subject = 009_S_5037, group = AD, imageDataID = I367491)
-예측 결과 : AD, prediction : [0.8906777]
-(subject = 002_S_5178, group = CN, imageDataID = I384728)
-예측 결과 : CN, prediction : [0.3997912]
-(subject = 023_S_4448, group = CN, imageDataID = I280812)
-예측 결과 : CN, prediction : [0.12515873]
-(subject = 002_S_4262, group = CN, imageDataID = I274823)
-예측 결과 : AD, prediction : [0.46374443]
-(subject = 023_S_0061, group = CN, imageDataID = I283530)
-예측 결과 : CN, prediction : [0.20756835]
-(subject = 082_S_4224, group = CN, imageDataID = I257382)
-예측 결과 : CN, prediction : [0.1513159]
-(subject = 073_S_4393, group = CN, imageDataID = I401086)
-예측 결과 : CN, prediction : [0.10774907]
+예측 결과 : AD, prediction : [0.8300684]
+(subject = 116_S_4195, group = AD, imageDataID = I271074)
+예측 결과 : CN, prediction : [0.4851069]
+(subject = 024_S_4905, group = AD, imageDataID = I363572)
+예측 결과 : CN, prediction : [0.4898337]
+(subject = 068_S_5206, group = AD, imageDataID = I379376)
+예측 결과 : AD, prediction : [0.84984523]
+(subject = 067_S_5205, group = AD, imageDataID = I376818)
+예측 결과 : AD, prediction : [0.5536853]
+(subject = 130_S_5006, group = AD, imageDataID = I360697)
+예측 결과 : AD, prediction : [0.7064105]
+(subject = 009_S_5037, group = AD, imageDataID = I414399)
+예측 결과 : AD, prediction : [0.8734269]
+(subject = 024_S_5054, group = AD, imageDataID = I352573)
+예측 결과 : CN, prediction : [0.4120829]
+(subject = 037_S_4879, group = AD, imageDataID = I349474)
+예측 결과 : CN, prediction : [0.49457493]
+(subject = 018_S_4696, group = AD, imageDataID = I321521)
+예측 결과 : CN, prediction : [0.4846761]
+(subject = 033_S_5087, group = AD, imageDataID = I416701)
+예측 결과 : AD, prediction : [0.6226361]
+(subject = 073_S_4853, group = AD, imageDataID = I315948)
+예측 결과 : AD, prediction : [0.5282557]
+(subject = 116_S_4209, group = AD, imageDataID = I253231)
+예측 결과 : AD, prediction : [0.5936127]
+(subject = 011_S_4912, group = AD, imageDataID = I363474)
+예측 결과 : CN, prediction : [0.25468776]
+(subject = 131_S_5138, group = AD, imageDataID = I379704)
+예측 결과 : CN, prediction : [0.17489615]
+(subject = 032_S_4755, group = AD, imageDataID = I313900)
+예측 결과 : AD, prediction : [0.6349382]
+(subject = 082_S_5029, group = AD, imageDataID = I364983)
+예측 결과 : AD, prediction : [0.75026196]
+(subject = 135_S_4657, group = AD, imageDataID = I369145)
+예측 결과 : CN, prediction : [0.48721614]
+(subject = 024_S_4280, group = AD, imageDataID = I276854)
+예측 결과 : AD, prediction : [0.7467211]
+(subject = 123_S_4526, group = AD, imageDataID = I416335)
+예측 결과 : AD, prediction : [0.7895606]
+(subject = 019_S_5012, group = AD, imageDataID = I372590)
+예측 결과 : AD, prediction : [0.78553754]
+(subject = 006_S_4546, group = AD, imageDataID = I310930)
+예측 결과 : AD, prediction : [0.56862754]
+(subject = 011_S_4827, group = AD, imageDataID = I338208)
+예측 결과 : AD, prediction : [0.6418099]
+(subject = 053_S_5070, group = AD, imageDataID = I389300)
+예측 결과 : AD, prediction : [0.81936157]
+(subject = 128_S_4772, group = AD, imageDataID = I310620)
+예측 결과 : CN, prediction : [0.421681]
+(subject = 137_S_4672, group = AD, imageDataID = I420398)
+예측 결과 : CN, prediction : [0.4205558]
+(subject = 116_S_4338, group = AD, imageDataID = I264968)
+예측 결과 : AD, prediction : [0.72636837]
+(subject = 116_S_4625, group = AD, imageDataID = I296138)
+예측 결과 : CN, prediction : [0.4480891]
+(subject = 019_S_4252, group = AD, imageDataID = I341964)
+예측 결과 : AD, prediction : [0.72068566]
+(subject = 032_S_4755, group = AD, imageDataID = I339380)
+예측 결과 : AD, prediction : [0.59061545]
+(subject = 130_S_4990, group = AD, imageDataID = I342911)
+예측 결과 : AD, prediction : [0.7840232]
+(subject = 099_S_4124, group = AD, imageDataID = I247513)
+예측 결과 : CN, prediction : [0.39267862]
+(subject = 011_S_4912, group = AD, imageDataID = I346989)
+예측 결과 : CN, prediction : [0.20371027]
+(subject = 037_S_4770, group = AD, imageDataID = I315489)
+예측 결과 : AD, prediction : [0.60809296]
+(subject = 116_S_4732, group = AD, imageDataID = I336228)
+예측 결과 : AD, prediction : [0.77959526]
+(subject = 024_S_4223, group = AD, imageDataID = I291035)
+예측 결과 : AD, prediction : [0.6365322]
+(subject = 009_S_5224, group = AD, imageDataID = I381184)
+예측 결과 : AD, prediction : [0.7743704]
+(subject = 031_S_4024, group = AD, imageDataID = I263857)
+예측 결과 : CN, prediction : [0.27150527]
+(subject = 137_S_4211, group = AD, imageDataID = I257193)
+예측 결과 : CN, prediction : [0.49073073]
+(subject = 067_S_4728, group = AD, imageDataID = I327068)
+예측 결과 : AD, prediction : [0.80771816]
+(subject = 036_S_4820, group = AD, imageDataID = I316737)
+예측 결과 : CN, prediction : [0.36893532]
+(subject = 024_S_5054, group = AD, imageDataID = I404608)
+예측 결과 : CN, prediction : [0.43044114]
+(subject = 130_S_4982, group = AD, imageDataID = I395985)
+예측 결과 : AD, prediction : [0.689113]
+(subject = 073_S_5016, group = AD, imageDataID = I342679)
+예측 결과 : CN, prediction : [0.12048312]
+(subject = 019_S_4477, group = AD, imageDataID = I297113)
+예측 결과 : AD, prediction : [0.6698286]
+(subject = 153_S_4172, group = AD, imageDataID = I251187)
+예측 결과 : AD, prediction : [0.6609777]
+(subject = 130_S_5006, group = AD, imageDataID = I348490)
+예측 결과 : AD, prediction : [0.74471354]
+(subject = 137_S_4672, group = AD, imageDataID = I317097)
+예측 결과 : CN, prediction : [0.42415154]
+(subject = 130_S_5059, group = AD, imageDataID = I358776)
+예측 결과 : CN, prediction : [0.40839934]
+(subject = 036_S_4894, group = AD, imageDataID = I323094)
+예측 결과 : CN, prediction : [0.18961376]
+(subject = 082_S_4090, group = CN, imageDataID = I241094)
+예측 결과 : CN, prediction : [0.38546348]
+(subject = 014_S_4576, group = CN, imageDataID = I336069)
+예측 결과 : CN, prediction : [0.20305331]
+(subject = 037_S_4071, group = CN, imageDataID = I412222)
+예측 결과 : CN, prediction : [0.24236743]
+(subject = 006_S_4150, group = CN, imageDataID = I336214)
+예측 결과 : AD, prediction : [0.5128327]
+(subject = 032_S_1169, group = CN, imageDataID = I282651)
+예측 결과 : CN, prediction : [0.2445721]
+(subject = 022_S_4266, group = CN, imageDataID = I289098)
+예측 결과 : CN, prediction : [0.2150586]
+(subject = 009_S_4337, group = CN, imageDataID = I346460)
+예측 결과 : CN, prediction : [0.44121477]
+(subject = 037_S_4028, group = CN, imageDataID = I495892)
+예측 결과 : CN, prediction : [0.11405723]
+(subject = 067_S_0056, group = CN, imageDataID = I279513)
+예측 결과 : CN, prediction : [0.06384681]
+(subject = 009_S_0842, group = CN, imageDataID = I499406)
+예측 결과 : CN, prediction : [0.31304324]
+(subject = 033_S_4179, group = CN, imageDataID = I252069)
+예측 결과 : CN, prediction : [0.4815389]
+(subject = 011_S_0023, group = CN, imageDataID = I342262)
+예측 결과 : CN, prediction : [0.400334]
+(subject = 003_S_0981, group = CN, imageDataID = I295005)
+예측 결과 : AD, prediction : [0.5779393]
+(subject = 941_S_4255, group = CN, imageDataID = I397804)
+예측 결과 : CN, prediction : [0.32942742]
+(subject = 067_S_0257, group = CN, imageDataID = I317533)
+예측 결과 : CN, prediction : [0.3459399]
+(subject = 011_S_4222, group = CN, imageDataID = I256865)
+예측 결과 : CN, prediction : [0.31833342]
+(subject = 067_S_0056, group = CN, imageDataID = I401691)
+예측 결과 : CN, prediction : [0.23793171]
+(subject = 116_S_4483, group = CN, imageDataID = I301748)
+예측 결과 : CN, prediction : [0.23342817]
+(subject = 018_S_4313, group = CN, imageDataID = I268930)
+예측 결과 : CN, prediction : [0.17128728]
+(subject = 011_S_4120, group = CN, imageDataID = I397486)
+예측 결과 : CN, prediction : [0.3832128]
+(subject = 137_S_4632, group = CN, imageDataID = I435040)
+예측 결과 : CN, prediction : [0.21777564]
+(subject = 037_S_4410, group = CN, imageDataID = I311751)
+예측 결과 : CN, prediction : [0.17698139]
+(subject = 023_S_1190, group = CN, imageDataID = I415243)
+예측 결과 : CN, prediction : [0.17194079]
+(subject = 012_S_4545, group = CN, imageDataID = I665221)
+예측 결과 : CN, prediction : [0.2608947]
+(subject = 037_S_4071, group = CN, imageDataID = I384204)
+예측 결과 : CN, prediction : [0.26447546]
+(subject = 033_S_4177, group = CN, imageDataID = I389487)
+예측 결과 : AD, prediction : [0.52589816]
 (subject = 036_S_4491, group = CN, imageDataID = I281772)
-예측 결과 : CN, prediction : [0.16488127]
-(subject = 037_S_4410, group = CN, imageDataID = I290033)
-예측 결과 : CN, prediction : [0.11113732]
-(subject = 022_S_4291, group = CN, imageDataID = I361312)
-예측 결과 : CN, prediction : [0.21106389]
-(subject = 053_S_4578, group = CN, imageDataID = I366391)
-예측 결과 : CN, prediction : [0.3670746]
-(subject = 128_S_4586, group = CN, imageDataID = I308307)
-예측 결과 : CN, prediction : [0.1584089]
-(subject = 018_S_4400, group = CN, imageDataID = I353125)
-예측 결과 : CN, prediction : [0.20460598]
-(subject = 014_S_4577, group = CN, imageDataID = I384900)
-예측 결과 : CN, prediction : [0.13049]
-(subject = 018_S_4400, group = CN, imageDataID = I580989)
-예측 결과 : CN, prediction : [0.15442997]
-(subject = 153_S_4372, group = CN, imageDataID = I575681)
-예측 결과 : CN, prediction : [0.15717824]
-(subject = 014_S_4080, group = CN, imageDataID = I272384)
-예측 결과 : CN, prediction : [0.20915572]
-(subject = 014_S_4401, group = CN, imageDataID = I310601)
-예측 결과 : CN, prediction : [0.14101899]
-(subject = 082_S_4090, group = CN, imageDataID = I384356)
-예측 결과 : CN, prediction : [0.15950553]
-(subject = 082_S_4224, group = CN, imageDataID = I1043686)
-예측 결과 : CN, prediction : [0.17903449]
-(subject = 016_S_0359, group = CN, imageDataID = I783532)
-예측 결과 : CN, prediction : [0.13570577]
-(subject = 135_S_5113, group = CN, imageDataID = I499660)
-예측 결과 : CN, prediction : [0.15617408]
-(subject = 014_S_4093, group = CN, imageDataID = I277894)
-예측 결과 : CN, prediction : [0.21114531]
-(subject = 153_S_4151, group = CN, imageDataID = I389229)
-예측 결과 : CN, prediction : [0.19029991]
-(subject = 137_S_4632, group = CN, imageDataID = I377606)
-예측 결과 : CN, prediction : [0.11385924]
-(subject = 041_S_4060, group = CN, imageDataID = I495795)
-예측 결과 : CN, prediction : [0.17529498]
-(subject = 100_S_4469, group = CN, imageDataID = I289564)
-예측 결과 : CN, prediction : [0.3761661]
-(subject = 941_S_1195, group = CN, imageDataID = I420205)
-예측 결과 : CN, prediction : [0.21086505]
-(subject = 136_S_4433, group = CN, imageDataID = I278511)
-예측 결과 : CN, prediction : [0.17876133]
-(subject = 006_S_0731, group = CN, imageDataID = I552099)
-예측 결과 : CN, prediction : [0.3704701]
-(subject = 037_S_5126, group = CN, imageDataID = I492146)
-예측 결과 : CN, prediction : [0.18177593]
-(subject = 135_S_5113, group = CN, imageDataID = I365355)
-예측 결과 : CN, prediction : [0.18035068]
-(subject = 100_S_4469, group = CN, imageDataID = I366946)
-예측 결과 : CN, prediction : [0.33028468]
-(subject = 006_S_4449, group = CN, imageDataID = I319631)
-예측 결과 : CN, prediction : [0.26166695]
-(subject = 041_S_5253, group = CN, imageDataID = I381326)
-예측 결과 : CN, prediction : [0.10071327]
-(subject = 137_S_4466, group = CN, imageDataID = I280773)
-예측 결과 : CN, prediction : [0.16249497]
-(subject = 070_S_5040, group = CN, imageDataID = I382389)
-예측 결과 : CN, prediction : [0.14002648]
-(subject = 037_S_0467, group = CN, imageDataID = I498649)
-예측 결과 : CN, prediction : [0.215811]
-(subject = 036_S_4491, group = CN, imageDataID = I323086)
-예측 결과 : CN, prediction : [0.17712724]
-(subject = 128_S_4599, group = CN, imageDataID = I487400)
-예측 결과 : CN, prediction : [0.1026377]
-(subject = 070_S_5040, group = CN, imageDataID = I348757)
-예측 결과 : CN, prediction : [0.154075]
+예측 결과 : CN, prediction : [0.29614046]
+(subject = 023_S_0058, group = CN, imageDataID = I229512)
+예측 결과 : CN, prediction : [0.09976594]
+(subject = 010_S_4442, group = CN, imageDataID = I319212)
+예측 결과 : CN, prediction : [0.31188136]
+(subject = 129_S_4369, group = CN, imageDataID = I322057)
+예측 결과 : CN, prediction : [0.1646548]
+(subject = 053_S_4578, group = CN, imageDataID = I337996)
+예측 결과 : CN, prediction : [0.3303701]
+(subject = 116_S_4092, group = CN, imageDataID = I502211)
+예측 결과 : CN, prediction : [0.4486851]
+(subject = 032_S_4429, group = CN, imageDataID = I666365)
+예측 결과 : CN, prediction : [0.397119]
+(subject = 023_S_4020, group = CN, imageDataID = I281785)
+예측 결과 : CN, prediction : [0.26621544]
+(subject = 135_S_4598, group = CN, imageDataID = I311224)
+예측 결과 : CN, prediction : [0.25021374]
+(subject = 002_S_0295, group = CN, imageDataID = I303066)
+예측 결과 : AD, prediction : [0.6021351]
+(subject = 130_S_5175, group = CN, imageDataID = I385730)
+예측 결과 : CN, prediction : [0.48157054]
+(subject = 116_S_4092, group = CN, imageDataID = I241692)
+예측 결과 : CN, prediction : [0.3601929]
+(subject = 022_S_4291, group = CN, imageDataID = I415168)
+예측 결과 : CN, prediction : [0.14248101]
+(subject = 023_S_4164, group = CN, imageDataID = I351091)
+예측 결과 : AD, prediction : [0.5985956]
+(subject = 137_S_4466, group = CN, imageDataID = I361913)
+예측 결과 : CN, prediction : [0.2201795]
+(subject = 051_S_1123, group = CN, imageDataID = I327000)
+예측 결과 : CN, prediction : [0.09093957]
+(subject = 073_S_4552, group = CN, imageDataID = I368465)
+예측 결과 : CN, prediction : [0.27808937]
+(subject = 032_S_4921, group = CN, imageDataID = I366251)
+예측 결과 : CN, prediction : [0.305843]
+(subject = 135_S_4598, group = CN, imageDataID = I291138)
+예측 결과 : CN, prediction : [0.2279313]
+(subject = 011_S_4278, group = CN, imageDataID = I543530)
+예측 결과 : CN, prediction : [0.45887592]
 (subject = 002_S_0685, group = CN, imageDataID = I322437)
-예측 결과 : AD, prediction : [0.48902592]
-(subject = 941_S_4376, group = CN, imageDataID = I423568)
-예측 결과 : CN, prediction : [0.18018492]
-(subject = 009_S_0751, group = CN, imageDataID = I390969)
-예측 결과 : CN, prediction : [0.20598425]
-(subject = 014_S_4576, group = CN, imageDataID = I289484)
-예측 결과 : CN, prediction : [0.15019454]
-(subject = 031_S_4032, group = CN, imageDataID = I371757)
-예측 결과 : CN, prediction : [0.28881344]
-(subject = 036_S_4389, group = CN, imageDataID = I410160)
-예측 결과 : CN, prediction : [0.20100112]
-(subject = 018_S_4257, group = CN, imageDataID = I320516)
-예측 결과 : CN, prediction : [0.33551848]
-(subject = 011_S_4278, group = CN, imageDataID = I275327)
-예측 결과 : CN, prediction : [0.17281397]
-(subject = 023_S_4020, group = CN, imageDataID = I500692)
-예측 결과 : CN, prediction : [0.17482655]
-(subject = 116_S_4855, group = CN, imageDataID = I500525)
-예측 결과 : CN, prediction : [0.21974891]
-(subject = 116_S_4195, group = AD, imageDataID = I271074)
-예측 결과 : CN, prediction : [0.18958037]
-(subject = 128_S_4792, group = AD, imageDataID = I310913)
-예측 결과 : CN, prediction : [0.2175227]
-(subject = 128_S_4792, group = AD, imageDataID = I344002)
-예측 결과 : CN, prediction : [0.2631514]
-(subject = 135_S_4676, group = AD, imageDataID = I424528)
-예측 결과 : CN, prediction : [0.20913644]
-(subject = 036_S_4820, group = AD, imageDataID = I338405)
-예측 결과 : CN, prediction : [0.16833884]
-(subject = 130_S_4982, group = AD, imageDataID = I341787)
-예측 결과 : CN, prediction : [0.42392215]
-(subject = 073_S_4853, group = AD, imageDataID = I341846)
-예측 결과 : CN, prediction : [0.18485382]
-(subject = 123_S_4526, group = AD, imageDataID = I302642)
-예측 결과 : CN, prediction : [0.25606716]
-(subject = 036_S_4894, group = AD, imageDataID = I387580)
-예측 결과 : CN, prediction : [0.20425616]
-(subject = 011_S_4912, group = AD, imageDataID = I363474)
-예측 결과 : CN, prediction : [0.13520408]
-(subject = 037_S_4770, group = AD, imageDataID = I315489)
-예측 결과 : CN, prediction : [0.22494836]
-(subject = 006_S_4192, group = AD, imageDataID = I302036)
-예측 결과 : CN, prediction : [0.41517502]
-(subject = 036_S_4894, group = AD, imageDataID = I363016)
-예측 결과 : CN, prediction : [0.18347181]
-(subject = 011_S_4906, group = AD, imageDataID = I346967)
-예측 결과 : CN, prediction : [0.1961698]
-(subject = 123_S_4526, group = AD, imageDataID = I416335)
-예측 결과 : CN, prediction : [0.27743497]
-(subject = 082_S_5029, group = AD, imageDataID = I364977)
-예측 결과 : CN, prediction : [0.22408214]
-(subject = 036_S_5112, group = AD, imageDataID = I371195)
-예측 결과 : CN, prediction : [0.14878042]
-(subject = 116_S_4209, group = AD, imageDataID = I253234)
-예측 결과 : CN, prediction : [0.19780682]
-(subject = 019_S_5012, group = AD, imageDataID = I372590)
-예측 결과 : CN, prediction : [0.43532538]
-(subject = 011_S_4912, group = AD, imageDataID = I346989)
-예측 결과 : CN, prediction : [0.12753162]
-(subject = 009_S_5224, group = AD, imageDataID = I381184)
-예측 결과 : CN, prediction : [0.24144448]
-(subject = 128_S_4774, group = AD, imageDataID = I311833)
-예측 결과 : CN, prediction : [0.16252616]
-(subject = 037_S_5162, group = AD, imageDataID = I382019)
-예측 결과 : CN, prediction : [0.13835093]
-(subject = 051_S_5005, group = AD, imageDataID = I344149)
-예측 결과 : CN, prediction : [0.15658583]
-(subject = 053_S_5070, group = AD, imageDataID = I372257)
-예측 결과 : AD, prediction : [0.5263512]
-(subject = 053_S_5070, group = AD, imageDataID = I357474)
-예측 결과 : AD, prediction : [0.52532053]
-(subject = 068_S_4968, group = AD, imageDataID = I360599)
-예측 결과 : CN, prediction : [0.2879596]
-(subject = 130_S_4730, group = AD, imageDataID = I352404)
-예측 결과 : AD, prediction : [0.46076074]
-(subject = 013_S_5071, group = AD, imageDataID = I413792)
-예측 결과 : CN, prediction : [0.20753615]
-(subject = 019_S_5019, group = AD, imageDataID = I372477)
-예측 결과 : CN, prediction : [0.25903642]
-(subject = 036_S_5063, group = AD, imageDataID = I355515)
-예측 결과 : CN, prediction : [0.21094957]
-(subject = 006_S_4153, group = AD, imageDataID = I248517)
-예측 결과 : CN, prediction : [0.33888346]
-(subject = 011_S_4845, group = AD, imageDataID = I337141)
-예측 결과 : CN, prediction : [0.1923622]
-(subject = 019_S_4477, group = AD, imageDataID = I322346)
-예측 결과 : CN, prediction : [0.43214542]
-(subject = 019_S_4549, group = AD, imageDataID = I317439)
-예측 결과 : CN, prediction : [0.39984137]
-(subject = 009_S_5027, group = AD, imageDataID = I373876)
-예측 결과 : CN, prediction : [0.20122963]
-(subject = 153_S_4172, group = AD, imageDataID = I251187)
-예측 결과 : CN, prediction : [0.22752954]
-(subject = 067_S_4728, group = AD, imageDataID = I348571)
-예측 결과 : CN, prediction : [0.30088934]
-(subject = 136_S_4993, group = AD, imageDataID = I342522)
-예측 결과 : CN, prediction : [0.23644407]
-(subject = 116_S_4195, group = AD, imageDataID = I335031)
-예측 결과 : CN, prediction : [0.19557428]
-(subject = 036_S_5063, group = AD, imageDataID = I368349)
-예측 결과 : CN, prediction : [0.25974637]
-(subject = 135_S_4657, group = AD, imageDataID = I342900)
-예측 결과 : CN, prediction : [0.16926123]
-(subject = 013_S_5071, group = AD, imageDataID = I390461)
-예측 결과 : CN, prediction : [0.2326014]
-(subject = 070_S_4692, group = AD, imageDataID = I302279)
-예측 결과 : CN, prediction : [0.1983893]
-(subject = 019_S_4549, group = AD, imageDataID = I300335)
-예측 결과 : CN, prediction : [0.35393178]
-(subject = 011_S_4906, group = AD, imageDataID = I330056)
-예측 결과 : CN, prediction : [0.2049725]
-(subject = 019_S_4477, group = AD, imageDataID = I412885)
-예측 결과 : CN, prediction : [0.44049346]
-(subject = 116_S_4625, group = AD, imageDataID = I313538)
-예측 결과 : CN, prediction : [0.17712682]
-(subject = 137_S_4672, group = AD, imageDataID = I340303)
-예측 결과 : CN, prediction : [0.1950097]
+예측 결과 : AD, prediction : [0.61251307]
+(subject = 053_S_4578, group = CN, imageDataID = I290814)
+예측 결과 : CN, prediction : [0.3537766]
+(subject = 002_S_0413, group = CN, imageDataID = I304793)
+예측 결과 : CN, prediction : [0.43549293]
+(subject = 137_S_4587, group = CN, imageDataID = I371168)
+예측 결과 : CN, prediction : [0.240457]
 (subject = 009_S_5037, group = AD, imageDataID = I367491)
-예측 결과 : CN, prediction : [0.29464072]
-(subject = 002_S_5178, group = CN, imageDataID = I384728)
-예측 결과 : CN, prediction : [0.3754645]
-(subject = 023_S_4448, group = CN, imageDataID = I280812)
-예측 결과 : CN, prediction : [0.20871693]
-(subject = 002_S_4262, group = CN, imageDataID = I274823)
-예측 결과 : CN, prediction : [0.444233]
-(subject = 023_S_0061, group = CN, imageDataID = I283530)
-예측 결과 : CN, prediction : [0.2848053]
-(subject = 082_S_4224, group = CN, imageDataID = I257382)
-예측 결과 : CN, prediction : [0.2363297]
-(subject = 073_S_4393, group = CN, imageDataID = I401086)
-예측 결과 : CN, prediction : [0.20229967]
+예측 결과 : AD, prediction : [0.6407752]
+(subject = 116_S_4195, group = AD, imageDataID = I271074)
+예측 결과 : CN, prediction : [0.39185494]
+(subject = 024_S_4905, group = AD, imageDataID = I363572)
+예측 결과 : AD, prediction : [0.54752666]
+(subject = 068_S_5206, group = AD, imageDataID = I379376)
+예측 결과 : AD, prediction : [0.69645697]
+(subject = 067_S_5205, group = AD, imageDataID = I376818)
+예측 결과 : AD, prediction : [0.5388988]
+(subject = 130_S_5006, group = AD, imageDataID = I360697)
+예측 결과 : AD, prediction : [0.59111124]
+(subject = 009_S_5037, group = AD, imageDataID = I414399)
+예측 결과 : AD, prediction : [0.69978267]
+(subject = 024_S_5054, group = AD, imageDataID = I352573)
+예측 결과 : CN, prediction : [0.4762747]
+(subject = 037_S_4879, group = AD, imageDataID = I349474)
+예측 결과 : AD, prediction : [0.5211799]
+(subject = 018_S_4696, group = AD, imageDataID = I321521)
+예측 결과 : AD, prediction : [0.51492184]
+(subject = 033_S_5087, group = AD, imageDataID = I416701)
+예측 결과 : AD, prediction : [0.56288034]
+(subject = 073_S_4853, group = AD, imageDataID = I315948)
+예측 결과 : CN, prediction : [0.49115264]
+(subject = 116_S_4209, group = AD, imageDataID = I253231)
+예측 결과 : CN, prediction : [0.37561533]
+(subject = 011_S_4912, group = AD, imageDataID = I363474)
+예측 결과 : CN, prediction : [0.19099188]
+(subject = 131_S_5138, group = AD, imageDataID = I379704)
+예측 결과 : CN, prediction : [0.20591937]
+(subject = 032_S_4755, group = AD, imageDataID = I313900)
+예측 결과 : AD, prediction : [0.6594157]
+(subject = 082_S_5029, group = AD, imageDataID = I364983)
+예측 결과 : AD, prediction : [0.582899]
+(subject = 135_S_4657, group = AD, imageDataID = I369145)
+예측 결과 : CN, prediction : [0.45383608]
+(subject = 024_S_4280, group = AD, imageDataID = I276854)
+예측 결과 : AD, prediction : [0.576856]
+(subject = 123_S_4526, group = AD, imageDataID = I416335)
+예측 결과 : CN, prediction : [0.4873249]
+(subject = 019_S_5012, group = AD, imageDataID = I372590)
+예측 결과 : AD, prediction : [0.6511055]
+(subject = 006_S_4546, group = AD, imageDataID = I310930)
+예측 결과 : AD, prediction : [0.53959316]
+(subject = 011_S_4827, group = AD, imageDataID = I338208)
+예측 결과 : AD, prediction : [0.55298764]
+(subject = 053_S_5070, group = AD, imageDataID = I389300)
+예측 결과 : AD, prediction : [0.71594876]
+(subject = 128_S_4772, group = AD, imageDataID = I310620)
+예측 결과 : CN, prediction : [0.3895197]
+(subject = 137_S_4672, group = AD, imageDataID = I420398)
+예측 결과 : CN, prediction : [0.40951163]
+(subject = 116_S_4338, group = AD, imageDataID = I264968)
+예측 결과 : AD, prediction : [0.5480049]
+(subject = 116_S_4625, group = AD, imageDataID = I296138)
+예측 결과 : AD, prediction : [0.5610225]
+(subject = 019_S_4252, group = AD, imageDataID = I341964)
+예측 결과 : AD, prediction : [0.71839154]
+(subject = 032_S_4755, group = AD, imageDataID = I339380)
+예측 결과 : AD, prediction : [0.5207354]
+(subject = 130_S_4990, group = AD, imageDataID = I342911)
+예측 결과 : AD, prediction : [0.6667646]
+(subject = 099_S_4124, group = AD, imageDataID = I247513)
+예측 결과 : CN, prediction : [0.22852823]
+(subject = 011_S_4912, group = AD, imageDataID = I346989)
+예측 결과 : CN, prediction : [0.1659012]
+(subject = 037_S_4770, group = AD, imageDataID = I315489)
+예측 결과 : AD, prediction : [0.59475124]
+(subject = 116_S_4732, group = AD, imageDataID = I336228)
+예측 결과 : AD, prediction : [0.6154399]
+(subject = 024_S_4223, group = AD, imageDataID = I291035)
+예측 결과 : AD, prediction : [0.5941549]
+(subject = 009_S_5224, group = AD, imageDataID = I381184)
+예측 결과 : AD, prediction : [0.55595064]
+(subject = 031_S_4024, group = AD, imageDataID = I263857)
+예측 결과 : CN, prediction : [0.3354695]
+(subject = 137_S_4211, group = AD, imageDataID = I257193)
+예측 결과 : CN, prediction : [0.48656228]
+(subject = 067_S_4728, group = AD, imageDataID = I327068)
+예측 결과 : AD, prediction : [0.5790574]
+(subject = 036_S_4820, group = AD, imageDataID = I316737)
+예측 결과 : CN, prediction : [0.2730721]
+(subject = 024_S_5054, group = AD, imageDataID = I404608)
+예측 결과 : AD, prediction : [0.5281829]
+(subject = 130_S_4982, group = AD, imageDataID = I395985)
+예측 결과 : AD, prediction : [0.54691976]
+(subject = 073_S_5016, group = AD, imageDataID = I342679)
+예측 결과 : CN, prediction : [0.12684627]
+(subject = 019_S_4477, group = AD, imageDataID = I297113)
+예측 결과 : AD, prediction : [0.61922324]
+(subject = 153_S_4172, group = AD, imageDataID = I251187)
+예측 결과 : AD, prediction : [0.54694766]
+(subject = 130_S_5006, group = AD, imageDataID = I348490)
+예측 결과 : AD, prediction : [0.66192174]
+(subject = 137_S_4672, group = AD, imageDataID = I317097)
+예측 결과 : CN, prediction : [0.43783072]
+(subject = 130_S_5059, group = AD, imageDataID = I358776)
+예측 결과 : CN, prediction : [0.38826692]
+(subject = 036_S_4894, group = AD, imageDataID = I323094)
+예측 결과 : CN, prediction : [0.23536122]
+(subject = 082_S_4090, group = CN, imageDataID = I241094)
+예측 결과 : AD, prediction : [0.6925939]
+(subject = 014_S_4576, group = CN, imageDataID = I336069)
+예측 결과 : AD, prediction : [0.6484413]
+(subject = 037_S_4071, group = CN, imageDataID = I412222)
+예측 결과 : AD, prediction : [0.75496966]
+(subject = 006_S_4150, group = CN, imageDataID = I336214)
+예측 결과 : AD, prediction : [0.7226847]
+(subject = 032_S_1169, group = CN, imageDataID = I282651)
+예측 결과 : AD, prediction : [0.763834]
+(subject = 022_S_4266, group = CN, imageDataID = I289098)
+예측 결과 : AD, prediction : [0.6948657]
+(subject = 009_S_4337, group = CN, imageDataID = I346460)
+예측 결과 : AD, prediction : [0.7755731]
+(subject = 037_S_4028, group = CN, imageDataID = I495892)
+예측 결과 : AD, prediction : [0.6403277]
+(subject = 067_S_0056, group = CN, imageDataID = I279513)
+예측 결과 : AD, prediction : [0.585587]
+(subject = 009_S_0842, group = CN, imageDataID = I499406)
+예측 결과 : AD, prediction : [0.75034845]
+(subject = 033_S_4179, group = CN, imageDataID = I252069)
+예측 결과 : AD, prediction : [0.7836278]
+(subject = 011_S_0023, group = CN, imageDataID = I342262)
+예측 결과 : AD, prediction : [0.7305993]
+(subject = 003_S_0981, group = CN, imageDataID = I295005)
+예측 결과 : AD, prediction : [0.7991812]
+(subject = 941_S_4255, group = CN, imageDataID = I397804)
+예측 결과 : AD, prediction : [0.750997]
+(subject = 067_S_0257, group = CN, imageDataID = I317533)
+예측 결과 : AD, prediction : [0.7428722]
+(subject = 011_S_4222, group = CN, imageDataID = I256865)
+예측 결과 : AD, prediction : [0.7625939]
+(subject = 067_S_0056, group = CN, imageDataID = I401691)
+예측 결과 : AD, prediction : [0.6751924]
+(subject = 116_S_4483, group = CN, imageDataID = I301748)
+예측 결과 : AD, prediction : [0.73592865]
+(subject = 018_S_4313, group = CN, imageDataID = I268930)
+예측 결과 : AD, prediction : [0.6529071]
+(subject = 011_S_4120, group = CN, imageDataID = I397486)
+예측 결과 : AD, prediction : [0.7690753]
+(subject = 137_S_4632, group = CN, imageDataID = I435040)
+예측 결과 : AD, prediction : [0.7160963]
+(subject = 037_S_4410, group = CN, imageDataID = I311751)
+예측 결과 : AD, prediction : [0.64578557]
+(subject = 023_S_1190, group = CN, imageDataID = I415243)
+예측 결과 : AD, prediction : [0.6911903]
+(subject = 012_S_4545, group = CN, imageDataID = I665221)
+예측 결과 : AD, prediction : [0.67790794]
+(subject = 037_S_4071, group = CN, imageDataID = I384204)
+예측 결과 : AD, prediction : [0.8084556]
+(subject = 033_S_4177, group = CN, imageDataID = I389487)
+예측 결과 : AD, prediction : [0.83330506]
 (subject = 036_S_4491, group = CN, imageDataID = I281772)
-예측 결과 : CN, prediction : [0.25102738]
-(subject = 037_S_4410, group = CN, imageDataID = I290033)
-예측 결과 : CN, prediction : [0.22495334]
-(subject = 022_S_4291, group = CN, imageDataID = I361312)
-예측 결과 : CN, prediction : [0.31189436]
-(subject = 053_S_4578, group = CN, imageDataID = I366391)
-예측 결과 : CN, prediction : [0.3761469]
-(subject = 128_S_4586, group = CN, imageDataID = I308307)
-예측 결과 : CN, prediction : [0.23779927]
-(subject = 018_S_4400, group = CN, imageDataID = I353125)
-예측 결과 : CN, prediction : [0.27314305]
-(subject = 014_S_4577, group = CN, imageDataID = I384900)
-예측 결과 : CN, prediction : [0.23630105]
-(subject = 018_S_4400, group = CN, imageDataID = I580989)
-예측 결과 : CN, prediction : [0.23226394]
-(subject = 153_S_4372, group = CN, imageDataID = I575681)
-예측 결과 : CN, prediction : [0.2608984]
-(subject = 014_S_4080, group = CN, imageDataID = I272384)
-예측 결과 : CN, prediction : [0.29352716]
-(subject = 014_S_4401, group = CN, imageDataID = I310601)
-예측 결과 : CN, prediction : [0.24193153]
-(subject = 082_S_4090, group = CN, imageDataID = I384356)
-예측 결과 : CN, prediction : [0.24520767]
-(subject = 082_S_4224, group = CN, imageDataID = I1043686)
-예측 결과 : CN, prediction : [0.26553512]
-(subject = 016_S_0359, group = CN, imageDataID = I783532)
-예측 결과 : CN, prediction : [0.25884402]
-(subject = 135_S_5113, group = CN, imageDataID = I499660)
-예측 결과 : CN, prediction : [0.24166635]
-(subject = 014_S_4093, group = CN, imageDataID = I277894)
-예측 결과 : CN, prediction : [0.3044206]
-(subject = 153_S_4151, group = CN, imageDataID = I389229)
-예측 결과 : CN, prediction : [0.27990946]
-(subject = 137_S_4632, group = CN, imageDataID = I377606)
-예측 결과 : CN, prediction : [0.22159764]
-(subject = 041_S_4060, group = CN, imageDataID = I495795)
-예측 결과 : CN, prediction : [0.24688755]
-(subject = 100_S_4469, group = CN, imageDataID = I289564)
-예측 결과 : CN, prediction : [0.3805608]
-(subject = 941_S_1195, group = CN, imageDataID = I420205)
-예측 결과 : CN, prediction : [0.2909843]
-(subject = 136_S_4433, group = CN, imageDataID = I278511)
-예측 결과 : CN, prediction : [0.2730834]
-(subject = 006_S_0731, group = CN, imageDataID = I552099)
-예측 결과 : CN, prediction : [0.36775216]
-(subject = 037_S_5126, group = CN, imageDataID = I492146)
-예측 결과 : CN, prediction : [0.26151073]
-(subject = 135_S_5113, group = CN, imageDataID = I365355)
-예측 결과 : CN, prediction : [0.2611262]
-(subject = 100_S_4469, group = CN, imageDataID = I366946)
-예측 결과 : CN, prediction : [0.3626371]
-(subject = 006_S_4449, group = CN, imageDataID = I319631)
-예측 결과 : CN, prediction : [0.30953982]
-(subject = 041_S_5253, group = CN, imageDataID = I381326)
-예측 결과 : CN, prediction : [0.17687164]
-(subject = 137_S_4466, group = CN, imageDataID = I280773)
-예측 결과 : CN, prediction : [0.24906208]
-(subject = 070_S_5040, group = CN, imageDataID = I382389)
-예측 결과 : CN, prediction : [0.24315229]
-(subject = 037_S_0467, group = CN, imageDataID = I498649)
-예측 결과 : CN, prediction : [0.31317234]
-(subject = 036_S_4491, group = CN, imageDataID = I323086)
-예측 결과 : CN, prediction : [0.25510222]
-(subject = 128_S_4599, group = CN, imageDataID = I487400)
-예측 결과 : CN, prediction : [0.1980774]
-(subject = 070_S_5040, group = CN, imageDataID = I348757)
-예측 결과 : CN, prediction : [0.2592049]
+예측 결과 : AD, prediction : [0.7638162]
+(subject = 023_S_0058, group = CN, imageDataID = I229512)
+예측 결과 : AD, prediction : [0.5725669]
+(subject = 010_S_4442, group = CN, imageDataID = I319212)
+예측 결과 : AD, prediction : [0.73150975]
+(subject = 129_S_4369, group = CN, imageDataID = I322057)
+예측 결과 : AD, prediction : [0.58949786]
+(subject = 053_S_4578, group = CN, imageDataID = I337996)
+예측 결과 : AD, prediction : [0.70537245]
+(subject = 116_S_4092, group = CN, imageDataID = I502211)
+예측 결과 : AD, prediction : [0.8414635]
+(subject = 032_S_4429, group = CN, imageDataID = I666365)
+예측 결과 : AD, prediction : [0.7289199]
+(subject = 023_S_4020, group = CN, imageDataID = I281785)
+예측 결과 : AD, prediction : [0.7458121]
+(subject = 135_S_4598, group = CN, imageDataID = I311224)
+예측 결과 : AD, prediction : [0.7533822]
+(subject = 002_S_0295, group = CN, imageDataID = I303066)
+예측 결과 : AD, prediction : [0.8010993]
+(subject = 130_S_5175, group = CN, imageDataID = I385730)
+예측 결과 : AD, prediction : [0.76482356]
+(subject = 116_S_4092, group = CN, imageDataID = I241692)
+예측 결과 : AD, prediction : [0.8139268]
+(subject = 022_S_4291, group = CN, imageDataID = I415168)
+예측 결과 : AD, prediction : [0.72044826]
+(subject = 023_S_4164, group = CN, imageDataID = I351091)
+예측 결과 : AD, prediction : [0.73492855]
+(subject = 137_S_4466, group = CN, imageDataID = I361913)
+예측 결과 : AD, prediction : [0.73623]
+(subject = 051_S_1123, group = CN, imageDataID = I327000)
+예측 결과 : AD, prediction : [0.65028405]
+(subject = 073_S_4552, group = CN, imageDataID = I368465)
+예측 결과 : AD, prediction : [0.71893406]
+(subject = 032_S_4921, group = CN, imageDataID = I366251)
+예측 결과 : AD, prediction : [0.71634]
+(subject = 135_S_4598, group = CN, imageDataID = I291138)
+예측 결과 : AD, prediction : [0.7518844]
+(subject = 011_S_4278, group = CN, imageDataID = I543530)
+예측 결과 : AD, prediction : [0.80904037]
 (subject = 002_S_0685, group = CN, imageDataID = I322437)
-예측 결과 : CN, prediction : [0.4481047]
-(subject = 941_S_4376, group = CN, imageDataID = I423568)
-예측 결과 : CN, prediction : [0.28054422]
-(subject = 009_S_0751, group = CN, imageDataID = I390969)
-예측 결과 : CN, prediction : [0.28522384]
-(subject = 014_S_4576, group = CN, imageDataID = I289484)
-예측 결과 : CN, prediction : [0.24386549]
-(subject = 031_S_4032, group = CN, imageDataID = I371757)
-예측 결과 : CN, prediction : [0.34352702]
-(subject = 036_S_4389, group = CN, imageDataID = I410160)
-예측 결과 : CN, prediction : [0.24832344]
-(subject = 018_S_4257, group = CN, imageDataID = I320516)
-예측 결과 : CN, prediction : [0.33829838]
-(subject = 011_S_4278, group = CN, imageDataID = I275327)
-예측 결과 : CN, prediction : [0.24960153]
-(subject = 023_S_4020, group = CN, imageDataID = I500692)
-예측 결과 : CN, prediction : [0.2663796]
-(subject = 116_S_4855, group = CN, imageDataID = I500525)
-예측 결과 : CN, prediction : [0.30595523]
-(subject = 116_S_4195, group = AD, imageDataID = I271074)
-예측 결과 : CN, prediction : [0.26508638]
-(subject = 128_S_4792, group = AD, imageDataID = I310913)
-예측 결과 : CN, prediction : [0.2987092]
-(subject = 128_S_4792, group = AD, imageDataID = I344002)
-예측 결과 : CN, prediction : [0.32342532]
-(subject = 135_S_4676, group = AD, imageDataID = I424528)
-예측 결과 : CN, prediction : [0.29256532]
-(subject = 036_S_4820, group = AD, imageDataID = I338405)
-예측 결과 : CN, prediction : [0.29021055]
-(subject = 130_S_4982, group = AD, imageDataID = I341787)
-예측 결과 : CN, prediction : [0.4212822]
-(subject = 073_S_4853, group = AD, imageDataID = I341846)
-예측 결과 : CN, prediction : [0.29646525]
-(subject = 123_S_4526, group = AD, imageDataID = I302642)
-예측 결과 : CN, prediction : [0.34066272]
-(subject = 036_S_4894, group = AD, imageDataID = I387580)
-예측 결과 : CN, prediction : [0.2762528]
-(subject = 011_S_4912, group = AD, imageDataID = I363474)
-예측 결과 : CN, prediction : [0.24681881]
-(subject = 037_S_4770, group = AD, imageDataID = I315489)
-예측 결과 : CN, prediction : [0.27616137]
-(subject = 006_S_4192, group = AD, imageDataID = I302036)
-예측 결과 : CN, prediction : [0.39429554]
-(subject = 036_S_4894, group = AD, imageDataID = I363016)
-예측 결과 : CN, prediction : [0.25873727]
-(subject = 011_S_4906, group = AD, imageDataID = I346967)
-예측 결과 : CN, prediction : [0.27353114]
-(subject = 123_S_4526, group = AD, imageDataID = I416335)
-예측 결과 : CN, prediction : [0.35510796]
-(subject = 082_S_5029, group = AD, imageDataID = I364977)
-예측 결과 : CN, prediction : [0.28665695]
-(subject = 036_S_5112, group = AD, imageDataID = I371195)
-예측 결과 : CN, prediction : [0.23217808]
-(subject = 116_S_4209, group = AD, imageDataID = I253234)
-예측 결과 : CN, prediction : [0.28134158]
-(subject = 019_S_5012, group = AD, imageDataID = I372590)
-예측 결과 : CN, prediction : [0.39730364]
-(subject = 011_S_4912, group = AD, imageDataID = I346989)
-예측 결과 : CN, prediction : [0.23117398]
-(subject = 009_S_5224, group = AD, imageDataID = I381184)
-예측 결과 : CN, prediction : [0.334668]
-(subject = 128_S_4774, group = AD, imageDataID = I311833)
-예측 결과 : CN, prediction : [0.26024312]
-(subject = 037_S_5162, group = AD, imageDataID = I382019)
-예측 결과 : CN, prediction : [0.22964846]
-(subject = 051_S_5005, group = AD, imageDataID = I344149)
-예측 결과 : CN, prediction : [0.25517607]
-(subject = 053_S_5070, group = AD, imageDataID = I372257)
-예측 결과 : AD, prediction : [0.4613327]
-(subject = 053_S_5070, group = AD, imageDataID = I357474)
-예측 결과 : AD, prediction : [0.45896143]
-(subject = 068_S_4968, group = AD, imageDataID = I360599)
-예측 결과 : CN, prediction : [0.3472429]
-(subject = 130_S_4730, group = AD, imageDataID = I352404)
-예측 결과 : CN, prediction : [0.43452755]
-(subject = 013_S_5071, group = AD, imageDataID = I413792)
-예측 결과 : CN, prediction : [0.2583086]
-(subject = 019_S_5019, group = AD, imageDataID = I372477)
-예측 결과 : CN, prediction : [0.3123095]
-(subject = 036_S_5063, group = AD, imageDataID = I355515)
-예측 결과 : CN, prediction : [0.31269315]
-(subject = 006_S_4153, group = AD, imageDataID = I248517)
-예측 결과 : CN, prediction : [0.33042833]
-(subject = 011_S_4845, group = AD, imageDataID = I337141)
-예측 결과 : CN, prediction : [0.30528703]
-(subject = 019_S_4477, group = AD, imageDataID = I322346)
-예측 결과 : CN, prediction : [0.4483821]
-(subject = 019_S_4549, group = AD, imageDataID = I317439)
-예측 결과 : CN, prediction : [0.37716532]
-(subject = 009_S_5027, group = AD, imageDataID = I373876)
-예측 결과 : CN, prediction : [0.27588043]
-(subject = 153_S_4172, group = AD, imageDataID = I251187)
-예측 결과 : CN, prediction : [0.29752457]
-(subject = 067_S_4728, group = AD, imageDataID = I348571)
-예측 결과 : CN, prediction : [0.37541386]
-(subject = 136_S_4993, group = AD, imageDataID = I342522)
-예측 결과 : CN, prediction : [0.2995751]
-(subject = 116_S_4195, group = AD, imageDataID = I335031)
-예측 결과 : CN, prediction : [0.2573047]
-(subject = 036_S_5063, group = AD, imageDataID = I368349)
-예측 결과 : CN, prediction : [0.35039476]
-(subject = 135_S_4657, group = AD, imageDataID = I342900)
-예측 결과 : CN, prediction : [0.2785552]
-(subject = 013_S_5071, group = AD, imageDataID = I390461)
-예측 결과 : CN, prediction : [0.26944134]
-(subject = 070_S_4692, group = AD, imageDataID = I302279)
-예측 결과 : CN, prediction : [0.2888852]
-(subject = 019_S_4549, group = AD, imageDataID = I300335)
-예측 결과 : CN, prediction : [0.3594082]
-(subject = 011_S_4906, group = AD, imageDataID = I330056)
-예측 결과 : CN, prediction : [0.28252703]
-(subject = 019_S_4477, group = AD, imageDataID = I412885)
-예측 결과 : CN, prediction : [0.4430237]
-(subject = 116_S_4625, group = AD, imageDataID = I313538)
-예측 결과 : CN, prediction : [0.24169001]
-(subject = 137_S_4672, group = AD, imageDataID = I340303)
-예측 결과 : CN, prediction : [0.2562295]
+예측 결과 : AD, prediction : [0.782699]
+(subject = 053_S_4578, group = CN, imageDataID = I290814)
+예측 결과 : AD, prediction : [0.72083235]
+(subject = 002_S_0413, group = CN, imageDataID = I304793)
+예측 결과 : AD, prediction : [0.75544107]
+(subject = 137_S_4587, group = CN, imageDataID = I371168)
+예측 결과 : AD, prediction : [0.75773793]
 (subject = 009_S_5037, group = AD, imageDataID = I367491)
-예측 결과 : CN, prediction : [0.3258205]
-(subject = 002_S_5178, group = CN, imageDataID = I384728)
-예측 결과 : CN, prediction : [0.36465633]
-(subject = 023_S_4448, group = CN, imageDataID = I280812)
-예측 결과 : CN, prediction : [0.27314723]
-(subject = 002_S_4262, group = CN, imageDataID = I274823)
-예측 결과 : AD, prediction : [0.46298787]
-(subject = 023_S_0061, group = CN, imageDataID = I283530)
-예측 결과 : AD, prediction : [0.6138631]
-(subject = 082_S_4224, group = CN, imageDataID = I257382)
-예측 결과 : CN, prediction : [0.44693133]
-(subject = 073_S_4393, group = CN, imageDataID = I401086)
-예측 결과 : CN, prediction : [0.21861948]
+예측 결과 : AD, prediction : [0.8644702]
+(subject = 116_S_4195, group = AD, imageDataID = I271074)
+예측 결과 : AD, prediction : [0.811205]
+(subject = 024_S_4905, group = AD, imageDataID = I363572)
+예측 결과 : AD, prediction : [0.71575296]
+(subject = 068_S_5206, group = AD, imageDataID = I379376)
+예측 결과 : AD, prediction : [0.8680559]
+(subject = 067_S_5205, group = AD, imageDataID = I376818)
+예측 결과 : AD, prediction : [0.72512954]
+(subject = 130_S_5006, group = AD, imageDataID = I360697)
+예측 결과 : AD, prediction : [0.7691713]
+(subject = 009_S_5037, group = AD, imageDataID = I414399)
+예측 결과 : AD, prediction : [0.8776858]
+(subject = 024_S_5054, group = AD, imageDataID = I352573)
+예측 결과 : AD, prediction : [0.7791768]
+(subject = 037_S_4879, group = AD, imageDataID = I349474)
+예측 결과 : AD, prediction : [0.7527562]
+(subject = 018_S_4696, group = AD, imageDataID = I321521)
+예측 결과 : AD, prediction : [0.76786774]
+(subject = 033_S_5087, group = AD, imageDataID = I416701)
+예측 결과 : AD, prediction : [0.83786726]
+(subject = 073_S_4853, group = AD, imageDataID = I315948)
+예측 결과 : AD, prediction : [0.76824236]
+(subject = 116_S_4209, group = AD, imageDataID = I253231)
+예측 결과 : AD, prediction : [0.8128612]
+(subject = 011_S_4912, group = AD, imageDataID = I363474)
+예측 결과 : AD, prediction : [0.7501769]
+(subject = 131_S_5138, group = AD, imageDataID = I379704)
+예측 결과 : AD, prediction : [0.56780094]
+(subject = 032_S_4755, group = AD, imageDataID = I313900)
+예측 결과 : AD, prediction : [0.7938171]
+(subject = 082_S_5029, group = AD, imageDataID = I364983)
+예측 결과 : AD, prediction : [0.8301088]
+(subject = 135_S_4657, group = AD, imageDataID = I369145)
+예측 결과 : AD, prediction : [0.7866294]
+(subject = 024_S_4280, group = AD, imageDataID = I276854)
+예측 결과 : AD, prediction : [0.8251618]
+(subject = 123_S_4526, group = AD, imageDataID = I416335)
+예측 결과 : AD, prediction : [0.87271816]
+(subject = 019_S_5012, group = AD, imageDataID = I372590)
+예측 결과 : AD, prediction : [0.81391585]
+(subject = 006_S_4546, group = AD, imageDataID = I310930)
+예측 결과 : AD, prediction : [0.7392034]
+(subject = 011_S_4827, group = AD, imageDataID = I338208)
+예측 결과 : AD, prediction : [0.81322634]
+(subject = 053_S_5070, group = AD, imageDataID = I389300)
+예측 결과 : AD, prediction : [0.82267433]
+(subject = 128_S_4772, group = AD, imageDataID = I310620)
+예측 결과 : AD, prediction : [0.7888825]
+(subject = 137_S_4672, group = AD, imageDataID = I420398)
+예측 결과 : AD, prediction : [0.79354227]
+(subject = 116_S_4338, group = AD, imageDataID = I264968)
+예측 결과 : AD, prediction : [0.8284995]
+(subject = 116_S_4625, group = AD, imageDataID = I296138)
+예측 결과 : AD, prediction : [0.7613994]
+(subject = 019_S_4252, group = AD, imageDataID = I341964)
+예측 결과 : AD, prediction : [0.79711723]
+(subject = 032_S_4755, group = AD, imageDataID = I339380)
+예측 결과 : AD, prediction : [0.79066116]
+(subject = 130_S_4990, group = AD, imageDataID = I342911)
+예측 결과 : AD, prediction : [0.80243653]
+(subject = 099_S_4124, group = AD, imageDataID = I247513)
+예측 결과 : AD, prediction : [0.7980529]
+(subject = 011_S_4912, group = AD, imageDataID = I346989)
+예측 결과 : AD, prediction : [0.72259337]
+(subject = 037_S_4770, group = AD, imageDataID = I315489)
+예측 결과 : AD, prediction : [0.7871328]
+(subject = 116_S_4732, group = AD, imageDataID = I336228)
+예측 결과 : AD, prediction : [0.8295303]
+(subject = 024_S_4223, group = AD, imageDataID = I291035)
+예측 결과 : AD, prediction : [0.8077574]
+(subject = 009_S_5224, group = AD, imageDataID = I381184)
+예측 결과 : AD, prediction : [0.8385777]
+(subject = 031_S_4024, group = AD, imageDataID = I263857)
+예측 결과 : AD, prediction : [0.692402]
+(subject = 137_S_4211, group = AD, imageDataID = I257193)
+예측 결과 : AD, prediction : [0.7741918]
+(subject = 067_S_4728, group = AD, imageDataID = I327068)
+예측 결과 : AD, prediction : [0.8611251]
+(subject = 036_S_4820, group = AD, imageDataID = I316737)
+예측 결과 : AD, prediction : [0.7531363]
+(subject = 024_S_5054, group = AD, imageDataID = I404608)
+예측 결과 : AD, prediction : [0.77330476]
+(subject = 130_S_4982, group = AD, imageDataID = I395985)
+예측 결과 : AD, prediction : [0.747191]
+(subject = 073_S_5016, group = AD, imageDataID = I342679)
+예측 결과 : AD, prediction : [0.6266361]
+(subject = 019_S_4477, group = AD, imageDataID = I297113)
+예측 결과 : AD, prediction : [0.7831306]
+(subject = 153_S_4172, group = AD, imageDataID = I251187)
+예측 결과 : AD, prediction : [0.81768495]
+(subject = 130_S_5006, group = AD, imageDataID = I348490)
+예측 결과 : AD, prediction : [0.78835297]
+(subject = 137_S_4672, group = AD, imageDataID = I317097)
+예측 결과 : AD, prediction : [0.79703754]
+(subject = 130_S_5059, group = AD, imageDataID = I358776)
+예측 결과 : AD, prediction : [0.7043229]
+(subject = 036_S_4894, group = AD, imageDataID = I323094)
+예측 결과 : AD, prediction : [0.7038163]
+(subject = 082_S_4090, group = CN, imageDataID = I241094)
+예측 결과 : CN, prediction : [0.34150785]
+(subject = 014_S_4576, group = CN, imageDataID = I336069)
+예측 결과 : CN, prediction : [0.2110814]
+(subject = 037_S_4071, group = CN, imageDataID = I412222)
+예측 결과 : CN, prediction : [0.32531938]
+(subject = 006_S_4150, group = CN, imageDataID = I336214)
+예측 결과 : AD, prediction : [0.52295]
+(subject = 032_S_1169, group = CN, imageDataID = I282651)
+예측 결과 : CN, prediction : [0.36525095]
+(subject = 022_S_4266, group = CN, imageDataID = I289098)
+예측 결과 : CN, prediction : [0.18000656]
+(subject = 009_S_4337, group = CN, imageDataID = I346460)
+예측 결과 : CN, prediction : [0.41281706]
+(subject = 037_S_4028, group = CN, imageDataID = I495892)
+예측 결과 : CN, prediction : [0.17199016]
+(subject = 067_S_0056, group = CN, imageDataID = I279513)
+예측 결과 : CN, prediction : [0.13539194]
+(subject = 009_S_0842, group = CN, imageDataID = I499406)
+예측 결과 : CN, prediction : [0.30105636]
+(subject = 033_S_4179, group = CN, imageDataID = I252069)
+예측 결과 : AD, prediction : [0.5106512]
+(subject = 011_S_0023, group = CN, imageDataID = I342262)
+예측 결과 : CN, prediction : [0.41673762]
+(subject = 003_S_0981, group = CN, imageDataID = I295005)
+예측 결과 : AD, prediction : [0.7028784]
+(subject = 941_S_4255, group = CN, imageDataID = I397804)
+예측 결과 : CN, prediction : [0.37424353]
+(subject = 067_S_0257, group = CN, imageDataID = I317533)
+예측 결과 : CN, prediction : [0.44773543]
+(subject = 011_S_4222, group = CN, imageDataID = I256865)
+예측 결과 : CN, prediction : [0.22491081]
+(subject = 067_S_0056, group = CN, imageDataID = I401691)
+예측 결과 : CN, prediction : [0.2296705]
+(subject = 116_S_4483, group = CN, imageDataID = I301748)
+예측 결과 : CN, prediction : [0.26677907]
+(subject = 018_S_4313, group = CN, imageDataID = I268930)
+예측 결과 : CN, prediction : [0.2742245]
+(subject = 011_S_4120, group = CN, imageDataID = I397486)
+예측 결과 : CN, prediction : [0.30235985]
+(subject = 137_S_4632, group = CN, imageDataID = I435040)
+예측 결과 : CN, prediction : [0.1916068]
+(subject = 037_S_4410, group = CN, imageDataID = I311751)
+예측 결과 : CN, prediction : [0.21995752]
+(subject = 023_S_1190, group = CN, imageDataID = I415243)
+예측 결과 : CN, prediction : [0.22446425]
+(subject = 012_S_4545, group = CN, imageDataID = I665221)
+예측 결과 : CN, prediction : [0.31498623]
+(subject = 037_S_4071, group = CN, imageDataID = I384204)
+예측 결과 : CN, prediction : [0.4587061]
+(subject = 033_S_4177, group = CN, imageDataID = I389487)
+예측 결과 : AD, prediction : [0.687233]
 (subject = 036_S_4491, group = CN, imageDataID = I281772)
-예측 결과 : AD, prediction : [0.558997]
-(subject = 037_S_4410, group = CN, imageDataID = I290033)
-예측 결과 : CN, prediction : [0.24995013]
-(subject = 022_S_4291, group = CN, imageDataID = I361312)
-예측 결과 : AD, prediction : [0.52774084]
-(subject = 053_S_4578, group = CN, imageDataID = I366391)
-예측 결과 : CN, prediction : [0.37743112]
-(subject = 128_S_4586, group = CN, imageDataID = I308307)
-예측 결과 : CN, prediction : [0.44060302]
-(subject = 018_S_4400, group = CN, imageDataID = I353125)
-예측 결과 : CN, prediction : [0.30847213]
-(subject = 014_S_4577, group = CN, imageDataID = I384900)
-예측 결과 : CN, prediction : [0.40041867]
-(subject = 018_S_4400, group = CN, imageDataID = I580989)
-예측 결과 : CN, prediction : [0.20307456]
-(subject = 153_S_4372, group = CN, imageDataID = I575681)
-예측 결과 : AD, prediction : [0.46303883]
-(subject = 014_S_4080, group = CN, imageDataID = I272384)
-예측 결과 : AD, prediction : [0.52146876]
-(subject = 014_S_4401, group = CN, imageDataID = I310601)
-예측 결과 : CN, prediction : [0.3130704]
-(subject = 082_S_4090, group = CN, imageDataID = I384356)
-예측 결과 : CN, prediction : [0.44521418]
-(subject = 082_S_4224, group = CN, imageDataID = I1043686)
-예측 결과 : AD, prediction : [0.521477]
-(subject = 016_S_0359, group = CN, imageDataID = I783532)
-예측 결과 : CN, prediction : [0.43173414]
-(subject = 135_S_5113, group = CN, imageDataID = I499660)
-예측 결과 : AD, prediction : [0.49534798]
-(subject = 014_S_4093, group = CN, imageDataID = I277894)
-예측 결과 : AD, prediction : [0.5509218]
-(subject = 153_S_4151, group = CN, imageDataID = I389229)
-예측 결과 : AD, prediction : [0.637213]
-(subject = 137_S_4632, group = CN, imageDataID = I377606)
-예측 결과 : CN, prediction : [0.28459173]
-(subject = 041_S_4060, group = CN, imageDataID = I495795)
-예측 결과 : AD, prediction : [0.45676684]
-(subject = 100_S_4469, group = CN, imageDataID = I289564)
-예측 결과 : CN, prediction : [0.36996207]
-(subject = 941_S_1195, group = CN, imageDataID = I420205)
-예측 결과 : AD, prediction : [0.62883663]
-(subject = 136_S_4433, group = CN, imageDataID = I278511)
-예측 결과 : CN, prediction : [0.27907708]
-(subject = 006_S_0731, group = CN, imageDataID = I552099)
-예측 결과 : CN, prediction : [0.37748122]
-(subject = 037_S_5126, group = CN, imageDataID = I492146)
-예측 결과 : AD, prediction : [0.50056684]
-(subject = 135_S_5113, group = CN, imageDataID = I365355)
-예측 결과 : AD, prediction : [0.5497238]
-(subject = 100_S_4469, group = CN, imageDataID = I366946)
-예측 결과 : CN, prediction : [0.32338145]
-(subject = 006_S_4449, group = CN, imageDataID = I319631)
-예측 결과 : CN, prediction : [0.1964713]
-(subject = 041_S_5253, group = CN, imageDataID = I381326)
-예측 결과 : CN, prediction : [0.24128698]
-(subject = 137_S_4466, group = CN, imageDataID = I280773)
-예측 결과 : AD, prediction : [0.5040228]
-(subject = 070_S_5040, group = CN, imageDataID = I382389)
-예측 결과 : CN, prediction : [0.35824051]
-(subject = 037_S_0467, group = CN, imageDataID = I498649)
-예측 결과 : AD, prediction : [0.6417237]
-(subject = 036_S_4491, group = CN, imageDataID = I323086)
-예측 결과 : AD, prediction : [0.5377679]
-(subject = 128_S_4599, group = CN, imageDataID = I487400)
-예측 결과 : CN, prediction : [0.22133704]
-(subject = 070_S_5040, group = CN, imageDataID = I348757)
-예측 결과 : AD, prediction : [0.48462486]
+예측 결과 : CN, prediction : [0.4307354]
+(subject = 023_S_0058, group = CN, imageDataID = I229512)
+예측 결과 : CN, prediction : [0.09723593]
+(subject = 010_S_4442, group = CN, imageDataID = I319212)
+예측 결과 : CN, prediction : [0.42128155]
+(subject = 129_S_4369, group = CN, imageDataID = I322057)
+예측 결과 : CN, prediction : [0.21708524]
+(subject = 053_S_4578, group = CN, imageDataID = I337996)
+예측 결과 : CN, prediction : [0.3880461]
+(subject = 116_S_4092, group = CN, imageDataID = I502211)
+예측 결과 : CN, prediction : [0.49376225]
+(subject = 032_S_4429, group = CN, imageDataID = I666365)
+예측 결과 : CN, prediction : [0.2982272]
+(subject = 023_S_4020, group = CN, imageDataID = I281785)
+예측 결과 : CN, prediction : [0.2915401]
+(subject = 135_S_4598, group = CN, imageDataID = I311224)
+예측 결과 : CN, prediction : [0.30186293]
+(subject = 002_S_0295, group = CN, imageDataID = I303066)
+예측 결과 : AD, prediction : [0.7026879]
+(subject = 130_S_5175, group = CN, imageDataID = I385730)
+예측 결과 : AD, prediction : [0.5704293]
+(subject = 116_S_4092, group = CN, imageDataID = I241692)
+예측 결과 : AD, prediction : [0.524481]
+(subject = 022_S_4291, group = CN, imageDataID = I415168)
+예측 결과 : CN, prediction : [0.1535127]
+(subject = 023_S_4164, group = CN, imageDataID = I351091)
+예측 결과 : AD, prediction : [0.5983212]
+(subject = 137_S_4466, group = CN, imageDataID = I361913)
+예측 결과 : CN, prediction : [0.3155451]
+(subject = 051_S_1123, group = CN, imageDataID = I327000)
+예측 결과 : CN, prediction : [0.12745804]
+(subject = 073_S_4552, group = CN, imageDataID = I368465)
+예측 결과 : CN, prediction : [0.2818434]
+(subject = 032_S_4921, group = CN, imageDataID = I366251)
+예측 결과 : CN, prediction : [0.25377646]
+(subject = 135_S_4598, group = CN, imageDataID = I291138)
+예측 결과 : CN, prediction : [0.2576488]
+(subject = 011_S_4278, group = CN, imageDataID = I543530)
+예측 결과 : CN, prediction : [0.4610464]
 (subject = 002_S_0685, group = CN, imageDataID = I322437)
-예측 결과 : AD, prediction : [0.47172186]
-(subject = 941_S_4376, group = CN, imageDataID = I423568)
-예측 결과 : AD, prediction : [0.5209457]
-(subject = 009_S_0751, group = CN, imageDataID = I390969)
-예측 결과 : AD, prediction : [0.59303856]
-(subject = 014_S_4576, group = CN, imageDataID = I289484)
-예측 결과 : CN, prediction : [0.32176563]
-(subject = 031_S_4032, group = CN, imageDataID = I371757)
-예측 결과 : CN, prediction : [0.3964881]
-(subject = 036_S_4389, group = CN, imageDataID = I410160)
-예측 결과 : AD, prediction : [0.47650665]
-(subject = 018_S_4257, group = CN, imageDataID = I320516)
-예측 결과 : AD, prediction : [0.5232035]
-(subject = 011_S_4278, group = CN, imageDataID = I275327)
-예측 결과 : AD, prediction : [0.5150741]
-(subject = 023_S_4020, group = CN, imageDataID = I500692)
-예측 결과 : AD, prediction : [0.5285768]
-(subject = 116_S_4855, group = CN, imageDataID = I500525)
-예측 결과 : AD, prediction : [0.6456058]
-(subject = 116_S_4195, group = AD, imageDataID = I271074)
-예측 결과 : AD, prediction : [0.5768933]
-(subject = 128_S_4792, group = AD, imageDataID = I310913)
-예측 결과 : AD, prediction : [0.7094853]
-(subject = 128_S_4792, group = AD, imageDataID = I344002)
-예측 결과 : AD, prediction : [0.76510113]
-(subject = 135_S_4676, group = AD, imageDataID = I424528)
-예측 결과 : AD, prediction : [0.6346901]
-(subject = 036_S_4820, group = AD, imageDataID = I338405)
-예측 결과 : AD, prediction : [0.63363415]
-(subject = 130_S_4982, group = AD, imageDataID = I341787)
-예측 결과 : AD, prediction : [0.5452829]
-(subject = 073_S_4853, group = AD, imageDataID = I341846)
-예측 결과 : AD, prediction : [0.4732183]
-(subject = 123_S_4526, group = AD, imageDataID = I302642)
-예측 결과 : AD, prediction : [0.72652197]
-(subject = 036_S_4894, group = AD, imageDataID = I387580)
-예측 결과 : AD, prediction : [0.5487083]
-(subject = 011_S_4912, group = AD, imageDataID = I363474)
-예측 결과 : CN, prediction : [0.40603969]
-(subject = 037_S_4770, group = AD, imageDataID = I315489)
-예측 결과 : AD, prediction : [0.65643334]
-(subject = 006_S_4192, group = AD, imageDataID = I302036)
-예측 결과 : CN, prediction : [0.40071464]
-(subject = 036_S_4894, group = AD, imageDataID = I363016)
-예측 결과 : AD, prediction : [0.48251978]
-(subject = 011_S_4906, group = AD, imageDataID = I346967)
-예측 결과 : AD, prediction : [0.59292144]
-(subject = 123_S_4526, group = AD, imageDataID = I416335)
-예측 결과 : AD, prediction : [0.78570586]
-(subject = 082_S_5029, group = AD, imageDataID = I364977)
-예측 결과 : AD, prediction : [0.6681723]
-(subject = 036_S_5112, group = AD, imageDataID = I371195)
-예측 결과 : CN, prediction : [0.41333088]
-(subject = 116_S_4209, group = AD, imageDataID = I253234)
-예측 결과 : AD, prediction : [0.6682742]
-(subject = 019_S_5012, group = AD, imageDataID = I372590)
-예측 결과 : AD, prediction : [0.67800766]
-(subject = 011_S_4912, group = AD, imageDataID = I346989)
-예측 결과 : CN, prediction : [0.39906982]
-(subject = 009_S_5224, group = AD, imageDataID = I381184)
-예측 결과 : AD, prediction : [0.7211106]
-(subject = 128_S_4774, group = AD, imageDataID = I311833)
-예측 결과 : AD, prediction : [0.4899851]
-(subject = 037_S_5162, group = AD, imageDataID = I382019)
-예측 결과 : CN, prediction : [0.42271793]
-(subject = 051_S_5005, group = AD, imageDataID = I344149)
-예측 결과 : AD, prediction : [0.50051874]
-(subject = 053_S_5070, group = AD, imageDataID = I372257)
-예측 결과 : AD, prediction : [0.69322926]
-(subject = 053_S_5070, group = AD, imageDataID = I357474)
-예측 결과 : AD, prediction : [0.71145815]
-(subject = 068_S_4968, group = AD, imageDataID = I360599)
-예측 결과 : AD, prediction : [0.75492316]
-(subject = 130_S_4730, group = AD, imageDataID = I352404)
-예측 결과 : AD, prediction : [0.5040998]
-(subject = 013_S_5071, group = AD, imageDataID = I413792)
-예측 결과 : AD, prediction : [0.63648486]
-(subject = 019_S_5019, group = AD, imageDataID = I372477)
-예측 결과 : AD, prediction : [0.46661285]
-(subject = 036_S_5063, group = AD, imageDataID = I355515)
-예측 결과 : AD, prediction : [0.6274711]
-(subject = 006_S_4153, group = AD, imageDataID = I248517)
-예측 결과 : CN, prediction : [0.21331307]
-(subject = 011_S_4845, group = AD, imageDataID = I337141)
-예측 결과 : AD, prediction : [0.575192]
-(subject = 019_S_4477, group = AD, imageDataID = I322346)
-예측 결과 : AD, prediction : [0.64610934]
-(subject = 019_S_4549, group = AD, imageDataID = I317439)
-예측 결과 : AD, prediction : [0.62067014]
-(subject = 009_S_5027, group = AD, imageDataID = I373876)
-예측 결과 : AD, prediction : [0.5487399]
-(subject = 153_S_4172, group = AD, imageDataID = I251187)
-예측 결과 : AD, prediction : [0.6590029]
-(subject = 067_S_4728, group = AD, imageDataID = I348571)
-예측 결과 : AD, prediction : [0.78856397]
-(subject = 136_S_4993, group = AD, imageDataID = I342522)
-예측 결과 : CN, prediction : [0.32886627]
-(subject = 116_S_4195, group = AD, imageDataID = I335031)
-예측 결과 : AD, prediction : [0.5205639]
-(subject = 036_S_5063, group = AD, imageDataID = I368349)
-예측 결과 : AD, prediction : [0.66669893]
-(subject = 135_S_4657, group = AD, imageDataID = I342900)
-예측 결과 : AD, prediction : [0.47867417]
-(subject = 013_S_5071, group = AD, imageDataID = I390461)
-예측 결과 : CN, prediction : [0.44415134]
-(subject = 070_S_4692, group = AD, imageDataID = I302279)
-예측 결과 : AD, prediction : [0.630607]
-(subject = 019_S_4549, group = AD, imageDataID = I300335)
-예측 결과 : AD, prediction : [0.61814713]
-(subject = 011_S_4906, group = AD, imageDataID = I330056)
-예측 결과 : AD, prediction : [0.59262323]
-(subject = 019_S_4477, group = AD, imageDataID = I412885)
-예측 결과 : AD, prediction : [0.67003274]
-(subject = 116_S_4625, group = AD, imageDataID = I313538)
-예측 결과 : AD, prediction : [0.52596796]
-(subject = 137_S_4672, group = AD, imageDataID = I340303)
-예측 결과 : AD, prediction : [0.6084886]
+예측 결과 : AD, prediction : [0.5837189]
+(subject = 053_S_4578, group = CN, imageDataID = I290814)
+예측 결과 : CN, prediction : [0.43182924]
+(subject = 002_S_0413, group = CN, imageDataID = I304793)
+예측 결과 : CN, prediction : [0.39892396]
+(subject = 137_S_4587, group = CN, imageDataID = I371168)
+예측 결과 : CN, prediction : [0.2935285]
 (subject = 009_S_5037, group = AD, imageDataID = I367491)
-예측 결과 : AD, prediction : [0.7686667]
-(subject = 002_S_5178, group = CN, imageDataID = I384728)
-예측 결과 : AD, prediction : [0.5878886]
-(subject = 023_S_4448, group = CN, imageDataID = I280812)
-예측 결과 : CN, prediction : [0.24441741]
-(subject = 002_S_4262, group = CN, imageDataID = I274823)
-예측 결과 : AD, prediction : [0.66425675]
-(subject = 023_S_0061, group = CN, imageDataID = I283530)
-예측 결과 : AD, prediction : [0.5079224]
-(subject = 082_S_4224, group = CN, imageDataID = I257382)
-예측 결과 : CN, prediction : [0.39160317]
-(subject = 073_S_4393, group = CN, imageDataID = I401086)
-예측 결과 : CN, prediction : [0.22614972]
+예측 결과 : AD, prediction : [0.803344]
+(subject = 116_S_4195, group = AD, imageDataID = I271074)
+예측 결과 : CN, prediction : [0.47438002]
+(subject = 024_S_4905, group = AD, imageDataID = I363572)
+예측 결과 : CN, prediction : [0.44715574]
+(subject = 068_S_5206, group = AD, imageDataID = I379376)
+예측 결과 : AD, prediction : [0.7045019]
+(subject = 067_S_5205, group = AD, imageDataID = I376818)
+예측 결과 : AD, prediction : [0.6115192]
+(subject = 130_S_5006, group = AD, imageDataID = I360697)
+예측 결과 : AD, prediction : [0.6049785]
+(subject = 009_S_5037, group = AD, imageDataID = I414399)
+예측 결과 : AD, prediction : [0.7956916]
+(subject = 024_S_5054, group = AD, imageDataID = I352573)
+예측 결과 : AD, prediction : [0.50759226]
+(subject = 037_S_4879, group = AD, imageDataID = I349474)
+예측 결과 : CN, prediction : [0.40892783]
+(subject = 018_S_4696, group = AD, imageDataID = I321521)
+예측 결과 : AD, prediction : [0.5513117]
+(subject = 033_S_5087, group = AD, imageDataID = I416701)
+예측 결과 : AD, prediction : [0.6864809]
+(subject = 073_S_4853, group = AD, imageDataID = I315948)
+예측 결과 : CN, prediction : [0.48158994]
+(subject = 116_S_4209, group = AD, imageDataID = I253231)
+예측 결과 : CN, prediction : [0.47354847]
+(subject = 011_S_4912, group = AD, imageDataID = I363474)
+예측 결과 : CN, prediction : [0.26145712]
+(subject = 131_S_5138, group = AD, imageDataID = I379704)
+예측 결과 : CN, prediction : [0.25251144]
+(subject = 032_S_4755, group = AD, imageDataID = I313900)
+예측 결과 : AD, prediction : [0.7046888]
+(subject = 082_S_5029, group = AD, imageDataID = I364983)
+예측 결과 : AD, prediction : [0.6622806]
+(subject = 135_S_4657, group = AD, imageDataID = I369145)
+예측 결과 : CN, prediction : [0.3969522]
+(subject = 024_S_4280, group = AD, imageDataID = I276854)
+예측 결과 : AD, prediction : [0.66573346]
+(subject = 123_S_4526, group = AD, imageDataID = I416335)
+예측 결과 : AD, prediction : [0.57414204]
+(subject = 019_S_5012, group = AD, imageDataID = I372590)
+예측 결과 : AD, prediction : [0.73952967]
+(subject = 006_S_4546, group = AD, imageDataID = I310930)
+예측 결과 : AD, prediction : [0.6155568]
+(subject = 011_S_4827, group = AD, imageDataID = I338208)
+예측 결과 : AD, prediction : [0.5931492]
+(subject = 053_S_5070, group = AD, imageDataID = I389300)
+예측 결과 : AD, prediction : [0.8325554]
+(subject = 128_S_4772, group = AD, imageDataID = I310620)
+예측 결과 : CN, prediction : [0.3736603]
+(subject = 137_S_4672, group = AD, imageDataID = I420398)
+예측 결과 : CN, prediction : [0.49733666]
+(subject = 116_S_4338, group = AD, imageDataID = I264968)
+예측 결과 : AD, prediction : [0.5808897]
+(subject = 116_S_4625, group = AD, imageDataID = I296138)
+예측 결과 : AD, prediction : [0.55214864]
+(subject = 019_S_4252, group = AD, imageDataID = I341964)
+예측 결과 : AD, prediction : [0.6541437]
+(subject = 032_S_4755, group = AD, imageDataID = I339380)
+예측 결과 : AD, prediction : [0.56843877]
+(subject = 130_S_4990, group = AD, imageDataID = I342911)
+예측 결과 : AD, prediction : [0.7342603]
+(subject = 099_S_4124, group = AD, imageDataID = I247513)
+예측 결과 : CN, prediction : [0.2286996]
+(subject = 011_S_4912, group = AD, imageDataID = I346989)
+예측 결과 : CN, prediction : [0.2745945]
+(subject = 037_S_4770, group = AD, imageDataID = I315489)
+예측 결과 : AD, prediction : [0.5898916]
+(subject = 116_S_4732, group = AD, imageDataID = I336228)
+예측 결과 : AD, prediction : [0.62523144]
+(subject = 024_S_4223, group = AD, imageDataID = I291035)
+예측 결과 : AD, prediction : [0.7127754]
+(subject = 009_S_5224, group = AD, imageDataID = I381184)
+예측 결과 : AD, prediction : [0.5279763]
+(subject = 031_S_4024, group = AD, imageDataID = I263857)
+예측 결과 : CN, prediction : [0.3747194]
+(subject = 137_S_4211, group = AD, imageDataID = I257193)
+예측 결과 : AD, prediction : [0.5992928]
+(subject = 067_S_4728, group = AD, imageDataID = I327068)
+예측 결과 : AD, prediction : [0.6490914]
+(subject = 036_S_4820, group = AD, imageDataID = I316737)
+예측 결과 : CN, prediction : [0.37283063]
+(subject = 024_S_5054, group = AD, imageDataID = I404608)
+예측 결과 : CN, prediction : [0.480576]
+(subject = 130_S_4982, group = AD, imageDataID = I395985)
+예측 결과 : AD, prediction : [0.69521415]
+(subject = 073_S_5016, group = AD, imageDataID = I342679)
+예측 결과 : CN, prediction : [0.15525214]
+(subject = 019_S_4477, group = AD, imageDataID = I297113)
+예측 결과 : AD, prediction : [0.6614893]
+(subject = 153_S_4172, group = AD, imageDataID = I251187)
+예측 결과 : AD, prediction : [0.5354286]
+(subject = 130_S_5006, group = AD, imageDataID = I348490)
+예측 결과 : AD, prediction : [0.6816692]
+(subject = 137_S_4672, group = AD, imageDataID = I317097)
+예측 결과 : CN, prediction : [0.429978]
+(subject = 130_S_5059, group = AD, imageDataID = I358776)
+예측 결과 : CN, prediction : [0.4775308]
+(subject = 036_S_4894, group = AD, imageDataID = I323094)
+예측 결과 : CN, prediction : [0.2152459]
+(subject = 082_S_4090, group = CN, imageDataID = I241094)
+예측 결과 : CN, prediction : [0.4599295]
+(subject = 014_S_4576, group = CN, imageDataID = I336069)
+예측 결과 : CN, prediction : [0.31688103]
+(subject = 037_S_4071, group = CN, imageDataID = I412222)
+예측 결과 : AD, prediction : [0.61476827]
+(subject = 006_S_4150, group = CN, imageDataID = I336214)
+예측 결과 : AD, prediction : [0.6172768]
+(subject = 032_S_1169, group = CN, imageDataID = I282651)
+예측 결과 : AD, prediction : [0.6230578]
+(subject = 022_S_4266, group = CN, imageDataID = I289098)
+예측 결과 : CN, prediction : [0.38852414]
+(subject = 009_S_4337, group = CN, imageDataID = I346460)
+예측 결과 : AD, prediction : [0.6049657]
+(subject = 037_S_4028, group = CN, imageDataID = I495892)
+예측 결과 : CN, prediction : [0.299921]
+(subject = 067_S_0056, group = CN, imageDataID = I279513)
+예측 결과 : CN, prediction : [0.1952365]
+(subject = 009_S_0842, group = CN, imageDataID = I499406)
+예측 결과 : CN, prediction : [0.49842486]
+(subject = 033_S_4179, group = CN, imageDataID = I252069)
+예측 결과 : AD, prediction : [0.6700148]
+(subject = 011_S_0023, group = CN, imageDataID = I342262)
+예측 결과 : CN, prediction : [0.49016395]
+(subject = 003_S_0981, group = CN, imageDataID = I295005)
+예측 결과 : AD, prediction : [0.69849086]
+(subject = 941_S_4255, group = CN, imageDataID = I397804)
+예측 결과 : AD, prediction : [0.5977069]
+(subject = 067_S_0257, group = CN, imageDataID = I317533)
+예측 결과 : CN, prediction : [0.48643]
+(subject = 011_S_4222, group = CN, imageDataID = I256865)
+예측 결과 : AD, prediction : [0.53159547]
+(subject = 067_S_0056, group = CN, imageDataID = I401691)
+예측 결과 : CN, prediction : [0.3669129]
+(subject = 116_S_4483, group = CN, imageDataID = I301748)
+예측 결과 : CN, prediction : [0.49945748]
+(subject = 018_S_4313, group = CN, imageDataID = I268930)
+예측 결과 : CN, prediction : [0.30363357]
+(subject = 011_S_4120, group = CN, imageDataID = I397486)
+예측 결과 : AD, prediction : [0.56943023]
+(subject = 137_S_4632, group = CN, imageDataID = I435040)
+예측 결과 : AD, prediction : [0.56484675]
+(subject = 037_S_4410, group = CN, imageDataID = I311751)
+예측 결과 : CN, prediction : [0.36153623]
+(subject = 023_S_1190, group = CN, imageDataID = I415243)
+예측 결과 : CN, prediction : [0.48320836]
+(subject = 012_S_4545, group = CN, imageDataID = I665221)
+예측 결과 : CN, prediction : [0.48320416]
+(subject = 037_S_4071, group = CN, imageDataID = I384204)
+예측 결과 : AD, prediction : [0.69331205]
+(subject = 033_S_4177, group = CN, imageDataID = I389487)
+예측 결과 : AD, prediction : [0.7443505]
 (subject = 036_S_4491, group = CN, imageDataID = I281772)
-예측 결과 : AD, prediction : [0.46253547]
-(subject = 037_S_4410, group = CN, imageDataID = I290033)
-예측 결과 : CN, prediction : [0.2581206]
-(subject = 022_S_4291, group = CN, imageDataID = I361312)
-예측 결과 : AD, prediction : [0.5713477]
-(subject = 053_S_4578, group = CN, imageDataID = I366391)
-예측 결과 : AD, prediction : [0.6102963]
-(subject = 128_S_4586, group = CN, imageDataID = I308307)
-예측 결과 : CN, prediction : [0.35384932]
-(subject = 018_S_4400, group = CN, imageDataID = I353125)
-예측 결과 : CN, prediction : [0.28143564]
-(subject = 014_S_4577, group = CN, imageDataID = I384900)
-예측 결과 : CN, prediction : [0.361493]
-(subject = 018_S_4400, group = CN, imageDataID = I580989)
-예측 결과 : CN, prediction : [0.22722395]
-(subject = 153_S_4372, group = CN, imageDataID = I575681)
-예측 결과 : CN, prediction : [0.35132936]
-(subject = 014_S_4080, group = CN, imageDataID = I272384)
-예측 결과 : AD, prediction : [0.4977426]
-(subject = 014_S_4401, group = CN, imageDataID = I310601)
-예측 결과 : CN, prediction : [0.31100667]
-(subject = 082_S_4090, group = CN, imageDataID = I384356)
-예측 결과 : CN, prediction : [0.3444832]
-(subject = 082_S_4224, group = CN, imageDataID = I1043686)
-예측 결과 : AD, prediction : [0.5576488]
-(subject = 016_S_0359, group = CN, imageDataID = I783532)
-예측 결과 : CN, prediction : [0.3256025]
-(subject = 135_S_5113, group = CN, imageDataID = I499660)
-예측 결과 : CN, prediction : [0.3600703]
-(subject = 014_S_4093, group = CN, imageDataID = I277894)
-예측 결과 : AD, prediction : [0.5599812]
-(subject = 153_S_4151, group = CN, imageDataID = I389229)
-예측 결과 : CN, prediction : [0.44570166]
-(subject = 137_S_4632, group = CN, imageDataID = I377606)
-예측 결과 : CN, prediction : [0.31634057]
-(subject = 041_S_4060, group = CN, imageDataID = I495795)
-예측 결과 : AD, prediction : [0.49243265]
-(subject = 100_S_4469, group = CN, imageDataID = I289564)
-예측 결과 : AD, prediction : [0.6316369]
-(subject = 941_S_1195, group = CN, imageDataID = I420205)
-예측 결과 : AD, prediction : [0.6425312]
-(subject = 136_S_4433, group = CN, imageDataID = I278511)
-예측 결과 : CN, prediction : [0.2696197]
-(subject = 006_S_0731, group = CN, imageDataID = I552099)
-예측 결과 : AD, prediction : [0.47784287]
-(subject = 037_S_5126, group = CN, imageDataID = I492146)
-예측 결과 : CN, prediction : [0.42492977]
-(subject = 135_S_5113, group = CN, imageDataID = I365355)
-예측 결과 : CN, prediction : [0.38624564]
-(subject = 100_S_4469, group = CN, imageDataID = I366946)
-예측 결과 : AD, prediction : [0.5675209]
-(subject = 006_S_4449, group = CN, imageDataID = I319631)
-예측 결과 : CN, prediction : [0.38551277]
-(subject = 041_S_5253, group = CN, imageDataID = I381326)
-예측 결과 : CN, prediction : [0.17045046]
-(subject = 137_S_4466, group = CN, imageDataID = I280773)
-예측 결과 : CN, prediction : [0.36126634]
-(subject = 070_S_5040, group = CN, imageDataID = I382389)
-예측 결과 : CN, prediction : [0.33710498]
-(subject = 037_S_0467, group = CN, imageDataID = I498649)
-예측 결과 : AD, prediction : [0.57875013]
-(subject = 036_S_4491, group = CN, imageDataID = I323086)
-예측 결과 : CN, prediction : [0.43885735]
-(subject = 128_S_4599, group = CN, imageDataID = I487400)
-예측 결과 : CN, prediction : [0.20718588]
-(subject = 070_S_5040, group = CN, imageDataID = I348757)
-예측 결과 : CN, prediction : [0.4318474]
+예측 결과 : AD, prediction : [0.6444505]
+(subject = 023_S_0058, group = CN, imageDataID = I229512)
+예측 결과 : CN, prediction : [0.301972]
+(subject = 010_S_4442, group = CN, imageDataID = I319212)
+예측 결과 : AD, prediction : [0.60192126]
+(subject = 129_S_4369, group = CN, imageDataID = I322057)
+예측 결과 : CN, prediction : [0.37998948]
+(subject = 053_S_4578, group = CN, imageDataID = I337996)
+예측 결과 : AD, prediction : [0.5473648]
+(subject = 116_S_4092, group = CN, imageDataID = I502211)
+예측 결과 : AD, prediction : [0.6584317]
+(subject = 032_S_4429, group = CN, imageDataID = I666365)
+예측 결과 : AD, prediction : [0.5344327]
+(subject = 023_S_4020, group = CN, imageDataID = I281785)
+예측 결과 : AD, prediction : [0.5569165]
+(subject = 135_S_4598, group = CN, imageDataID = I311224)
+예측 결과 : CN, prediction : [0.4916821]
+(subject = 002_S_0295, group = CN, imageDataID = I303066)
+예측 결과 : AD, prediction : [0.74565005]
+(subject = 130_S_5175, group = CN, imageDataID = I385730)
+예측 결과 : AD, prediction : [0.67278117]
+(subject = 116_S_4092, group = CN, imageDataID = I241692)
+예측 결과 : AD, prediction : [0.62781894]
+(subject = 022_S_4291, group = CN, imageDataID = I415168)
+예측 결과 : CN, prediction : [0.478418]
+(subject = 023_S_4164, group = CN, imageDataID = I351091)
+예측 결과 : AD, prediction : [0.5530065]
+(subject = 137_S_4466, group = CN, imageDataID = I361913)
+예측 결과 : CN, prediction : [0.47605538]
+(subject = 051_S_1123, group = CN, imageDataID = I327000)
+예측 결과 : CN, prediction : [0.28469068]
+(subject = 073_S_4552, group = CN, imageDataID = I368465)
+예측 결과 : CN, prediction : [0.4700067]
+(subject = 032_S_4921, group = CN, imageDataID = I366251)
+예측 결과 : CN, prediction : [0.4813414]
+(subject = 135_S_4598, group = CN, imageDataID = I291138)
+예측 결과 : CN, prediction : [0.45189178]
+(subject = 011_S_4278, group = CN, imageDataID = I543530)
+예측 결과 : AD, prediction : [0.60056674]
 (subject = 002_S_0685, group = CN, imageDataID = I322437)
-예측 결과 : AD, prediction : [0.6958802]
-(subject = 941_S_4376, group = CN, imageDataID = I423568)
-예측 결과 : AD, prediction : [0.5201935]
-(subject = 009_S_0751, group = CN, imageDataID = I390969)
-예측 결과 : AD, prediction : [0.49341443]
-(subject = 014_S_4576, group = CN, imageDataID = I289484)
-예측 결과 : CN, prediction : [0.3100305]
-(subject = 031_S_4032, group = CN, imageDataID = I371757)
-예측 결과 : CN, prediction : [0.4355664]
-(subject = 036_S_4389, group = CN, imageDataID = I410160)
-예측 결과 : AD, prediction : [0.61329925]
-(subject = 018_S_4257, group = CN, imageDataID = I320516)
-예측 결과 : AD, prediction : [0.47763065]
-(subject = 011_S_4278, group = CN, imageDataID = I275327)
-예측 결과 : CN, prediction : [0.37294766]
-(subject = 023_S_4020, group = CN, imageDataID = I500692)
-예측 결과 : AD, prediction : [0.60941195]
-(subject = 116_S_4855, group = CN, imageDataID = I500525)
-예측 결과 : AD, prediction : [0.7055025]
-(subject = 116_S_4195, group = AD, imageDataID = I271074)
-예측 결과 : AD, prediction : [0.5045866]
-(subject = 128_S_4792, group = AD, imageDataID = I310913)
-예측 결과 : AD, prediction : [0.6960745]
-(subject = 128_S_4792, group = AD, imageDataID = I344002)
-예측 결과 : AD, prediction : [0.76336646]
-(subject = 135_S_4676, group = AD, imageDataID = I424528)
-예측 결과 : AD, prediction : [0.63052756]
-(subject = 036_S_4820, group = AD, imageDataID = I338405)
-예측 결과 : AD, prediction : [0.51375884]
-(subject = 130_S_4982, group = AD, imageDataID = I341787)
-예측 결과 : AD, prediction : [0.66412765]
-(subject = 073_S_4853, group = AD, imageDataID = I341846)
-예측 결과 : AD, prediction : [0.58176315]
-(subject = 123_S_4526, group = AD, imageDataID = I302642)
-예측 결과 : AD, prediction : [0.6724455]
-(subject = 036_S_4894, group = AD, imageDataID = I387580)
-예측 결과 : AD, prediction : [0.53249496]
-(subject = 011_S_4912, group = AD, imageDataID = I363474)
-예측 결과 : CN, prediction : [0.31526884]
-(subject = 037_S_4770, group = AD, imageDataID = I315489)
-예측 결과 : AD, prediction : [0.5031356]
-(subject = 006_S_4192, group = AD, imageDataID = I302036)
-예측 결과 : AD, prediction : [0.5773403]
-(subject = 036_S_4894, group = AD, imageDataID = I363016)
-예측 결과 : AD, prediction : [0.49731347]
-(subject = 011_S_4906, group = AD, imageDataID = I346967)
-예측 결과 : AD, prediction : [0.55899143]
-(subject = 123_S_4526, group = AD, imageDataID = I416335)
-예측 결과 : AD, prediction : [0.76620036]
-(subject = 082_S_5029, group = AD, imageDataID = I364977)
-예측 결과 : AD, prediction : [0.64914745]
-(subject = 036_S_5112, group = AD, imageDataID = I371195)
-예측 결과 : CN, prediction : [0.28970343]
-(subject = 116_S_4209, group = AD, imageDataID = I253234)
-예측 결과 : AD, prediction : [0.54505]
-(subject = 019_S_5012, group = AD, imageDataID = I372590)
-예측 결과 : AD, prediction : [0.7047956]
-(subject = 011_S_4912, group = AD, imageDataID = I346989)
-예측 결과 : CN, prediction : [0.26006436]
-(subject = 009_S_5224, group = AD, imageDataID = I381184)
-예측 결과 : AD, prediction : [0.75751656]
-(subject = 128_S_4774, group = AD, imageDataID = I311833)
-예측 결과 : AD, prediction : [0.49893066]
-(subject = 037_S_5162, group = AD, imageDataID = I382019)
-예측 결과 : CN, prediction : [0.28223935]
-(subject = 051_S_5005, group = AD, imageDataID = I344149)
-예측 결과 : CN, prediction : [0.3638079]
-(subject = 053_S_5070, group = AD, imageDataID = I372257)
-예측 결과 : AD, prediction : [0.77007467]
-(subject = 053_S_5070, group = AD, imageDataID = I357474)
-예측 결과 : AD, prediction : [0.771118]
-(subject = 068_S_4968, group = AD, imageDataID = I360599)
-예측 결과 : AD, prediction : [0.71314305]
-(subject = 130_S_4730, group = AD, imageDataID = I352404)
-예측 결과 : AD, prediction : [0.684218]
-(subject = 013_S_5071, group = AD, imageDataID = I413792)
-예측 결과 : AD, prediction : [0.4815117]
-(subject = 019_S_5019, group = AD, imageDataID = I372477)
-예측 결과 : CN, prediction : [0.38858536]
-(subject = 036_S_5063, group = AD, imageDataID = I355515)
-예측 결과 : AD, prediction : [0.5896265]
-(subject = 006_S_4153, group = AD, imageDataID = I248517)
-예측 결과 : AD, prediction : [0.49519715]
-(subject = 011_S_4845, group = AD, imageDataID = I337141)
-예측 결과 : AD, prediction : [0.5184148]
-(subject = 019_S_4477, group = AD, imageDataID = I322346)
-예측 결과 : AD, prediction : [0.66996026]
-(subject = 019_S_4549, group = AD, imageDataID = I317439)
-예측 결과 : AD, prediction : [0.62729734]
-(subject = 009_S_5027, group = AD, imageDataID = I373876)
-예측 결과 : AD, prediction : [0.5809372]
-(subject = 153_S_4172, group = AD, imageDataID = I251187)
-예측 결과 : AD, prediction : [0.6047531]
-(subject = 067_S_4728, group = AD, imageDataID = I348571)
-예측 결과 : AD, prediction : [0.7387989]
-(subject = 136_S_4993, group = AD, imageDataID = I342522)
-예측 결과 : CN, prediction : [0.36569294]
-(subject = 116_S_4195, group = AD, imageDataID = I335031)
-예측 결과 : AD, prediction : [0.53537446]
-(subject = 036_S_5063, group = AD, imageDataID = I368349)
-예측 결과 : AD, prediction : [0.66615194]
-(subject = 135_S_4657, group = AD, imageDataID = I342900)
-예측 결과 : AD, prediction : [0.5051273]
-(subject = 013_S_5071, group = AD, imageDataID = I390461)
-예측 결과 : CN, prediction : [0.3789515]
-(subject = 070_S_4692, group = AD, imageDataID = I302279)
-예측 결과 : AD, prediction : [0.58519506]
-(subject = 019_S_4549, group = AD, imageDataID = I300335)
-예측 결과 : AD, prediction : [0.58308446]
-(subject = 011_S_4906, group = AD, imageDataID = I330056)
-예측 결과 : AD, prediction : [0.6042099]
-(subject = 019_S_4477, group = AD, imageDataID = I412885)
-예측 결과 : AD, prediction : [0.673834]
-(subject = 116_S_4625, group = AD, imageDataID = I313538)
-예측 결과 : AD, prediction : [0.45893925]
-(subject = 137_S_4672, group = AD, imageDataID = I340303)
-예측 결과 : AD, prediction : [0.51453775]
+예측 결과 : AD, prediction : [0.74004877]
+(subject = 053_S_4578, group = CN, imageDataID = I290814)
+예측 결과 : AD, prediction : [0.5990054]
+(subject = 002_S_0413, group = CN, imageDataID = I304793)
+예측 결과 : AD, prediction : [0.6405995]
+(subject = 137_S_4587, group = CN, imageDataID = I371168)
+예측 결과 : CN, prediction : [0.497184]
 (subject = 009_S_5037, group = AD, imageDataID = I367491)
-예측 결과 : AD, prediction : [0.77959174]
+예측 결과 : AD, prediction : [0.79526305]
+(subject = 116_S_4195, group = AD, imageDataID = I271074)
+예측 결과 : AD, prediction : [0.6682193]
+(subject = 024_S_4905, group = AD, imageDataID = I363572)
+예측 결과 : AD, prediction : [0.57392406]
+(subject = 068_S_5206, group = AD, imageDataID = I379376)
+예측 결과 : AD, prediction : [0.7607027]
+(subject = 067_S_5205, group = AD, imageDataID = I376818)
+예측 결과 : AD, prediction : [0.55343086]
+(subject = 130_S_5006, group = AD, imageDataID = I360697)
+예측 결과 : AD, prediction : [0.6932492]
+(subject = 009_S_5037, group = AD, imageDataID = I414399)
+예측 결과 : AD, prediction : [0.7829586]
+(subject = 024_S_5054, group = AD, imageDataID = I352573)
+예측 결과 : AD, prediction : [0.6005657]
+(subject = 037_S_4879, group = AD, imageDataID = I349474)
+예측 결과 : AD, prediction : [0.5157464]
+(subject = 018_S_4696, group = AD, imageDataID = I321521)
+예측 결과 : AD, prediction : [0.6466841]
+(subject = 033_S_5087, group = AD, imageDataID = I416701)
+예측 결과 : AD, prediction : [0.74412173]
+(subject = 073_S_4853, group = AD, imageDataID = I315948)
+예측 결과 : AD, prediction : [0.65425134]
+(subject = 116_S_4209, group = AD, imageDataID = I253231)
+예측 결과 : AD, prediction : [0.67985123]
+(subject = 011_S_4912, group = AD, imageDataID = I363474)
+예측 결과 : CN, prediction : [0.4183504]
+(subject = 131_S_5138, group = AD, imageDataID = I379704)
+예측 결과 : CN, prediction : [0.34152916]
+(subject = 032_S_4755, group = AD, imageDataID = I313900)
+예측 결과 : AD, prediction : [0.6505253]
+(subject = 082_S_5029, group = AD, imageDataID = I364983)
+예측 결과 : AD, prediction : [0.69742197]
+(subject = 135_S_4657, group = AD, imageDataID = I369145)
+예측 결과 : AD, prediction : [0.6199825]
+(subject = 024_S_4280, group = AD, imageDataID = I276854)
+예측 결과 : AD, prediction : [0.74949276]
+(subject = 123_S_4526, group = AD, imageDataID = I416335)
+예측 결과 : AD, prediction : [0.7882421]
+(subject = 019_S_5012, group = AD, imageDataID = I372590)
+예측 결과 : AD, prediction : [0.74811614]
+(subject = 006_S_4546, group = AD, imageDataID = I310930)
+예측 결과 : AD, prediction : [0.62535006]
+(subject = 011_S_4827, group = AD, imageDataID = I338208)
+예측 결과 : AD, prediction : [0.7004317]
+(subject = 053_S_5070, group = AD, imageDataID = I389300)
+예측 결과 : AD, prediction : [0.8031014]
+(subject = 128_S_4772, group = AD, imageDataID = I310620)
+예측 결과 : AD, prediction : [0.59445256]
+(subject = 137_S_4672, group = AD, imageDataID = I420398)
+예측 결과 : AD, prediction : [0.6235725]
+(subject = 116_S_4338, group = AD, imageDataID = I264968)
+예측 결과 : AD, prediction : [0.755112]
+(subject = 116_S_4625, group = AD, imageDataID = I296138)
+예측 결과 : AD, prediction : [0.5871451]
+(subject = 019_S_4252, group = AD, imageDataID = I341964)
+예측 결과 : AD, prediction : [0.71245855]
+(subject = 032_S_4755, group = AD, imageDataID = I339380)
+예측 결과 : AD, prediction : [0.6038685]
+(subject = 130_S_4990, group = AD, imageDataID = I342911)
+예측 결과 : AD, prediction : [0.7634784]
+(subject = 099_S_4124, group = AD, imageDataID = I247513)
+예측 결과 : AD, prediction : [0.5300867]
+(subject = 011_S_4912, group = AD, imageDataID = I346989)
+예측 결과 : CN, prediction : [0.36140558]
+(subject = 037_S_4770, group = AD, imageDataID = I315489)
+예측 결과 : AD, prediction : [0.6374303]
+(subject = 116_S_4732, group = AD, imageDataID = I336228)
+예측 결과 : AD, prediction : [0.76535]
+(subject = 024_S_4223, group = AD, imageDataID = I291035)
+예측 결과 : AD, prediction : [0.71200186]
+(subject = 009_S_5224, group = AD, imageDataID = I381184)
+예측 결과 : AD, prediction : [0.7761747]
+(subject = 031_S_4024, group = AD, imageDataID = I263857)
+예측 결과 : CN, prediction : [0.43303797]
+(subject = 137_S_4211, group = AD, imageDataID = I257193)
+예측 결과 : AD, prediction : [0.6718419]
+(subject = 067_S_4728, group = AD, imageDataID = I327068)
+예측 결과 : AD, prediction : [0.7587154]
+(subject = 036_S_4820, group = AD, imageDataID = I316737)
+예측 결과 : AD, prediction : [0.5457899]
+(subject = 024_S_5054, group = AD, imageDataID = I404608)
+예측 결과 : AD, prediction : [0.63223493]
+(subject = 130_S_4982, group = AD, imageDataID = I395985)
+예측 결과 : AD, prediction : [0.68477464]
+(subject = 073_S_5016, group = AD, imageDataID = I342679)
+예측 결과 : CN, prediction : [0.27893275]
+(subject = 019_S_4477, group = AD, imageDataID = I297113)
+예측 결과 : AD, prediction : [0.71408945]
+(subject = 153_S_4172, group = AD, imageDataID = I251187)
+예측 결과 : AD, prediction : [0.6991096]
+(subject = 130_S_5006, group = AD, imageDataID = I348490)
+예측 결과 : AD, prediction : [0.7325882]
+(subject = 137_S_4672, group = AD, imageDataID = I317097)
+예측 결과 : AD, prediction : [0.63819253]
+(subject = 130_S_5059, group = AD, imageDataID = I358776)
+예측 결과 : AD, prediction : [0.56220543]
+(subject = 036_S_4894, group = AD, imageDataID = I323094)
+예측 결과 : AD, prediction : [0.5193767]
