@@ -73,3 +73,33 @@ ADNI에서 제공된 파일은 기본적으로 DCM파일 -> NII.GZ확장자로 �
                    MPRAGE                      촬영 방식    
                        2012-05-10_15_44_50.0   촬영 날짜 (여러개 존재 가능)    
                            I303066             Image Data ID --> 촬영 식별번호    
+
+
+# HeimerRuri 동작이전 필요한 사전 작업    
+1. 위에서 서술한 DCM -> NII.GZ 파일 변환   
+2. hd_bet.ipynb에 있는 코드 절차대로 실행해서 두개골 및 불필요한 부분 제거 작업   
+3. registration.ipynb 으로 절차대로 실행(mri 정합 처리)   
+3-1. registration_roi.ipynb을 이용할 경우 template 폴더에 있는 마스크를 이용해서 특정 부위를 추출 가능   
+3-2. 다른 마스크가 필요할 경우 다음 링크를 참조 : https://git.fmrib.ox.ac.uk/fsl/data_standard   
+4. 필요한 전처리가 모두 처리되었을 경우 model_source/(전처리 방식)으로 정리 or HeimerRuri.ipynb 으로 지정해서 수정가능
+
+# HeimerRuri.ipynb, Setting에서 간단히 조절 가능한 옵션들     
+
+    MRI_SIZE = 128 -> 사용한 MRI 크기 hd-bet, registration에서 사용한 크기과 동일한 사이즈를 권장    
+
+    # 테스트할때 사용할 데이터 수 ( 학습, 증강에서 제외됨 )   
+    TEST_DATA_SIZE = 50 -> train/test 에 사용할 데이터중 test를 ad, cn 각각 TEST_DATA_SIZE 만큼 TEST로 사용   
+
+    # 사용할 데이터 경로   
+    INPUT_DATASET_PATH="/content/drive/MyDrive/model_source/registered_brains_128/" -> 위 전처리된 파일 모인 폴더 지정   
+
+    # clinical CSV 경로 + 사용할 feature 이름
+    CLINICAL_CSV_PATH = "/content/drive/MyDrive/originData2_5_16_2025.csv"  # 실제 파일명에 맞게 수정
+    CLINICAL_FEATURES = ["MMSE", "Age", "Gender"]  # CSV 컬럼명에 맞게 수정 (Age/AGE, Gender/PTGENDER 등)
+
+    VERBOSE = 0 # or 1 -> TENSORFLOW 학습과정중 로그 조절(0 -> 최소화)    
+    # 캐시 전역 설정 (통일형)    
+    CACHE_ROOT = Path("./cache_preprocessed")    
+    CACHE_VERSION = "pre_v5"      # 버전 문자열 한 곳에서 관리 -> 전처리 방식이 수정되었을 경우 캐시가 남아있다면 수정이 필요    
+    CACHE_DIR = CACHE_ROOT / CACHE_VERSION    
+    CFG_VERSION = CACHE_VERSION   # TorchIO 파이프라인에서 참조    
