@@ -5,8 +5,8 @@
 # 뇌 부위별로 구분해주는 모델?
 https://github.com/HOA-2/SlicerNeuroSegmentation?tab=readme-ov-file
 
-
-
+# Used Libraries
+- [HD-BET](https://github.com/MIC-DKFZ/HD-BET)
 
 # COlab dir example    
 Drive    
