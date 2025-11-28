@@ -5,10 +5,15 @@
 # 뇌 부위별로 구분해주는 모델?
 https://github.com/HOA-2/SlicerNeuroSegmentation?tab=readme-ov-file
 
-# Used Libraries
+# Used Libraries & References
 - [HD-BET](https://github.com/MIC-DKFZ/HD-BET)
-
-# COlab dir example    
+- [NiBabel](https://nipy.org/nibabel/)
+- [TorchIO](https://docs.torchio.org/)
+- [dcm2niix](https://github.com/rordenlab/dcm2niix)
+- 
+- [ADNI](https://adni.loni.usc.edu/)
+- [FSL](https://git.fmrib.ox.ac.uk/fsl/data_standard)
+# Colab dir example    
 Drive    
 |--template    
 |--|  MNI152_T1_1mm_Brain_Mask.nii.gz - 뇌 전체 마스크    
